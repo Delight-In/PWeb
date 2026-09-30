@@ -17,7 +17,6 @@ export const CapabilityModal: React.FC<CapabilityModalProps> = ({ isOpen, onClos
     e.preventDefault();
     setDownloaded(true);
 
-    // Create a mock synthetic download of the Capability Statement
     const fileContent = `
 ========================================================================
 PRISHITECH SOLUTIONS & TRIAXIS CONSORTIUM
@@ -69,15 +68,15 @@ Date: September 2026
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs animate-fade-in"
       role="dialog"
       aria-modal="true"
       aria-labelledby="cap-title"
     >
-      <div className="relative w-full max-w-lg p-6 sm:p-8 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl">
+      <div className="relative w-full max-w-lg p-6 sm:p-8 bg-white border border-slate-200 rounded-2xl shadow-xl text-slate-800">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400"
           aria-label="Close dialog"
         >
           <X className="w-5 h-5" />
@@ -85,35 +84,35 @@ Date: September 2026
 
         {!downloaded ? (
           <div>
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 mb-4">
               <FileText className="w-6 h-6" />
             </div>
 
-            <h2 id="cap-title" className="text-xl font-bold text-white mb-1">
+            <h2 id="cap-title" className="text-xl font-bold text-slate-900 mb-1">
               Download Enterprise Capability Statement
             </h2>
-            <p className="text-slate-400 text-sm mb-5">
+            <p className="text-slate-500 text-sm mb-5">
               Access the complete 2026 technical prospectus detailing our Resource Intelligence platform specifications, OT security framework, and TRIAXIS consortium project highlights.
             </p>
 
-            <div className="space-y-2 mb-6 text-xs text-slate-300">
+            <div className="space-y-2 mb-6 text-xs text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <CheckCircle className="w-4 h-4 text-emerald-600" />
                 <span>Unified Energy, Water, Gas &amp; Chiller architecture blueprints</span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-cyan-400" />
+                <Shield className="w-4 h-4 text-sky-600" />
                 <span>OT / ICS Cybersecurity architecture (IEC 62443 aligned)</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-emerald-400" />
+                <Award className="w-4 h-4 text-emerald-600" />
                 <span>TRIAXIS Consortium delivery methodology and SLA structures</span>
               </div>
             </div>
 
             <form onSubmit={handleDownload} className="space-y-4">
               <div>
-                <label htmlFor="cap-name" className="block text-xs font-medium text-slate-300 mb-1">
+                <label htmlFor="cap-name" className="block text-xs font-medium text-slate-700 mb-1">
                   Your Name *
                 </label>
                 <input
@@ -123,12 +122,12 @@ Date: September 2026
                   placeholder="e.g. Sanjeev"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-950/60 border border-slate-700 rounded-xl text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white"
                 />
               </div>
 
               <div>
-                <label htmlFor="cap-email" className="block text-xs font-medium text-slate-300 mb-1">
+                <label htmlFor="cap-email" className="block text-xs font-medium text-slate-700 mb-1">
                   Work Email *
                 </label>
                 <input
@@ -138,13 +137,13 @@ Date: September 2026
                   placeholder="sanjeev@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-950/60 border border-slate-700 rounded-xl text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl transition-all shadow-glow-emerald flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Capability Statement</span>
@@ -153,20 +152,20 @@ Date: September 2026
           </div>
         ) : (
           <div className="text-center py-6 space-y-4">
-            <div className="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 border border-emerald-500 flex items-center justify-center text-emerald-400">
+            <div className="w-14 h-14 mx-auto rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
               <CheckCircle className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold text-white">Document Downloaded!</h3>
-            <p className="text-slate-300 text-sm">
-              Your download for <span className="font-semibold text-emerald-400">{name}</span> has started. A copy has also been registered in our Vaishali, Ghaziabad enterprise portal.
+            <h3 className="text-xl font-bold text-slate-900">Document Downloaded</h3>
+            <p className="text-slate-600 text-sm">
+              Your download for <span className="font-semibold text-slate-900">{name}</span> has started. A copy has also been registered in our Vaishali, Ghaziabad enterprise portal.
             </p>
-            <div className="p-3 bg-slate-800/60 rounded-xl border border-slate-700/60 text-xs text-slate-400 flex items-center justify-center gap-2">
-              <Building2 className="w-4 h-4 text-emerald-400" />
+            <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 flex items-center justify-center gap-2">
+              <Building2 className="w-4 h-4 text-emerald-600" />
               <span>Headquartered at Cloud-9, Sector-1, Vaishali, Ghaziabad</span>
             </div>
             <button
               onClick={() => { setDownloaded(false); onClose(); }}
-              className="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-semibold transition-colors"
+              className="px-6 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-sm font-medium transition-colors shadow-sm"
             >
               Close
             </button>

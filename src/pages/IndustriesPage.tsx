@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Factory, Building2, Zap, Hotel, Landmark, 
-  ArrowRight, CheckCircle2, TrendingDown 
+  ArrowRight, CheckCircle2, AlertCircle, Download
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
 
@@ -12,7 +12,7 @@ interface IndustriesPageProps {
 }
 
 export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo, onOpenCapability }) => {
-  const [selectedIndustry, setSelectedIndustry] = useState<string>('all');
+  const [selectedIndustry, setSelectedIndustry] = useState<string>('manufacturing');
 
   const industries = [
     {
@@ -22,8 +22,8 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo, o
       tag: 'Heavy & Discrete Manufacturing',
       summary: 'Automotive, chemicals, textiles, pharmaceuticals, and precision metal fabrication.',
       challenges: [
-        'Volatile electrical loads and sudden peak kVA demand penalty charges from discoms.',
-        'High thermal losses in boilers, furnaces, and unmonitored steam/gas distribution lines.',
+        'Volatile electrical loads causing sudden peak kVA demand surcharge penalties from discoms.',
+        'High thermal losses in boilers, furnaces, and unmonitored steam and gas distribution lines.',
         'Unplanned motor and air compressor breakdowns causing severe line stoppage losses.',
       ],
       solutions: [
@@ -31,25 +31,25 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo, o
         'PNG/LPG mass flow and air-fuel ratio telemetry for boiler combustion optimization.',
         'AI vibration and thermal monitoring on heavy induction motors and chiller compressors.',
       ],
-      impact: '26% reduction in specific energy consumption (SEC) per finished product metric ton.',
+      impact: '26% reduction in specific energy consumption (SEC) per finished metric ton.',
     },
     {
       id: 'real-estate',
-      title: 'Commercial Real Estate & Facility Portfolios',
+      title: 'Commercial Real Estate & Portfolios',
       icon: Building2,
       tag: 'Grade-A Offices & IT Parks',
       summary: 'Multi-tenant commercial towers, tech parks, shopping malls, and corporate campuses.',
       challenges: [
         'Disputed tenant sub-metering and laborious manual meter readings each month.',
-        'Central HVAC chiller plants consuming 50%+ of common area electricity with sub-optimal staging.',
+        'Central HVAC chiller plants consuming 50%+ of common area electricity at low efficiency.',
         'Complex ESG disclosure reporting and SEBI BRSR core compliance requirements.',
       ],
       solutions: [
         'Automated multi-tenant revenue-grade sub-metering with automated digital billing.',
         'Real-time COP tracking and condenser water temperature reset for chiller plants.',
-        'Automated ESG and Scope 1/2 carbon reporting dashboards accessible to property executives.',
+        'Automated ESG Scope 1 & 2 carbon reporting dashboards accessible to property executives.',
       ],
-      impact: '₹38 – 52 Lakh annual savings per 500,000 sq. ft. commercial complex.',
+      impact: '₹38 – 52 Lakh annual utility savings per 500,000 sq. ft. commercial complex.',
     },
     {
       id: 'utilities',
@@ -58,7 +58,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo, o
       tag: 'Discoms & Renewable IPPs',
       summary: 'Power distribution utilities, captive power plants, and solar/wind farm operators.',
       challenges: [
-        'High AT&C (aggregate technical and commercial) transmission and distribution losses.',
+        'High AT&C transmission losses and undetected power factor dips.',
         'Substation power quality degradation, severe harmonic distortion, and low power factor.',
         'Fragmented telemetry across thousands of remote distribution transformers.',
       ],
@@ -81,7 +81,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo, o
         'Safety-critical steam and gas monitoring in laundry and dietary boilers.',
       ],
       solutions: [
-        'Zone-based HVAC automated scheduling mapped to PMS (property management system) occupancy.',
+        'Zone-based HVAC automated scheduling mapped to PMS property management occupancy.',
         'Acoustic leak detection and STP recycling water balance accounting.',
         'Continuous gas leak safety telemetry with automatic shut-off valve integration.',
       ],
@@ -95,21 +95,20 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo, o
       summary: 'Municipal waterworks, defense establishments, railways, and state administrative complexes.',
       challenges: [
         'Strict statutory compliance with national Energy Conservation Building Codes (ECBC).',
-        'Mandatory BEE audit certifications and stringent procurement guidelines.',
-        'Legacy equipment requiring retrofits without replacing existing functional infrastructure.',
+        'Mandatory BEE audit certifications and stringent public procurement guidelines.',
+        'Legacy equipment requiring non-invasive retrofits without replacing functional infrastructure.',
       ],
       solutions: [
         'TRIAXIS Consortium accredited BEE energy auditors executing investment-grade audits.',
         'Non-intrusive bolt-on IoT sensors requiring zero modification to existing heavy machinery.',
         'Air-gapped and on-premise capable sovereign deployment architectures.',
       ],
-      impact: 'Guaranteed compliance with Bureau of Energy Efficiency statutory benchmarks.',
+      impact: '100% statutory compliance with Bureau of Energy Efficiency benchmarks.',
     },
   ];
 
-  const filtered = selectedIndustry === 'all' 
-    ? industries 
-    : industries.filter((i) => i.id === selectedIndustry);
+  const current = industries.find((i) => i.id === selectedIndustry) || industries[0];
+  const CurrentIcon = current.icon;
 
   return (
     <>
@@ -118,144 +117,151 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo, o
         description="Prishitech Solutions supports manufacturing, commercial real estate, utilities, hospitality and government/PSU clients with resource intelligence and digital transformation."
       />
 
-      <div className="pt-24 pb-16 space-y-20">
+      <div className="pt-24 pb-20 space-y-20">
         {/* HERO SECTION */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto pt-6 sm:pt-12">
-            <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider bg-emerald-950/60 border border-emerald-800/80 px-3 py-1.5 rounded-full inline-block mb-4">
+          <div className="text-center max-w-3xl mx-auto pt-6 sm:pt-10">
+            <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full inline-block mb-4">
               Sector Specialization
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              “Built for facilities where{' '}
-              <span className="gradient-text">every resource counts</span>.”
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Built for Facilities Where{' '}
+              <span className="text-emerald-700">Every Resource Counts</span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              From heavy manufacturing plant floors to multi-tower commercial portfolios and municipal utilities, Prishitech adapts to the specific operating physics of your sector.
+            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+              From heavy manufacturing plant floors to multi-tower commercial portfolios and utilities, Prishitech adapts to the specific operating physics of your sector.
             </p>
+          </div>
+        </section>
 
-            {/* Filter buttons */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-              <button
-                onClick={() => setSelectedIndustry('all')}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                  selectedIndustry === 'all'
-                    ? 'bg-emerald-500 text-slate-950 shadow-glow-emerald'
-                    : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
-                }`}
-              >
-                All 5 Sectors
-              </button>
-              {industries.map((ind) => (
+        {/* INTERACTIVE SECTOR STUDIO (User-Friendly Tab Selector) */}
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          {/* Tab Selector */}
+          <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 mb-6">
+            {industries.map((ind) => {
+              const Icon = ind.icon;
+              return (
                 <button
                   key={ind.id}
                   onClick={() => setSelectedIndustry(ind.id)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
                     selectedIndustry === ind.id
-                      ? 'bg-emerald-500 text-slate-950 shadow-glow-emerald'
-                      : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
+                      ? 'bg-slate-900 text-white shadow-sm'
+                      : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300'
                   }`}
                 >
-                  {ind.title.split('&')[0]}
+                  <Icon className="w-4 h-4" />
+                  <span>{ind.title.split('&')[0].trim()}</span>
                 </button>
-              ))}
+              );
+            })}
+          </div>
+
+          {/* Active Industry Focused Showcase Card */}
+          <div className="bg-white rounded-3xl p-7 sm:p-10 border border-slate-200/90 shadow-sm transition-all">
+            <div className="flex items-center gap-3 pb-6 border-b border-slate-100">
+              <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-800">
+                <CurrentIcon className="w-6 h-6 text-emerald-700" />
+              </div>
+              <div>
+                <span className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold block">
+                  {current.tag}
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                  {current.title}
+                </h2>
+              </div>
+            </div>
+
+            <p className="text-slate-600 text-sm leading-relaxed my-6">
+              {current.summary}
+            </p>
+
+            {/* Split Comparison: Challenges vs Solutions */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Challenges */}
+              <div className="lg:col-span-6 p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
+                  <AlertCircle className="w-4 h-4 text-amber-600" />
+                  <span>Common Operational Challenges</span>
+                </div>
+                <div className="space-y-2.5 pt-1 text-xs">
+                  {current.challenges.map((c, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-slate-600">
+                      <span className="text-amber-600 font-bold mt-0.5">•</span>
+                      <span className="leading-relaxed">{c}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Solutions & Measured Benchmark */}
+              <div className="lg:col-span-6 p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-4">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Prishitech Telemetry &amp; Automation</span>
+                </div>
+                <div className="space-y-2.5 pt-1 text-xs">
+                  {current.solutions.map((s, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-slate-600">
+                      <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                      <span className="leading-relaxed">{s}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-3 border-t border-slate-200">
+                  <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
+                    Verified Sector Benchmark:
+                  </span>
+                  <div className="text-base font-bold font-mono text-emerald-700 mt-0.5">
+                    {current.impact}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <button
+                onClick={onRequestDemo}
+                className="w-full sm:w-auto px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors flex items-center justify-center gap-2"
+              >
+                <span>Request {current.title.split('&')[0]} Assessment</span>
+                <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
+              </button>
+
+              <button
+                onClick={onOpenCapability}
+                className="w-full sm:w-auto px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl text-xs border border-slate-200 flex items-center justify-center gap-1.5 transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Sector Capability Brief (PDF)</span>
+              </button>
             </div>
           </div>
         </section>
 
-        {/* INDUSTRIES LIST */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
-          {filtered.map((ind) => {
-            const Icon = ind.icon;
-            return (
-              <div
-                key={ind.id}
-                className="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800 hover:border-slate-700 transition-all"
-              >
-                <div className="flex flex-col lg:flex-row gap-8 items-start">
-                  <div className="w-full lg:w-1/3 space-y-4">
-                    <div className="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                      <Icon className="w-7 h-7" />
-                    </div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">
-                      {ind.tag}
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                      {ind.title}
-                    </h2>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      {ind.summary}
-                    </p>
-                    <div className="p-4 bg-emerald-950/30 border border-emerald-900/50 rounded-2xl text-xs text-emerald-300 space-y-1">
-                      <strong className="block text-white">Proven Sector Impact:</strong>
-                      <span>{ind.impact}</span>
-                    </div>
-                    <div className="pt-2">
-                      <button
-                        onClick={onRequestDemo}
-                        className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"
-                      >
-                        <span>Schedule a Sector-Specific Walkthrough</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-950/60 p-6 rounded-2xl border border-slate-800">
-                    {/* Challenges */}
-                    <div className="space-y-3">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-                        <TrendingDown className="w-4 h-4" /> Operational Roadblocks
-                      </h4>
-                      <div className="space-y-2.5">
-                        {ind.challenges.map((c, i) => (
-                          <div key={i} className="p-3 bg-slate-900 rounded-xl text-xs text-slate-300 border border-slate-800/80">
-                            • {c}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Solutions */}
-                    <div className="space-y-3">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-4 h-4" /> Prishitech Platform Solutions
-                      </h4>
-                      <div className="space-y-2.5">
-                        {ind.solutions.map((s, i) => (
-                          <div key={i} className="p-3 bg-slate-900 rounded-xl text-xs text-slate-300 border border-slate-800/80">
-                            ✓ {s}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </section>
-
         {/* BOTTOM CTA */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-          <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 max-w-3xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Do you operate in one of these sectors?
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Need a custom engineering review for your facility?
             </h2>
-            <p className="text-slate-300 text-sm">
-              Connect with our facility engineering team to explore anonymized case benchmarks and customized utility monitoring architecture.
+            <p className="text-slate-600 text-sm max-w-xl mx-auto mt-2 mb-6">
+              Our engineering team and TRIAXIS certified auditors in Vaishali, Ghaziabad conduct comprehensive on-site walk-throughs and feasibility analyses.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 to="/contact"
-                className="px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-glow-emerald"
+                className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors shadow-sm"
               >
-                Discuss Your Facility
+                Schedule Site Feasibility Walk
               </Link>
               <button
-                onClick={onOpenCapability}
-                className="px-8 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl text-sm transition-colors"
+                onClick={onRequestDemo}
+                className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-100 text-slate-800 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
               >
-                Download Industry Capability Brief
+                Request Platform Walkthrough
               </button>
             </div>
           </div>

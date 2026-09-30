@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Zap, Droplets, Flame, Wind, ShieldCheck, Cpu, Cloud, 
-  Database, Bot, ArrowRight, CheckCircle2, ChevronRight, 
-  Layers, Building2, Activity, Award 
+  Bot, ArrowRight, CheckCircle2, ChevronRight, 
+  Layers, Building2, Activity, Award, Factory, Hotel, Landmark,
+  Eye
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
 import { TelemetrySimulator } from '../components/TelemetrySimulator';
@@ -15,6 +16,84 @@ interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo, onOpenCapability }) => {
+  const [activePortfolio, setActivePortfolio] = useState<'resource' | 'digital'>('resource');
+  const [activeIndustry, setActiveIndustry] = useState<string>('manufacturing');
+  const [showLiveTelemetry, setShowLiveTelemetry] = useState<boolean>(false);
+
+  const industriesData: Record<string, {
+    title: string;
+    icon: React.ComponentType<{ className?: string }>;
+    tag: string;
+    summary: string;
+    challenges: string[];
+    solution: string;
+    impact: string;
+  }> = {
+    manufacturing: {
+      title: 'Manufacturing & Industrial Plants',
+      icon: Factory,
+      tag: 'Heavy & Discrete Manufacturing',
+      summary: 'Prevent discom peak kVA penalties, catch boiler line leaks, and automate motor energy baselines.',
+      challenges: [
+        'Volatile electrical loads causing sudden peak demand surcharge tariffs.',
+        'Thermal energy losses in unmonitored steam and PNG gas distribution lines.',
+      ],
+      solution: 'Sub-second feeder telemetry with automated peak-load alert notifications and combustion monitoring.',
+      impact: '26% reduction in specific energy consumption (SEC)',
+    },
+    'real-estate': {
+      title: 'Commercial Real Estate & Portfolios',
+      icon: Building2,
+      tag: 'Grade-A Offices & IT Parks',
+      summary: 'Accurate multi-tenant sub-metering, chiller plant COP optimization, and automated ESG disclosures.',
+      challenges: [
+        'Central HVAC chiller plants consuming over 50% of facility power at poor COP.',
+        'Disputed manual sub-metering readings across commercial tenant floors.',
+      ],
+      solution: 'Continuous kW/TR chiller tracking, condenser setpoint reset, and automated tenant energy invoicing.',
+      impact: '₹38 – 52 Lakh annual utility savings per complex',
+    },
+    utilities: {
+      title: 'Utilities & Energy Providers',
+      icon: Zap,
+      tag: 'Discoms & IPPs',
+      summary: 'Substation telemetry, power quality analysis, and real-time feeder loss detection.',
+      challenges: [
+        'High AT&C transmission losses and undetected power factor dips.',
+        'Fragmented telemetry across remote distribution transformers.',
+      ],
+      solution: 'Cloud-connected power quality analyzers tracking THD, unbalance, and active power factor.',
+      impact: '99.98% telemetry uptime with sub-second alert dispatch',
+    },
+    hospitality: {
+      title: 'Hospitality & Large Campuses',
+      icon: Hotel,
+      tag: 'Hotels & Healthcare',
+      summary: 'Occupancy-linked cooling, commercial laundry water accounting, and kitchen gas monitoring.',
+      challenges: [
+        'High cooling costs in vacant zones and undetected pipe leaks across grounds.',
+        'Safety-critical gas line monitoring across food & beverage facilities.',
+      ],
+      solution: 'Zone-based HVAC staging and automated ultrasonic water balance accounting.',
+      impact: '21% water waste eliminated; 19% thermal energy savings',
+    },
+    government: {
+      title: 'Government & PSU Facilities',
+      icon: Landmark,
+      tag: 'Public Sector Undertakings',
+      summary: 'Statutory BEE compliance, national energy conservation standards, and sovereign OT hardening.',
+      challenges: [
+        'Stringent Energy Conservation Building Code (ECBC) statutory mandates.',
+        'Legacy equipment requiring non-invasive sensor retrofits.',
+      ],
+      solution: 'Turnkey non-intrusive CT/PT metering, automated BEE reporting, and Purdue model security.',
+      impact: '100% statutory compliance with verifiable audit trails',
+    },
+  };
+
+  const currentIndustry = industriesData[activeIndustry] || industriesData.manufacturing;
+  const IndustryIcon = currentIndustry.icon;
+
   return (
     <>
       <SeoHead
@@ -22,251 +101,387 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo, onOpenCapabil
         description="Prishitech Solutions helps industrial and commercial facilities cut energy, water and gas waste with a unified resource intelligence platform, backed by IoT, cloud, cybersecurity, data and AI services."
       />
 
-      <div className="pt-24 pb-16 space-y-24">
+      <div className="pt-24 pb-20 space-y-24">
         {/* 1. HERO SECTION */}
         <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          {/* Subtle grid background & lighting accent */}
-          <div className="absolute inset-0 tech-grid-bg opacity-70 pointer-events-none -z-10"></div>
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3/4 h-96 bg-gradient-to-tr from-emerald-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
-
-          <div className="text-center max-w-4xl mx-auto pt-6 sm:pt-12 pb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6 shadow-glow-emerald">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <div className="text-center max-w-4xl mx-auto pt-6 sm:pt-10 pb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-6">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
               TRIAXIS Consortium Partner · Industrial Grade
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
               One Platform.{' '}
-              <span className="gradient-text">Every Resource.</span>{' '}
+              <span className="text-emerald-700">Every Resource.</span>{' '}
               Total Intelligence.
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto font-normal">
-              Prishitech Solutions unifies energy, water, gas and chiller management into a single resource intelligence platform — backed by end-to-end IT services and digital transformation expertise, as a TRIAXIS Consortium partner.
+            <p className="mt-5 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-normal">
+              Prishitech Solutions unifies energy, water, gas and chiller management into a single resource intelligence platform — backed by end-to-end IT services and digital transformation expertise.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
               <Link
                 to="/solutions/resource-intelligence"
-                className="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-base transition-all shadow-glow-emerald hover:shadow-xl flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-7 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-sm transition-all shadow-sm hover:shadow flex items-center justify-center gap-2 group"
               >
                 <span>Explore the Platform</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 text-slate-300" />
               </Link>
 
               <button
                 onClick={onRequestDemo}
-                className="w-full sm:w-auto px-8 py-4 bg-slate-900/90 hover:bg-slate-800 text-white font-semibold rounded-xl text-base transition-all border border-slate-700/80 hover:border-emerald-500/40 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-slate-50 text-slate-800 font-medium rounded-xl text-sm transition-all border border-slate-200 shadow-xs flex items-center justify-center gap-2"
               >
                 <span>Request a Demo</span>
               </button>
             </div>
 
-            {/* Quick trust metrics bar */}
-            <div className="mt-12 pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-left max-w-3xl mx-auto">
+            {/* Quick Metrics Bar */}
+            <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 text-left max-w-3xl mx-auto">
               <div>
-                <div className="text-2xl font-bold font-mono text-emerald-400">18 - 32%</div>
-                <div className="text-xs text-slate-400 mt-0.5">Average Utility Cost Reduction</div>
+                <div className="text-2xl font-bold font-mono text-emerald-700">18 - 32%</div>
+                <div className="text-xs text-slate-500 mt-0.5">Average Utility Cost Reduction</div>
               </div>
               <div>
-                <div className="text-2xl font-bold font-mono text-cyan-400">&lt; 1 sec</div>
-                <div className="text-xs text-slate-400 mt-0.5">Edge Sensor Telemetry Latency</div>
+                <div className="text-2xl font-bold font-mono text-slate-900">&lt; 1 sec</div>
+                <div className="text-xs text-slate-500 mt-0.5">Edge Sensor Latency</div>
               </div>
               <div>
-                <div className="text-2xl font-bold font-mono text-white">4 Utility Streams</div>
-                <div className="text-xs text-slate-400 mt-0.5">Power, Water, Gas &amp; Chiller</div>
+                <div className="text-2xl font-bold font-mono text-slate-900">4 Streams</div>
+                <div className="text-xs text-slate-500 mt-0.5">Power, Water, Gas &amp; Chiller</div>
               </div>
               <div>
-                <div className="text-2xl font-bold font-mono text-emerald-400">1 SLA</div>
-                <div className="text-xs text-slate-400 mt-0.5">TRIAXIS Unified Governance</div>
+                <div className="text-2xl font-bold font-mono text-emerald-700">1 SLA</div>
+                <div className="text-xs text-slate-500 mt-0.5">TRIAXIS Unified Governance</div>
               </div>
+            </div>
+
+            {/* Toggle for Live Telemetry Dashboard */}
+            <div className="mt-8">
+              <button
+                onClick={() => setShowLiveTelemetry(!showLiveTelemetry)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 shadow-xs transition-colors"
+              >
+                <Eye className="w-3.5 h-3.5 text-emerald-600" />
+                <span>{showLiveTelemetry ? 'Hide Live Telemetry Console' : 'View Live Telemetry Console (Interactive)'}</span>
+              </button>
             </div>
           </div>
 
-          {/* Real-time Interactive Telemetry Console Display */}
-          <div className="mt-8">
-            <TelemetrySimulator />
+          {/* Collapsible/Toggleable Telemetry Simulator */}
+          {showLiveTelemetry && (
+            <div className="mt-6 animate-fade-in">
+              <TelemetrySimulator />
+            </div>
+          )}
+        </section>
+
+        {/* 2. SECTION: TWO WAYS WE HELP YOU (Interactive Segmented Switcher) */}
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80">
+              Core Solutions
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2">
+              Two Ways We Help You
+            </h2>
+            <p className="text-slate-600 text-sm mt-1.5">
+              Select a portfolio below to see how we deliver measurable utility savings and digital agility.
+            </p>
+
+            {/* Segmented Switcher Tabs */}
+            <div className="mt-6 inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200 shadow-inner">
+              <button
+                onClick={() => setActivePortfolio('resource')}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                  activePortfolio === 'resource'
+                    ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Zap className="w-4 h-4 text-emerald-600" />
+                <span>Resource Intelligence Platform</span>
+              </button>
+
+              <button
+                onClick={() => setActivePortfolio('digital')}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                  activePortfolio === 'digital'
+                    ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Cpu className="w-4 h-4 text-sky-600" />
+                <span>IT &amp; Digital Transformation</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Active Portfolio Focused Showcase */}
+          <div className="bg-white rounded-3xl p-7 sm:p-10 border border-slate-200/90 shadow-sm transition-all">
+            {activePortfolio === 'resource' ? (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-6 space-y-4">
+                  <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wider bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                    Portfolio 01 · Real-Time Control
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                    Resource Intelligence Platform
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Real-time visibility and control across Energy, Water, Gas and Chiller Management, plus Energy Advisory. Built to eliminate utility waste, stop hidden leaks, and automate peak-demand shedding.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-3 pt-2">
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <Zap className="w-3.5 h-3.5 text-amber-600" />
+                        <span>Energy Management</span>
+                      </div>
+                      <span className="text-slate-500">Meters, feeders &amp; peak-load alerts</span>
+                    </div>
+
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <Droplets className="w-3.5 h-3.5 text-blue-600" />
+                        <span>Water Management</span>
+                      </div>
+                      <span className="text-slate-500">Flow meters &amp; acoustic leak alerts</span>
+                    </div>
+
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <Flame className="w-3.5 h-3.5 text-orange-600" />
+                        <span>Gas Management</span>
+                      </div>
+                      <span className="text-slate-500">Pressure lines &amp; safety thresholds</span>
+                    </div>
+
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <Wind className="w-3.5 h-3.5 text-cyan-600" />
+                        <span>Chiller Plants</span>
+                      </div>
+                      <span className="text-slate-500">COP analytics &amp; staging optimization</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 flex flex-wrap gap-3">
+                    <Link
+                      to="/solutions/resource-intelligence"
+                      className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors flex items-center gap-2"
+                    >
+                      <span>Explore All 5 Pillars</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </Link>
+                    <button
+                      onClick={onRequestDemo}
+                      className="px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-800 font-medium rounded-xl text-xs border border-slate-200"
+                    >
+                      Request Platform Demo
+                    </button>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-6 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                  <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
+                    <span className="font-semibold text-slate-900">Unified Monitoring Snapshot</span>
+                    <span className="text-emerald-700 font-mono font-medium">Live Telemetry Active</span>
+                  </div>
+
+                  <div className="space-y-2.5 text-xs">
+                    <div className="flex items-center justify-between p-2.5 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-600">Peak Demand Surcharge Risk</span>
+                      <span className="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                        Zero Risk (68% Cap)
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-600">Water Balance Reconciliation</span>
+                      <span className="font-semibold text-slate-900">98.4% Accounted</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-600">Chiller Plant Overall COP</span>
+                      <span className="font-semibold text-emerald-700 font-mono">5.2 COP (0.68 kW/TR)</span>
+                    </div>
+                    <div className="flex items-center justify-between p-2.5 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-600">BEE Statutory Audit Readiness</span>
+                      <span className="font-semibold text-slate-900">Compliant (ISO 50001)</span>
+                    </div>
+                  </div>
+
+                  <p className="text-[11px] text-slate-500 pt-1">
+                    ✓ Non-invasive wireless CT/PT sensors deployed in under 72 hours per facility.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-6 space-y-4">
+                  <span className="text-xs font-semibold text-sky-800 uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md border border-sky-200">
+                    Portfolio 02 · Full-Stack IT
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                    IT Services &amp; Digital Transformation
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    The robust technology backbone behind resource intelligence — available as standalone services for any enterprise initiative. From edge IoT gateways to hybrid cloud analytics and Purdue OT cybersecurity.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-3 pt-2">
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <Activity className="w-3.5 h-3.5 text-sky-600" />
+                        <span>IoT &amp; Monitoring</span>
+                      </div>
+                      <span className="text-slate-500">Edge gateways &amp; multi-site telemetry</span>
+                    </div>
+
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <Cloud className="w-3.5 h-3.5 text-indigo-600" />
+                        <span>Cloud Architecture</span>
+                      </div>
+                      <span className="text-slate-500">Scalable AWS/Azure infrastructure</span>
+                    </div>
+
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                        <span>OT Cybersecurity</span>
+                      </div>
+                      <span className="text-slate-500">Purdue Model &amp; SCADA isolation</span>
+                    </div>
+
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-0.5">
+                        <Bot className="w-3.5 h-3.5 text-purple-600" />
+                        <span>AI &amp; Automation</span>
+                      </div>
+                      <span className="text-slate-500">Predictive maintenance &amp; load shedding</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 flex flex-wrap gap-3">
+                    <Link
+                      to="/solutions/digital-transformation"
+                      className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors flex items-center gap-2"
+                    >
+                      <span>Explore All 5 IT Services</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </Link>
+                    <button
+                      onClick={onRequestDemo}
+                      className="px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-800 font-medium rounded-xl text-xs border border-slate-200"
+                    >
+                      Consult an IT Architect
+                    </button>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-6 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                  <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
+                    <span className="font-semibold text-slate-900">Enterprise IT Architecture</span>
+                    <span className="text-sky-700 font-mono font-medium">Hardened Purdue Model</span>
+                  </div>
+
+                  <div className="space-y-2.5 text-xs">
+                    <div className="p-2.5 bg-white rounded-lg border border-slate-200 flex items-start gap-2.5">
+                      <span className="font-mono font-bold text-slate-900 text-[11px] bg-slate-100 px-1.5 py-0.5 rounded">L4</span>
+                      <div>
+                        <strong className="block text-slate-900">Enterprise Cloud &amp; BI</strong>
+                        <span className="text-slate-500">REST APIs, Snowflake/BigQuery data lakes, PowerBI &amp; ERP integrations.</span>
+                      </div>
+                    </div>
+
+                    <div className="p-2.5 bg-white rounded-lg border border-slate-200 flex items-start gap-2.5">
+                      <span className="font-mono font-bold text-slate-900 text-[11px] bg-slate-100 px-1.5 py-0.5 rounded">IDMZ</span>
+                      <div>
+                        <strong className="block text-slate-900">Industrial Demilitarized Zone</strong>
+                        <span className="text-slate-500">One-way data diodes and encrypted Modbus-over-TLS edge conduits.</span>
+                      </div>
+                    </div>
+
+                    <div className="p-2.5 bg-white rounded-lg border border-slate-200 flex items-start gap-2.5">
+                      <span className="font-mono font-bold text-slate-900 text-[11px] bg-slate-100 px-1.5 py-0.5 rounded">L1-3</span>
+                      <div>
+                        <strong className="block text-slate-900">Physical Plant &amp; SCADA</strong>
+                        <span className="text-slate-500">Substation meters, flow transmitters, chillers, and localized PLCs.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-[11px] text-slate-500 pt-1">
+                    ✓ End-to-end OT security compliance with IEC 62443 and ISO 27001 standards.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* 2. SECTION: TWO WAYS WE HELP YOU */}
+        {/* 3. SECTION: WHY PRISHITECH (Concise, Clean & Scannable) */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-800">
-              Integrated Capabilities
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80">
+              Why Prishitech
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3">
-              Two Ways We Help You
+            <h2 className="text-3xl font-bold text-slate-900 mt-2">
+              Engineered for Zero Operational Downtime
             </h2>
-            <p className="text-slate-400 text-base mt-2">
-              Whether you need turnkey utility stream optimization or a modern cloud &amp; OT technology foundation, Prishitech provides single-source accountability.
+            <p className="text-slate-600 text-sm mt-1.5">
+              Built specifically for complex facilities where reliability, data integrity, and cyber safety are non-negotiable.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Card 1: Resource Intelligence Platform */}
-            <div className="glass-panel glass-panel-hover rounded-2xl p-8 border border-slate-800 relative flex flex-col justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 shadow-glow-emerald">
-                  <Zap className="w-7 h-7" />
-                </div>
-                <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">
-                  Portfolio 01
-                </span>
-                <h3 className="text-2xl font-bold text-white mt-1 mb-3">
-                  Resource Intelligence Platform
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Real-time visibility and control across Energy, Water, Gas and Chiller Management, plus Energy Advisory. Built to eliminate blind spots, stop resource leaks, and automate peak-demand shedding across your physical plant.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {[
-                    { title: 'Energy Management', desc: 'Meters, feeders, peak-load alerts', icon: Zap },
-                    { title: 'Water Management', desc: 'Flow tracking, acoustic leak detection', icon: Droplets },
-                    { title: 'Gas Management', desc: 'Pressure telemetry, safety thresholds', icon: Flame },
-                    { title: 'Chiller Management', desc: 'COP monitoring, predictive HVAC staging', icon: Wind },
-                    { title: 'Energy Advisory', desc: 'BEE audits, compliance, retrofit ROI', icon: Award },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={item.title} className="p-3 bg-slate-950/60 rounded-xl border border-slate-800/90 text-xs">
-                        <div className="flex items-center gap-2 font-semibold text-white mb-1">
-                          <Icon className="w-4 h-4 text-emerald-400 shrink-0" />
-                          <span>{item.title}</span>
-                        </div>
-                        <p className="text-slate-400">{item.desc}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <Link
-                to="/solutions/resource-intelligence"
-                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold text-sm group"
-              >
-                <span>Explore Resource Intelligence Platform</span>
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            {/* Card 2: IT Services & Digital Transformation */}
-            <div className="glass-panel glass-panel-hover rounded-2xl p-8 border border-slate-800 relative flex flex-col justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 shadow-glow-cyan">
-                  <Cpu className="w-7 h-7" />
-                </div>
-                <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">
-                  Portfolio 02
-                </span>
-                <h3 className="text-2xl font-bold text-white mt-1 mb-3">
-                  IT Services &amp; Digital Transformation
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  The technology backbone behind resource intelligence — available as standalone services for any digital transformation initiative. From rugged edge sensors to enterprise cloud analytics and Purdue-model OT security.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {[
-                    { title: 'IoT & Remote Monitoring', desc: 'Edge telemetry & multi-site visibility', icon: Activity },
-                    { title: 'Cloud & Infrastructure', desc: 'Scalable hybrid cloud architecture', icon: Cloud },
-                    { title: 'Cybersecurity & OT Security', desc: 'ICS/SCADA hardening & compliance', icon: ShieldCheck },
-                    { title: 'Data & Analytics', desc: 'Pipeline design & predictive BI models', icon: Database },
-                    { title: 'AI & Process Automation', desc: 'Anomaly detection & robotic workflows', icon: Bot },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={item.title} className="p-3 bg-slate-950/60 rounded-xl border border-slate-800/90 text-xs">
-                        <div className="flex items-center gap-2 font-semibold text-white mb-1">
-                          <Icon className="w-4 h-4 text-cyan-400 shrink-0" />
-                          <span>{item.title}</span>
-                        </div>
-                        <p className="text-slate-400">{item.desc}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <Link
-                to="/solutions/digital-transformation"
-                className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm group"
-              >
-                <span>Discover IT &amp; Digital Transformation Services</span>
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. SECTION: WHY PRISHITECH */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950 p-8 sm:p-12 rounded-3xl border border-slate-800 relative overflow-hidden">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-                Core Differentiators
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-                Why Prishitech
-              </h2>
-              <p className="text-slate-400 text-sm sm:text-base mt-2">
-                Engineered specifically for complex facilities where reliability, data integrity, and cyber-physical security cannot be compromised.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: 'Single-Pane-of-Glass Monitoring',
-                  desc: 'Unify electricity meters, water flows, gas valves, and chiller staging into one contextualized interface instead of 5 disconnected software vendors.',
-                  icon: Layers,
-                  accent: 'emerald',
-                },
-                {
-                  title: 'OT-Aware Cybersecurity',
-                  desc: 'Built specifically for operational technology and industrial control systems (ICS/SCADA), enforcing Purdue model isolation and zero-trust edge policies.',
-                  icon: ShieldCheck,
-                  accent: 'cyan',
-                },
-                {
-                  title: 'AI-Driven Process Automation',
-                  desc: 'Turn raw sensor streams into automated physical actions, predictive maintenance work orders, and dynamic peak-load mitigation in real time.',
-                  icon: Bot,
-                  accent: 'emerald',
-                },
-                {
-                  title: 'Backed by TRIAXIS Consortium',
-                  desc: 'Combined depth of power grid engineers, certified energy auditors, and enterprise cloud architects under a single accountable SLA.',
-                  icon: Award,
-                  accent: 'cyan',
-                },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.title}
-                    className="p-6 bg-slate-950/70 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-slate-400 text-xs leading-relaxed">{item.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                title: 'Single-Pane Monitoring',
+                desc: 'Unify power, water, gas, and chillers into one clean dashboard instead of juggling multiple software tools.',
+                icon: Layers,
+              },
+              {
+                title: 'OT-Aware Cyber Defense',
+                desc: 'Industrial-grade security enforcing strict Purdue model isolation to keep operational machinery safe.',
+                icon: ShieldCheck,
+              },
+              {
+                title: 'Automated AI Actions',
+                desc: 'Predict peak demand spikes 20 minutes in advance and automatically notify floor managers before penalties.',
+                icon: Bot,
+              },
+              {
+                title: 'TRIAXIS Consortium',
+                desc: 'A unified bench of electrical power engineers, BEE auditors, and cloud developers under a single SLA.',
+                icon: Award,
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="p-6 bg-white rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-card hover:border-slate-300 transition-all"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-800 mb-4">
+                    <Icon className="w-5 h-5 text-emerald-600" />
                   </div>
-                );
-              })}
-            </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1.5">{item.title}</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
 
-            <div className="mt-12 text-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl transition-all shadow-glow-emerald"
-              >
-                <span>Talk to an Expert</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+          <div className="mt-8 text-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors shadow-sm"
+            >
+              <span>Talk to an Expert</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
+            </Link>
           </div>
         </section>
 
@@ -275,140 +490,175 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo, onOpenCapabil
           <RoiCalculator />
         </section>
 
-        {/* 5. TRIAXIS CONSORTIUM HIGHLIGHT */}
+        {/* 5. TRIAXIS CONSORTIUM HIGHLIGHT (Clean & Airy) */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="max-w-2xl space-y-4">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400">
-                <Building2 className="w-4 h-4" />
-                <span>The Power of Strategic Partnership</span>
+          <div className="bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="max-w-2xl space-y-3">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                <Building2 className="w-3.5 h-3.5" />
+                <span>Strategic Consortium</span>
               </div>
-              <h2 className="text-3xl font-extrabold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
                 Stronger Together: Technology + Domain Expertise
               </h2>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                The TRIAXIS Consortium brings Prishitech's resource intelligence platform and IT services together with specialist partners across energy, power and facilities domains — so clients get technology and subject-matter expertise from one coordinated team, not a patchwork of vendors.
+              <p className="text-slate-600 text-sm leading-relaxed">
+                The TRIAXIS Consortium brings Prishitech's platform together with certified electrical power specialists, BEE energy auditors, and HVAC engineers. Clients get end-to-end delivery from one coordinated team, not an uncoordinated patchwork of vendors.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2 text-xs text-slate-300">
-                <span className="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Bureau of Energy Efficiency (BEE) Certified
+              <div className="flex flex-wrap gap-2 pt-2 text-xs text-slate-700">
+                <span className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Certified BEE Auditors
                 </span>
-                <span className="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400" /> Turnkey Hardware + Cloud Architecture
+                <span className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-600" /> Turnkey Hardware + Software
                 </span>
-                <span className="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Zero Vendor Disconnect
+                <span className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Single Contract SLA
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Link
                 to="/triaxis"
-                className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-glow-emerald flex items-center justify-center gap-2"
+                className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5"
               >
                 <span>Learn About TRIAXIS</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
               </Link>
               <button
                 onClick={onOpenCapability}
-                className="px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-sm border border-slate-700 transition-colors"
+                className="px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl text-xs border border-slate-200 shadow-xs"
               >
-                View Capability PDF
+                Capability Statement PDF
               </button>
             </div>
           </div>
         </section>
 
-        {/* 6. INDUSTRIES SERVED PREVIEW */}
+        {/* 6. INDUSTRIES SERVED (Interactive Scannable Selector) */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-                Sectors &amp; Facilities
+              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                Industries Served
               </span>
-              <h2 className="text-3xl font-extrabold text-white mt-1">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">
                 Built for Facilities Where Every Resource Counts
               </h2>
             </div>
             <Link
               to="/industries"
-              className="text-emerald-400 hover:text-emerald-300 font-semibold text-sm flex items-center gap-1"
+              className="text-emerald-700 hover:text-emerald-800 font-semibold text-xs sm:text-sm flex items-center gap-1"
             >
-              <span>Explore all industries</span>
+              <span>Explore full industry specs</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Interactive Industry Pill Selector */}
+          <div className="flex flex-wrap gap-2 mb-6">
             {[
-              {
-                title: 'Manufacturing & Industrial Plants',
-                desc: 'Heavy motor telemetry, peak electricity tariff shedding, boiler gas flow, and compressed air leakage tracking.',
-                metric: '26% avg power saving',
-              },
-              {
-                title: 'Commercial Real Estate & Portfolios',
-                desc: 'Multi-tenant sub-metering, chiller plant COP optimization, and automated ESG carbon disclosure reporting.',
-                metric: '₹42 Lakh/yr portfolio saving',
-              },
-              {
-                title: 'Utilities & Energy Providers',
-                desc: 'Feeder loss identification, smart grid edge analytics, power factor correction, and substation monitoring.',
-                metric: '99.98% telemetry uptime',
-              },
-              {
-                title: 'Hospitality & Large Campuses',
-                desc: 'Zone-based guest cooling automation, commercial laundry water recycling balance, and kitchen gas telemetry.',
-                metric: '19% water waste eliminated',
-              },
-              {
-                title: 'Government / PSU Facilities',
-                desc: 'Strict adherence to national energy conservation codes, automated BEE compliance, and sovereign-grade OT hardening.',
-                metric: 'Full BEE & ISO 50001 compliance',
-              },
-              {
-                title: 'IT Parks & Hyperscale Data Centers',
-                desc: 'PUE optimization, high-density server rack temperature monitoring, UPS battery health, and dual-source power balancing.',
-                metric: '1.24 target PUE achieved',
-              },
-            ].map((ind) => (
-              <div
-                key={ind.title}
-                className="p-6 bg-slate-900/60 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-2">{ind.title}</h3>
-                  <p className="text-slate-400 text-xs leading-relaxed mb-4">{ind.desc}</p>
+              { id: 'manufacturing', label: 'Manufacturing', icon: Factory },
+              { id: 'real-estate', label: 'Commercial Real Estate', icon: Building2 },
+              { id: 'utilities', label: 'Utilities & Power', icon: Zap },
+              { id: 'hospitality', label: 'Hospitality & Campuses', icon: Hotel },
+              { id: 'government', label: 'Government & PSU', icon: Landmark },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveIndustry(item.id)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    activeIndustry === item.id
+                      ? 'bg-slate-900 text-white shadow-sm'
+                      : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300'
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Industry Showcase Card */}
+          <div className="bg-white rounded-3xl p-7 sm:p-9 border border-slate-200 shadow-sm">
+            <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
+              <div className="max-w-2xl space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-800">
+                    <IndustryIcon className="w-5 h-5 text-emerald-600" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono uppercase tracking-wider text-slate-500 block">
+                      {currentIndustry.tag}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      {currentIndustry.title}
+                    </h3>
+                  </div>
                 </div>
-                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                  <span className="text-slate-500">Benchmark:</span>
-                  <span className="text-emerald-400 font-mono font-semibold">{ind.metric}</span>
+
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {currentIndustry.summary}
+                </p>
+
+                <div className="space-y-2 pt-1 text-xs">
+                  <strong className="text-slate-900 block font-semibold text-[11px] uppercase tracking-wider">
+                    Addressed Operational Challenges:
+                  </strong>
+                  {currentIndustry.challenges.map((ch, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-slate-600">
+                      <span className="text-emerald-600 font-bold">•</span>
+                      <span>{ch}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
+
+              <div className="w-full lg:w-80 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4 shrink-0">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
+                  Typical Facility Impact
+                </span>
+                <div className="text-xl font-bold font-mono text-emerald-700 leading-snug">
+                  {currentIndustry.impact}
+                </div>
+                <div className="pt-2 border-t border-slate-200 text-xs text-slate-600">
+                  <strong className="block text-slate-900 mb-1">Tailored Architecture:</strong>
+                  {currentIndustry.solution}
+                </div>
+                <Link
+                  to="/industries"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors"
+                >
+                  <span>View Case Metrics</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* 7. BOTTOM CTA SECTION */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-emerald-950/40 via-slate-900 to-cyan-950/40 p-8 sm:p-14 rounded-3xl border border-emerald-500/30 text-center relative overflow-hidden shadow-2xl">
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <div className="bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 text-center relative overflow-hidden shadow-xs">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Ready to modernize your facility resources?
             </h2>
-            <p className="mt-4 text-slate-300 text-base max-w-2xl mx-auto">
-              Connect with our solutions engineering team in Vaishali, Ghaziabad to schedule a site walk or request a tailored Resource Intelligence platform demonstration.
+            <p className="mt-2 text-slate-600 text-sm max-w-xl mx-auto">
+              Connect with our engineering team in Vaishali, Ghaziabad to schedule a site walk or request a tailored demonstration.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-base transition-all shadow-glow-emerald"
+                className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-all shadow-sm"
               >
                 Talk to an Expert
               </Link>
               <button
                 onClick={onRequestDemo}
-                className="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-base border border-slate-700 transition-colors"
+                className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-100 text-slate-800 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
               >
                 Request a Platform Demo
               </button>

@@ -29,7 +29,7 @@ export function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-[#070d18] text-slate-100 font-sans selection:bg-emerald-500/20 selection:text-emerald-300">
+      <div className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-800 font-sans selection:bg-emerald-100 selection:text-emerald-900">
         <Navbar onRequestDemo={() => handleOpenDemo()} />
         
         <main className="flex-grow">

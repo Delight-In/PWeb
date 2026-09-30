@@ -53,18 +53,18 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
         description="Get in touch with Prishitech Solutions to discuss Resource Intelligence or IT Services & Digital Transformation for your facility."
       />
 
-      <div className="pt-24 pb-16 space-y-20">
+      <div className="pt-24 pb-16 space-y-16">
         {/* HERO SECTION */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto pt-6 sm:pt-12">
-            <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider bg-emerald-950/60 border border-emerald-800/80 px-3 py-1.5 rounded-full inline-block mb-4">
+          <div className="text-center max-w-4xl mx-auto pt-6 sm:pt-10">
+            <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wider bg-emerald-50 border border-emerald-200/80 px-3.5 py-1.5 rounded-full inline-block mb-4">
               Get in Touch with Engineering &amp; Sales
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               “Let's build your{' '}
-              <span className="gradient-text">Resource Intelligence</span> platform.”
+              <span className="text-emerald-700">Resource Intelligence</span> platform.”
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
+            <p className="mt-5 text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
               Connect directly with our solutions architects to discuss Resource Intelligence or IT Services &amp; Digital Transformation for your facility.
             </p>
           </div>
@@ -72,28 +72,28 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
 
         {/* MAIN CONTACT CONTENT: DETAILS + FORM */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
             {/* LEFT COLUMN: CONTACT DETAILS & CREDENTIALS (5 cols) */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="glass-panel p-8 rounded-3xl border border-slate-800 space-y-6">
+              <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Corporate Headquarters</h3>
-                  <p className="text-slate-400 text-xs leading-relaxed">
+                  <h3 className="text-xl font-bold text-slate-900 mb-1.5">Corporate Headquarters</h3>
+                  <p className="text-slate-500 text-xs leading-relaxed">
                     Official registered address and central technical operations center.
                   </p>
                 </div>
 
-                <div className="space-y-4 text-sm text-slate-300">
+                <div className="space-y-4 text-sm">
                   {/* Address */}
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
-                      <MapPin className="w-5 h-5" />
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5">
+                      <MapPin className="w-4 h-4" />
                     </div>
                     <div>
-                      <strong className="text-white block text-xs font-mono uppercase tracking-wider text-emerald-400">
+                      <strong className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                         Registered Address
                       </strong>
-                      <span className="text-slate-200 mt-1 block">
+                      <span className="text-slate-800 text-sm mt-0.5 block font-medium leading-relaxed">
                         5A 45/46, Cloud-9, Sector-1, Vaishali,<br />
                         Ghaziabad, Uttar Pradesh 201019, India
                       </span>
@@ -101,69 +101,69 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                   </div>
 
                   {/* Phone */}
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 mt-0.5">
-                      <Phone className="w-5 h-5" />
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0 mt-0.5">
+                      <Phone className="w-4 h-4" />
                     </div>
                     <div>
-                      <strong className="text-white block text-xs font-mono uppercase tracking-wider text-cyan-400">
+                      <strong className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                         Phone
                       </strong>
-                      <a href="tel:+911204567890" className="hover:text-emerald-400 transition-colors block text-slate-200">
+                      <a href="tel:+911204567890" className="hover:text-emerald-700 font-medium transition-colors block text-slate-800 text-sm mt-0.5">
                         +91 120 456 7890 (Direct Switchboard)
                       </a>
-                      <a href="tel:+919810012345" className="hover:text-emerald-400 transition-colors block text-slate-400 text-xs mt-0.5">
+                      <a href="tel:+919810012345" className="hover:text-emerald-700 transition-colors block text-slate-500 text-xs mt-0.5">
                         +91 98100 12345 (Sales &amp; Enterprise WhatsApp)
                       </a>
                     </div>
                   </div>
 
                   {/* Email */}
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
-                      <Mail className="w-5 h-5" />
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5">
+                      <Mail className="w-4 h-4" />
                     </div>
                     <div>
-                      <strong className="text-white block text-xs font-mono uppercase tracking-wider text-emerald-400">
+                      <strong className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                         Email
                       </strong>
-                      <a href="mailto:contact@prishitech.com" className="hover:text-emerald-400 transition-colors block text-slate-200">
+                      <a href="mailto:contact@prishitech.com" className="hover:text-emerald-700 font-medium transition-colors block text-slate-800 text-sm mt-0.5">
                         contact@prishitech.com
                       </a>
-                      <a href="mailto:sales@prishitech.com" className="hover:text-emerald-400 transition-colors block text-slate-400 text-xs mt-0.5">
+                      <a href="mailto:sales@prishitech.com" className="hover:text-emerald-700 transition-colors block text-slate-500 text-xs mt-0.5">
                         sales@prishitech.com
                       </a>
                     </div>
                   </div>
 
                   {/* Website */}
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
-                      <Globe className="w-5 h-5" />
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0 mt-0.5">
+                      <Globe className="w-4 h-4" />
                     </div>
                     <div>
-                      <strong className="text-white block text-xs font-mono uppercase tracking-wider text-blue-400">
+                      <strong className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                         Website
                       </strong>
-                      <a href="https://www.prishitech.com" className="hover:text-emerald-400 transition-colors block text-slate-200">
+                      <a href="https://www.prishitech.com" className="hover:text-emerald-700 font-medium transition-colors block text-slate-800 text-sm mt-0.5">
                         https://www.prishitech.com
                       </a>
                     </div>
                   </div>
 
                   {/* Business Hours */}
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
-                      <Clock className="w-5 h-5" />
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0 mt-0.5">
+                      <Clock className="w-4 h-4" />
                     </div>
                     <div>
-                      <strong className="text-white block text-xs font-mono uppercase tracking-wider text-amber-400">
+                      <strong className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                         Business Hours
                       </strong>
-                      <span className="text-slate-200 block">
+                      <span className="text-slate-800 text-sm block font-medium mt-0.5">
                         Monday – Friday: 9:00 AM – 6:00 PM IST
                       </span>
-                      <span className="text-slate-400 text-xs block mt-0.5">
+                      <span className="text-slate-500 text-xs block mt-0.5">
                         24/7 Priority OT Emergency Support for Contracted Facilities
                       </span>
                     </div>
@@ -172,18 +172,18 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
               </div>
 
               {/* TRIAXIS Consortium Assurance Banner */}
-              <div className="p-6 bg-slate-900/90 rounded-3xl border border-slate-800 space-y-3">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-200/90 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-800">
                   <ShieldCheck className="w-4 h-4" />
                   <span>TRIAXIS Consortium Assurance</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   All enterprise technical enquiries are reviewed jointly by Prishitech Solutions digital architects and TRIAXIS certified electrical/HVAC engineering consultants.
                 </p>
                 <div className="pt-2">
                   <button
                     onClick={onRequestDemo}
-                    className="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-emerald-400 font-semibold rounded-xl text-xs border border-slate-700 transition-colors text-center"
+                    className="w-full py-2.5 px-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-xl text-xs border border-slate-200 transition-colors text-center shadow-sm"
                   >
                     Request Instant Telemetry Demo
                   </button>
@@ -193,24 +193,24 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
 
             {/* RIGHT COLUMN: INTERACTIVE CONTACT FORM (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800">
+              <div className="bg-white p-7 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
                 {submitted ? (
-                  <div className="text-center py-12 space-y-5 animate-fade-in">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-emerald-500/20 border border-emerald-500 flex items-center justify-center text-emerald-400">
-                      <CheckCircle2 className="w-10 h-10" />
+                  <div className="text-center py-10 space-y-5 animate-fade-in">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700">
+                      <CheckCircle2 className="w-9 h-9" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Thank You, {formData.name}!</h3>
-                    <p className="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-                      Your inquiry regarding <strong className="text-emerald-400">{formData.areaOfInterest}</strong> for <span className="text-white">{formData.company}</span> has been dispatched to our Vaishali, Ghaziabad engineering inbox.
+                    <h3 className="text-2xl font-bold text-slate-900">Thank You, {formData.name}!</h3>
+                    <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
+                      Your inquiry regarding <strong className="text-emerald-700">{formData.areaOfInterest}</strong> for <span className="text-slate-900 font-medium">{formData.company}</span> has been dispatched to our Vaishali, Ghaziabad engineering inbox.
                     </p>
-                    <div className="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-left max-w-md mx-auto space-y-1.5 text-slate-300">
+                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-left max-w-md mx-auto space-y-1.5 text-slate-700">
                       <p>• <strong>Lead Routed To:</strong> Prishitech Solutions Sales &amp; TRIAXIS Advisory Bench</p>
-                      <p>• <strong>Confirmation Email:</strong> Sent to <span className="text-emerald-300">{formData.email}</span></p>
+                      <p>• <strong>Confirmation Email:</strong> Sent to <span className="text-emerald-800 font-medium">{formData.email}</span></p>
                       <p>• <strong>Response SLA:</strong> Within 4 business hours</p>
                     </div>
                     <button
                       onClick={handleReset}
-                      className="mt-6 px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-glow-emerald"
+                      className="mt-6 px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-sm transition-all shadow-sm"
                     >
                       Send Another Message
                     </button>
@@ -218,13 +218,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                 ) : (
                   <div>
                     <div className="mb-6">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
                         Direct Inquiry
                       </span>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">
                         Send Us a Message
                       </h2>
-                      <p className="text-slate-400 text-xs sm:text-sm mt-1">
+                      <p className="text-slate-500 text-xs sm:text-sm mt-1">
                         Please provide details below. Our technical specialists will respond within 4 business hours.
                       </p>
                     </div>
@@ -233,7 +233,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                       {/* Name & Company */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="contact-name" className="block text-xs font-medium text-slate-300 mb-1">
+                          <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-700 mb-1.5">
                             Your Name *
                           </label>
                           <input
@@ -244,12 +244,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                             autoComplete="name"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full px-3.5 py-2.5 bg-slate-950/70 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all shadow-sm"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="contact-company" className="block text-xs font-medium text-slate-300 mb-1">
+                          <label htmlFor="contact-company" className="block text-xs font-semibold text-slate-700 mb-1.5">
                             Company / Organization *
                           </label>
                           <input
@@ -260,7 +260,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                             autoComplete="organization"
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                            className="w-full px-3.5 py-2.5 bg-slate-950/70 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all shadow-sm"
                           />
                         </div>
                       </div>
@@ -268,7 +268,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                       {/* Email & Phone */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="contact-email" className="block text-xs font-medium text-slate-300 mb-1">
+                          <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-700 mb-1.5">
                             Email Address *
                           </label>
                           <input
@@ -279,12 +279,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                             autoComplete="email"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full px-3.5 py-2.5 bg-slate-950/70 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all shadow-sm"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="contact-phone" className="block text-xs font-medium text-slate-300 mb-1">
+                          <label htmlFor="contact-phone" className="block text-xs font-semibold text-slate-700 mb-1.5">
                             Phone / Mobile *
                           </label>
                           <input
@@ -295,14 +295,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                             autoComplete="tel"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="w-full px-3.5 py-2.5 bg-slate-950/70 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all shadow-sm"
                           />
                         </div>
                       </div>
 
                       {/* Area of Interest */}
                       <div>
-                        <label htmlFor="contact-interest" className="block text-xs font-medium text-slate-300 mb-1">
+                        <label htmlFor="contact-interest" className="block text-xs font-semibold text-slate-700 mb-1.5">
                           Area of Interest *
                         </label>
                         <select
@@ -310,7 +310,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                           required
                           value={formData.areaOfInterest}
                           onChange={(e) => setFormData({ ...formData, areaOfInterest: e.target.value as AreaOfInterest })}
-                          className="w-full px-3.5 py-2.5 bg-slate-950/70 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                          className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all shadow-sm"
                         >
                           <option value="Resource Intelligence">Resource Intelligence (Energy, Water, Gas, Chiller)</option>
                           <option value="IT Services & Digital Transformation">IT Services &amp; Digital Transformation (IoT, Cloud, Cyber, AI)</option>
@@ -322,7 +322,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
 
                       {/* Message */}
                       <div>
-                        <label htmlFor="contact-message" className="block text-xs font-medium text-slate-300 mb-1">
+                        <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-700 mb-1.5">
                           Message / Facility Specifics *
                         </label>
                         <textarea
@@ -332,7 +332,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                           placeholder="Tell us about your facility type, current monthly energy/utility spend, or digital transformation goals..."
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full px-3.5 py-2.5 bg-slate-950/70 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-y"
+                          className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all shadow-sm resize-y"
                         ></textarea>
                       </div>
 
@@ -341,7 +341,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                         <button
                           type="submit"
                           disabled={loading}
-                          className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-slate-950 font-bold rounded-xl transition-all shadow-glow-emerald flex items-center justify-center gap-2 group disabled:opacity-50"
+                          className="w-full py-3.5 px-6 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 group disabled:opacity-50"
                         >
                           {loading ? (
                             <span>Routing Inquiry to Engineering...</span>

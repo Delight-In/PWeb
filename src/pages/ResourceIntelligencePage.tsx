@@ -1,22 +1,211 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   Zap, Droplets, Flame, Wind, Award, ArrowRight, 
-  CheckCircle2 
+  CheckCircle2, ChevronDown, ChevronUp, Cpu, ShieldCheck, 
+  Layers, Download
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { TelemetrySimulator } from '../components/TelemetrySimulator';
 
 interface ResourceIntelligencePageProps {
   onRequestDemo: () => void;
   onOpenCapability: () => void;
 }
 
+type PillarKey = 'energy' | 'water' | 'gas' | 'chiller' | 'advisory';
+
 export const ResourceIntelligencePage: React.FC<ResourceIntelligencePageProps> = ({
   onRequestDemo,
   onOpenCapability,
 }) => {
-  const [activePillar, setActivePillar] = useState<'energy' | 'water' | 'gas' | 'chiller' | 'advisory'>('energy');
+  const [activePillar, setActivePillar] = useState<PillarKey>('energy');
+  const [showTechSpecs, setShowTechSpecs] = useState<boolean>(false);
+
+  const pillarsData: Record<PillarKey, {
+    title: string;
+    tag: string;
+    icon: React.ComponentType<{ className?: string }>;
+    accentColor: string;
+    bgAccent: string;
+    headline: string;
+    summary: string;
+    points: { title: string; desc: string }[];
+    metrics: { label: string; value: string; status: string }[];
+    techSpecs: string[];
+  }> = {
+    energy: {
+      title: 'Energy Management',
+      tag: 'Pillar 01 · Power Telemetry',
+      icon: Zap,
+      accentColor: 'text-amber-600',
+      bgAccent: 'bg-amber-50 border-amber-200',
+      headline: 'Real-time electricity consumption monitoring across meters, feeders and equipment.',
+      summary: 'Prevent expensive peak demand (kVA) penalties, track power factor continuously, and benchmark consumption against actual production output.',
+      points: [
+        {
+          title: 'Sub-second Feeder Metering',
+          desc: 'Granular tracking across incoming substations, main busbars, and high-draw equipment.',
+        },
+        {
+          title: 'Automated Peak-Demand Alerts',
+          desc: 'Predictive notifications 20 minutes in advance before exceeding contracted discom maximum demand limits.',
+        },
+        {
+          title: 'Target Benchmarking',
+          desc: 'Normalizes kWh against production tonnage, weather, and shift schedules to isolate true operational waste.',
+        },
+      ],
+      metrics: [
+        { label: 'Contract Demand Utilization', value: '68.4% (Safe)', status: 'Within Normal Baseline' },
+        { label: 'Average Power Factor', value: '0.992 Lag', status: 'Penalty Exempt' },
+        { label: 'Total Harmonic Distortion (THD)', value: '2.4%', status: 'IEEE 519 Compliant' },
+      ],
+      techSpecs: [
+        'Supports Class 0.2S and 0.5S revenue-grade digital power meters.',
+        'Protocols: Modbus-RTU over RS-485, Modbus-TCP, BACnet/IP, MQTT.',
+        'Continuous logging of active (kWh), reactive (kVArh), and apparent (kVAh) energy.',
+        'Automatic load shedding integration via relay triggers or PLC commands.',
+      ],
+    },
+    water: {
+      title: 'Water Management',
+      tag: 'Pillar 02 · Hydrological Intelligence',
+      icon: Droplets,
+      accentColor: 'text-blue-600',
+      bgAccent: 'bg-blue-50 border-blue-200',
+      headline: 'Continuous flow and consumption tracking across sources, zones, and recycling plants.',
+      summary: 'Detect subterranean leaks before ground saturation, account for bulk tanker receipts, and streamline statutory Central Ground Water Authority (CGWA) reporting.',
+      points: [
+        {
+          title: 'End-to-End Flow Ledger',
+          desc: 'Track intake from borewells, municipal mains, and tankers down to cooling towers and restrooms.',
+        },
+        {
+          title: 'Acoustic Leak Detection',
+          desc: 'Algorithmic mass-balance auditing alerts facility teams immediately when zone distribution drops below inflow.',
+        },
+        {
+          title: 'Water Balance & CGWA Compliance',
+          desc: 'Automates digital water ledger records to meet municipal conservation and ESG water-positive goals.',
+        },
+      ],
+      metrics: [
+        { label: 'Reconciliation Balance', value: '98.6%', status: 'Zero Active Leaks' },
+        { label: 'Recycled STP Utilization', value: '84.2%', status: 'Horticulture & HVAC Makeup' },
+        { label: 'CGWA Statutory Ledger', value: 'Logged', status: 'Automated Compliance' },
+      ],
+      techSpecs: [
+        'Ultrasonic transit-time and electromagnetic flow transmitters (accuracy ±0.5%).',
+        'Direct pulse output and 4-20mA analog loop sensors for legacy mechanical meters.',
+        'Digital hydrostatic level transmitters for overhead and underground tanks.',
+        'Cloud-calculated water balance engine with daily automated variance reports.',
+      ],
+    },
+    gas: {
+      title: 'Gas Management',
+      tag: 'Pillar 03 · Thermal Energy & Safety',
+      icon: Flame,
+      accentColor: 'text-orange-600',
+      bgAccent: 'bg-orange-50 border-orange-200',
+      headline: 'Live monitoring of gas consumption, line pressure, and safety thresholds across pipelines.',
+      summary: 'Safeguard plant infrastructure, catch anomalous line drops instantly, and optimize boiler and furnace combustion efficiency.',
+      points: [
+        {
+          title: 'Mass Flow & Thermal Telemetry',
+          desc: 'Real-time PNG, LPG, and compressed air flow tracking with temperature and pressure compensation.',
+        },
+        {
+          title: 'Safety-Threshold Alerts',
+          desc: 'Instant notifications on abnormal pressure drops, high-limit exceedances, or line rupture risks.',
+        },
+        {
+          title: 'Combustion Efficiency Benchmarks',
+          desc: 'Correlate fuel consumption with steam output to catch boiler burner degradation early.',
+        },
+      ],
+      metrics: [
+        { label: 'Manifold Line Pressure', value: '4.20 bar', status: 'Stable Operating Range' },
+        { label: 'Combustion Efficiency', value: '83.4%', status: 'Optimal Air-to-Fuel Ratio' },
+        { label: 'Emergency Solenoid Status', value: 'Armed', status: 'Auto Shut-Off Linked' },
+      ],
+      techSpecs: [
+        'Thermal mass flow meters and vortex shedding flow sensors.',
+        'Explosion-proof ATEX / IECEx certified pressure transmitters.',
+        'Hardwired safety interlock interface for emergency shut-off valves.',
+        'Automated specific fuel consumption (SFC) reporting per tonne of steam.',
+      ],
+    },
+    chiller: {
+      title: 'Chiller Management',
+      tag: 'Pillar 04 · Thermodynamic Efficiency',
+      icon: Wind,
+      accentColor: 'text-cyan-600',
+      bgAccent: 'bg-cyan-50 border-cyan-200',
+      headline: 'Real-time chiller plant performance (COP) and HVAC efficiency optimization.',
+      summary: 'Central chillers consume over 50% of facility electricity. Our platform tracks kW/TR in real time, suggests optimal staging, and flags fouling before compressor wear.',
+      points: [
+        {
+          title: 'Real-Time kW/TR & COP Analytics',
+          desc: 'Monitors thermal cooling tonnage delivered against electrical input power every 60 seconds.',
+        },
+        {
+          title: 'Predictive Degradation Alerts',
+          desc: 'Detects condenser tube scale buildup and approach temperature deviations before failure.',
+        },
+        {
+          title: 'Dynamic Staging Recommendations',
+          desc: 'Advises operators on condenser water setpoint reset and optimal part-load compressor sequencing.',
+        },
+      ],
+      metrics: [
+        { label: 'Instantaneous Efficiency', value: '0.67 kW/TR', status: 'COP 5.25 (High Efficiency)' },
+        { label: 'Evaporator Approach Temp', value: '1.2° C', status: 'Clean Heat Exchanger' },
+        { label: 'Cooling Tower Delta T', value: '4.8° C', status: 'Optimal Fan Staging' },
+      ],
+      techSpecs: [
+        'Four-wire PT100/PT1000 RTD precision temperature transmitters (±0.05°C).',
+        'Direct BACnet-MSTP / BACnet-IP interfaces to York, Trane, Carrier, and Daikin chillers.',
+        'Variable Primary Pumping (VPF) delta-P tracking.',
+        'Predictive fouling detection algorithms based on thermodynamic models.',
+      ],
+    },
+    advisory: {
+      title: 'Energy Advisory & Audits',
+      tag: 'Pillar 05 · Domain Consulting',
+      icon: Award,
+      accentColor: 'text-emerald-700',
+      bgAccent: 'bg-emerald-50 border-emerald-200',
+      headline: 'Expert-led energy audits, statutory BEE compliance, and ROI-backed retrofit roadmaps.',
+      summary: 'Delivered in partnership with certified TRIAXIS energy auditors. We turn telemetry numbers into verified financial savings and bankable investment proposals.',
+      points: [
+        {
+          title: 'Certified BEE & ISO 50001 Audits',
+          desc: 'Mandatory statutory walk-through and detailed investment-grade facility energy audits.',
+        },
+        {
+          title: 'Regulatory & Tariff Advisory',
+          desc: 'Discom tariff structure optimization, open-access renewable power sourcing, and power factor rebates.',
+        },
+        {
+          title: 'ROI-Backed Retrofit Roadmaps',
+          desc: 'Clear techno-commercial business cases for VFD retrofits, solar integration, and lighting overhauls.',
+        },
+      ],
+      metrics: [
+        { label: 'BEE Audit Readiness', value: 'Certified', status: 'Statutory Grade' },
+        { label: 'Average Payback Period', value: '8.4 Months', status: 'Low-CapEx Interventions' },
+        { label: 'Tariff Rebate Realization', value: 'Maximum', status: 'Power Factor Incentive' },
+      ],
+      techSpecs: [
+        'Audits conducted by Bureau of Energy Efficiency (BEE) accredited energy auditors.',
+        'ISO 50001 Energy Management System (EnMS) documentation and readiness audit support.',
+        'Level 1, 2, and 3 ASHRAE / BEE compliant energy audits.',
+        'Full ESG Scope 1, 2, and 3 carbon accounting methodologies.',
+      ],
+    },
+  };
+
+  const currentPillar = pillarsData[activePillar];
+  const PillarIcon = currentPillar.icon;
 
   return (
     <>
@@ -25,507 +214,245 @@ export const ResourceIntelligencePage: React.FC<ResourceIntelligencePageProps> =
         description="A unified platform for Energy, Water, Gas and Chiller Management with expert Energy Advisory — real-time monitoring, alerts and reporting in one dashboard."
       />
 
-      <div className="pt-24 pb-16 space-y-20">
+      <div className="pt-24 pb-20 space-y-20">
         {/* HERO SECTION */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto pt-6 sm:pt-12">
-            <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider bg-emerald-950/60 border border-emerald-800/80 px-3 py-1.5 rounded-full inline-block mb-4">
+          <div className="text-center max-w-3xl mx-auto pt-6 sm:pt-10">
+            <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full inline-block mb-4">
               Unified Resource Telemetry
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              “One Unified Platform for{' '}
-              <span className="gradient-text">Resource Intelligence</span>”
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              One Unified Platform for{' '}
+              <span className="text-emerald-700">Resource Intelligence</span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              Real-time visibility, control and advisory across every resource stream your facility depends on.
+            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+              Real-time visibility, automated alerts, and engineering advisory across every resource stream your facility depends on.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
                 onClick={onRequestDemo}
-                className="w-full sm:w-auto px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-glow-emerald flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs sm:text-sm transition-all shadow-sm flex items-center justify-center gap-2"
               >
-                <span>Request a Platform Demo</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Request Platform Demo</span>
+                <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
               </button>
               <button
                 onClick={onOpenCapability}
-                className="w-full sm:w-auto px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-sm border border-slate-700 transition-colors"
+                className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl text-xs sm:text-sm border border-slate-200 shadow-xs transition-colors flex items-center justify-center gap-1.5"
               >
-                Download Technical Specs
+                <Download className="w-3.5 h-3.5" />
+                <span>Technical Specifications (PDF)</span>
               </button>
             </div>
           </div>
         </section>
 
-        {/* INTERACTIVE TELEMETRY PREVIEW */}
+        {/* INTERACTIVE PILLAR STUDIO (Clean, Tabbed, User-Friendly) */}
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <TelemetrySimulator />
-        </section>
-
-        {/* PILLAR QUICK JUMP NAVIGATION */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="sticky top-20 z-30 bg-slate-950/80 backdrop-blur-md p-2 rounded-2xl border border-slate-800 flex items-center justify-start sm:justify-center gap-2 overflow-x-auto">
-            {[
-              { id: 'energy', label: 'Energy Management', icon: Zap },
-              { id: 'water', label: 'Water Management', icon: Droplets },
-              { id: 'gas', label: 'Gas Management', icon: Flame },
-              { id: 'chiller', label: 'Chiller Management', icon: Wind },
-              { id: 'advisory', label: 'Energy Advisory', icon: Award },
-            ].map((p) => {
-              const Icon = p.icon;
+          {/* Top Segmented Tab Navigation */}
+          <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 mb-6">
+            {(
+              [
+                { id: 'energy', label: 'Energy Management', icon: Zap },
+                { id: 'water', label: 'Water Management', icon: Droplets },
+                { id: 'gas', label: 'Gas Management', icon: Flame },
+                { id: 'chiller', label: 'Chiller Management', icon: Wind },
+                { id: 'advisory', label: 'Energy Advisory', icon: Award },
+              ] as const
+            ).map((item) => {
+              const Icon = item.icon;
               return (
-                <a
-                  key={p.id}
-                  href={`#${p.id}`}
-                  onClick={() => setActivePillar(p.id as any)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
-                    activePillar === p.id
-                      ? 'bg-emerald-500 text-slate-950 shadow-glow-emerald'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-900'
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setActivePillar(item.id);
+                    setShowTechSpecs(false);
+                  }}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+                    activePillar === item.id
+                      ? 'bg-slate-900 text-white shadow-sm'
+                      : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
-                  <span>{p.label}</span>
-                </a>
+                  <span>{item.label}</span>
+                </button>
               );
             })}
           </div>
+
+          {/* Active Pillar Focused Showcase */}
+          <div className="bg-white rounded-3xl p-7 sm:p-10 border border-slate-200/90 shadow-sm transition-all">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Bite-Sized Capabilities */}
+              <div className="lg:col-span-7 space-y-5">
+                <div className="flex items-center gap-2">
+                  <div className={`w-9 h-9 rounded-xl ${currentPillar.bgAccent} flex items-center justify-center`}>
+                    <PillarIcon className={`w-5 h-5 ${currentPillar.accentColor}`} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono uppercase tracking-wider text-slate-500 block">
+                      {currentPillar.tag}
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                      {currentPillar.title}
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {currentPillar.headline} {currentPillar.summary}
+                </p>
+
+                {/* 3 Scannable Feature Pills */}
+                <div className="space-y-3 pt-1">
+                  {currentPillar.points.map((pt, idx) => (
+                    <div key={idx} className="flex items-start gap-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-slate-900 block font-semibold text-xs mb-0.5">{pt.title}</strong>
+                        <span className="text-slate-600 leading-relaxed">{pt.desc}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={onRequestDemo}
+                    className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors flex items-center gap-1.5 shadow-sm"
+                  >
+                    <span>Request {currentPillar.title} Demo</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+
+                  <button
+                    onClick={() => setShowTechSpecs(!showTechSpecs)}
+                    className="px-4 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl text-xs border border-slate-200 flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>{showTechSpecs ? 'Hide Engineering Specs' : 'View Engineering Specs'}</span>
+                    {showTechSpecs ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column: Live Operational Telemetry Snapshot */}
+              <div className="lg:col-span-5 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-200 text-xs">
+                  <span className="font-semibold text-slate-900">Operational Health Snapshot</span>
+                  <span className="text-emerald-700 font-mono font-medium">Telemetry Connected</span>
+                </div>
+
+                <div className="space-y-3">
+                  {currentPillar.metrics.map((m, idx) => (
+                    <div key={idx} className="p-3 bg-white rounded-xl border border-slate-200 text-xs flex flex-col gap-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-500">{m.label}</span>
+                        <span className="font-bold font-mono text-slate-900">{m.value}</span>
+                      </div>
+                      <span className="text-[11px] font-medium text-emerald-700">{m.status}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-2 border-t border-slate-200 text-[11px] text-slate-500">
+                  ✓ Continuous sampling with historical baseline trending and automated anomaly alerts.
+                </div>
+              </div>
+            </div>
+
+            {/* Collapsible Deep Engineering Specifications */}
+            {showTechSpecs && (
+              <div className="mt-8 pt-6 border-t border-slate-200 animate-fade-in">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold mb-3">
+                  Supported Sensors, Transducers &amp; Industrial Field Protocols:
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  {currentPillar.techSpecs.map((spec, idx) => (
+                    <div key={idx} className="p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-slate-700 flex items-start gap-2">
+                      <span className="text-emerald-600 font-bold">•</span>
+                      <span>{spec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </section>
 
-        {/* 5 CORE PILLARS DETAIL SECTIONS */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
-          {/* PILLAR 1: ENERGY MANAGEMENT */}
-          <div id="energy" className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 scroll-mt-28">
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <div className="w-full lg:w-1/2 space-y-5">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                  <Zap className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-mono uppercase tracking-wider text-amber-400">
-                  Pillar 01 · Power Telemetry
-                </span>
-                <h2 className="text-3xl font-extrabold text-white">
-                  Energy Management
-                </h2>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Real-time electricity consumption monitoring across meters, feeders and equipment. Move from reactive monthly utility bills to continuous sub-second power factor and harmonic optimization.
-                </p>
-
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Real-time electricity consumption monitoring</strong>
-                      <span className="text-slate-400">Granular tracking across main incomers, busbars, sub-distribution boards, and critical high-draw motors.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Automated anomaly detection &amp; peak-load alerts</strong>
-                      <span className="text-slate-400">Instant SMS, WhatsApp, and email dispatch before exceeding contractual maximum demand (kVA) penalties.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Consumption benchmarking against baselines</strong>
-                      <span className="text-slate-400">Normalizes kWh against production tonnage, weather conditions (HDD/CDD), and shift hours to isolate actual operational waste.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    onClick={onRequestDemo}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl text-xs transition-colors"
-                  >
-                    <span>Request Energy Audit Demo</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Graphic card */}
-              <div className="w-full lg:w-1/2 bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-4">
-                <div className="flex justify-between items-center text-xs pb-3 border-b border-slate-800">
-                  <span className="text-white font-semibold">Feeder Incomer 01 (415V 3-Phase)</span>
-                  <span className="text-emerald-400 font-mono">Sampling: 100ms</span>
-                </div>
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Active Demand:</span>
-                    <span className="text-lg font-bold text-white font-mono">482.4 kW</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Power Factor:</span>
-                    <span className="text-lg font-bold text-emerald-400 font-mono">0.992</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">THD (Voltage):</span>
-                    <span className="text-lg font-bold text-slate-200 font-mono">1.8%</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Contract Cap:</span>
-                    <span className="text-lg font-bold text-amber-400 font-mono">600 kVA</span>
-                  </div>
-                </div>
-                <div className="p-3 bg-emerald-950/30 border border-emerald-900/50 rounded-xl text-xs text-emerald-300">
-                  ✓ TOD (Time of Day) tariff scheduler active. Heavy pumping loads shifted to low-cost tariff block (10:00 PM – 6:00 AM).
-                </div>
-              </div>
-            </div>
+        {/* HARDWARE-TO-CLOUD ARCHITECTURE (Clean & Visual) */}
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+              End-to-End Pipeline
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">
+              How the Platform Connects Your Plant
+            </h2>
+            <p className="text-slate-600 text-sm mt-1.5">
+              Turnkey physical installation to executive cloud dashboards without disrupting ongoing plant operations.
+            </p>
           </div>
 
-          {/* PILLAR 2: WATER MANAGEMENT */}
-          <div id="water" className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 scroll-mt-28">
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <div className="w-full lg:w-1/2 space-y-5">
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                  <Droplets className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">
-                  Pillar 02 · Hydrological Intelligence
-                </span>
-                <h2 className="text-3xl font-extrabold text-white">
-                  Water Management
-                </h2>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Continuous flow and consumption tracking across sources and zones. Prevent underground leaks, track cooling tower makeup water, and ensure complete water balance accounting.
-                </p>
-
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Continuous flow &amp; consumption tracking</strong>
-                      <span className="text-slate-400">Monitor borewells, municipal supplies, STP/ETP recycling loops, and distribution networks.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Leak and abnormal-usage detection with instant alerts</strong>
-                      <span className="text-slate-400">Differential pressure telemetry and night-flow algorithmic baseline flags pipe fractures and overflow conditions instantly.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Water balance reporting to support conservation targets</strong>
-                      <span className="text-slate-400">Automated CGWA compliance reporting, zero-liquid-discharge (ZLD) monitoring, and ESG disclosures.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    onClick={onRequestDemo}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-bold rounded-xl text-xs transition-colors"
-                  >
-                    <span>Request Water Auditing Demo</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-800 mb-4">
+                <Cpu className="w-5 h-5 text-amber-600" />
               </div>
-
-              {/* Graphic card */}
-              <div className="w-full lg:w-1/2 bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-4">
-                <div className="flex justify-between items-center text-xs pb-3 border-b border-slate-800">
-                  <span className="text-white font-semibold">Campus Water Balance Ledger</span>
-                  <span className="text-cyan-400 font-mono">Balance: 98.6%</span>
-                </div>
-                <div className="space-y-2 text-xs">
-                  <div className="flex justify-between p-2 bg-slate-900 rounded">
-                    <span className="text-slate-400">Total Input (Borewell + Municipal):</span>
-                    <span className="text-white font-mono font-semibold">245.0 kL/day</span>
-                  </div>
-                  <div className="flex justify-between p-2 bg-slate-900 rounded">
-                    <span className="text-slate-400">Cooling Tower Evaporation / Makeup:</span>
-                    <span className="text-white font-mono font-semibold">112.4 kL/day</span>
-                  </div>
-                  <div className="flex justify-between p-2 bg-slate-900 rounded">
-                    <span className="text-slate-400">STP Treated Water Recycled for Flushing/Horticulture:</span>
-                    <span className="text-emerald-400 font-mono font-semibold">94.8 kL/day</span>
-                  </div>
-                  <div className="flex justify-between p-2 bg-slate-900 rounded">
-                    <span className="text-slate-400">Unaccounted Losses (Leak Threshold):</span>
-                    <span className="text-cyan-300 font-mono font-semibold">1.4% (Within Green Zone)</span>
-                  </div>
-                </div>
-              </div>
+              <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase">Step 01</span>
+              <h3 className="text-base font-bold text-slate-900 mt-1 mb-1.5">Non-Invasive Sensor Taps</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Split-core CTs, clamp-on ultrasonic flow meters, and insertion pressure taps deployed with zero electrical shutdown.
+              </p>
             </div>
-          </div>
 
-          {/* PILLAR 3: GAS MANAGEMENT */}
-          <div id="gas" className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 scroll-mt-28">
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <div className="w-full lg:w-1/2 space-y-5">
-                <div className="w-12 h-12 rounded-xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400">
-                  <Flame className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-mono uppercase tracking-wider text-orange-400">
-                  Pillar 03 · Thermal Fuel &amp; Gas Safety
-                </span>
-                <h2 className="text-3xl font-extrabold text-white">
-                  Gas Management
-                </h2>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Live monitoring of gas consumption and pressure across connected lines. Ensure thermal efficiency in boilers and furnaces while maintaining zero-leak safety standards.
-                </p>
-
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Live monitoring of gas consumption &amp; pressure</strong>
-                      <span className="text-slate-400">Continuous measurement of PNG/LPG/CNG mass flow, line pressure, temperature, and calorific heat output.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Safety-threshold alerting for abnormal usage or leaks</strong>
-                      <span className="text-slate-400">Automated solenoid valve shutdown triggers and acoustic leak detection linked directly to plant emergency response systems.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Usage trend reporting for cost &amp; safety planning</strong>
-                      <span className="text-slate-400">Specific fuel consumption (SFC) reporting per unit output to prevent burner drift and over-firing.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    onClick={onRequestDemo}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-orange-500 hover:bg-orange-600 text-slate-950 font-bold rounded-xl text-xs transition-colors"
-                  >
-                    <span>Request Gas Monitoring Demo</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-800 mb-4">
+                <ShieldCheck className="w-5 h-5 text-emerald-600" />
               </div>
-
-              {/* Graphic card */}
-              <div className="w-full lg:w-1/2 bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-4">
-                <div className="flex justify-between items-center text-xs pb-3 border-b border-slate-800">
-                  <span className="text-white font-semibold">Boiler House PNG Main Feed</span>
-                  <span className="text-emerald-400 font-mono">Status: 100% Safe</span>
-                </div>
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Line Pressure:</span>
-                    <span className="text-lg font-bold text-white font-mono">4.18 kg/cm²</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Instant Flow:</span>
-                    <span className="text-lg font-bold text-orange-400 font-mono">78.5 SCMH</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Gas Temperature:</span>
-                    <span className="text-lg font-bold text-slate-200 font-mono">27.4 °C</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Air-Fuel Ratio:</span>
-                    <span className="text-lg font-bold text-emerald-400 font-mono">1 : 10.2 (Optimal)</span>
-                  </div>
-                </div>
-              </div>
+              <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase">Step 02</span>
+              <h3 className="text-base font-bold text-slate-900 mt-1 mb-1.5">Hardened Edge Gateways</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Industrial DIN-rail gateways aggregate Modbus &amp; BACnet telemetry with TLS 1.3 encryption and local storage failover.
+              </p>
             </div>
-          </div>
 
-          {/* PILLAR 4: CHILLER MANAGEMENT */}
-          <div id="chiller" className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 scroll-mt-28">
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <div className="w-full lg:w-1/2 space-y-5">
-                <div className="w-12 h-12 rounded-xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center text-teal-400">
-                  <Wind className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-mono uppercase tracking-wider text-teal-400">
-                  Pillar 04 · Thermodynamic Optimization
-                </span>
-                <h2 className="text-3xl font-extrabold text-white">
-                  Chiller Management
-                </h2>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Real-time chiller plant performance and efficiency monitoring. Chillers often consume 40% to 60% of a commercial building or plant's power. Prishitech tracks Coefficient of Performance (COP) and optimizes plant sequencing.
-                </p>
-
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Real-time chiller plant performance &amp; efficiency monitoring</strong>
-                      <span className="text-slate-400">Sub-minute kW/TR calculations, evaporator approach temperatures, and condenser water ΔT analytics.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Predictive alerts on performance degradation before failure</strong>
-                      <span className="text-slate-400">Detect tube fouling, refrigerant leaks, compressor vibration anomalies, and pump cavitation weeks before trip events.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Energy-efficiency optimization recommendations for HVAC</strong>
-                      <span className="text-slate-400">Automated condenser water reset, variable secondary pumping control, and AI-optimized sequencing schedules.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    onClick={onRequestDemo}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold rounded-xl text-xs transition-colors"
-                  >
-                    <span>Request Chiller Optimization Demo</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-800 mb-4">
+                <Layers className="w-5 h-5 text-sky-600" />
               </div>
-
-              {/* Graphic card */}
-              <div className="w-full lg:w-1/2 bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-4">
-                <div className="flex justify-between items-center text-xs pb-3 border-b border-slate-800">
-                  <span className="text-white font-semibold">Central Chiller Bank (3 x 400 TR Water-Cooled)</span>
-                  <span className="text-teal-400 font-mono">Current COP: 5.84</span>
-                </div>
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Efficiency Index:</span>
-                    <span className="text-lg font-bold text-white font-mono">0.602 kW / TR</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Chilled Water Supply:</span>
-                    <span className="text-lg font-bold text-teal-400 font-mono">7.2 °C</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Chilled Water Return:</span>
-                    <span className="text-lg font-bold text-slate-200 font-mono">12.5 °C (ΔT 5.3°C)</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-lg border border-slate-800">
-                    <span className="text-slate-400 block text-[11px]">Condenser Water In:</span>
-                    <span className="text-lg font-bold text-emerald-400 font-mono">29.8 °C</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* PILLAR 5: ENERGY ADVISORY */}
-          <div id="advisory" className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 scroll-mt-28">
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <div className="w-full lg:w-1/2 space-y-5">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                  <Award className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">
-                  Pillar 05 · Domain Consulting &amp; Audits
-                </span>
-                <h2 className="text-3xl font-extrabold text-white">
-                  Energy Advisory
-                </h2>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Expert-led energy audits and efficiency roadmaps. Backed by TRIAXIS Consortium senior power consultants, we turn sensor data into actionable capital expenditure business cases.
-                </p>
-
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Expert-led energy audits &amp; efficiency roadmaps</strong>
-                      <span className="text-slate-400">Comprehensive walk-through and detailed investment-grade energy audits conducted by BEE-accredited energy auditors.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">Regulatory and compliance guidance</strong>
-                      <span className="text-slate-400">Guidance for PAT (Perform Achieve and Trade) compliance, ISO 50001 certification, and SEBI BRSR Core sustainability mandates.</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white block">ROI-backed recommendations for retrofits &amp; upgrades</strong>
-                      <span className="text-slate-400">Financial payback models for VFD retrofits, heat recovery wheels, solar PV integration, and harmonic filter banks.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                  <Link
-                    to="/contact"
-                    className="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-xs transition-colors flex items-center justify-center gap-2"
-                  >
-                    <span>Book an Energy Audit Consultation</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Advisory deliverable breakdown */}
-              <div className="w-full lg:w-1/2 bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-4">
-                <div className="text-xs font-semibold text-white pb-3 border-b border-slate-800">
-                  Advisory Deliverables Framework
-                </div>
-                <div className="space-y-3 text-xs text-slate-300">
-                  <div className="p-3 bg-slate-900 rounded-xl border border-slate-800">
-                    <div className="font-semibold text-emerald-400 mb-1">Phase 1: Baseline &amp; Diagnostic Walkthrough</div>
-                    <p className="text-slate-400">Thermal imaging, power quality analyzer logging, and process flow heat balance reconciliation.</p>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-xl border border-slate-800">
-                    <div className="font-semibold text-cyan-400 mb-1">Phase 2: Techno-Commercial Feasibility</div>
-                    <p className="text-slate-400">Categorization into Zero-Cost, Low-Cost, and High-Capex conservation opportunities with IRR &gt; 35%.</p>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-xl border border-slate-800">
-                    <div className="font-semibold text-emerald-400 mb-1">Phase 3: Turnkey TRIAXIS Commissioning</div>
-                    <p className="text-slate-400">Engineering delivery, verification through continuous cloud telemetry, and post-retrofit savings audit.</p>
-                  </div>
-                </div>
-              </div>
+              <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase">Step 03</span>
+              <h3 className="text-base font-bold text-slate-900 mt-1 mb-1.5">Cloud Intelligence &amp; Alerts</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Sub-second anomaly detection, predictive peak-load warnings via SMS/WhatsApp, and automated statutory audit reports.
+              </p>
             </div>
           </div>
         </section>
 
         {/* BOTTOM CTA */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-emerald-950/40 via-slate-900 to-cyan-950/40 border border-emerald-500/30 max-w-3xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Ready to see the platform in action?
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Ready to eliminate utility waste across your facility?
             </h2>
-            <p className="text-slate-300 text-sm">
-              Schedule a live demonstration configured for your facility's utility setup.
+            <p className="text-slate-600 text-sm max-w-xl mx-auto mt-2 mb-6">
+              Connect with our Vaishali, Ghaziabad engineering team for a feasibility assessment or live platform walkthrough.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
                 onClick={onRequestDemo}
-                className="px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-glow-emerald"
+                className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors shadow-sm"
               >
-                Request a Platform Demo
+                Request Platform Demo
               </button>
-              <Link
-                to="/contact"
-                className="px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-sm border border-slate-700 transition-colors"
+              <button
+                onClick={onOpenCapability}
+                className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-100 text-slate-800 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
               >
-                Talk to an Expert
-              </Link>
+                Download Technical Prospectus
+              </button>
             </div>
           </div>
         </section>
