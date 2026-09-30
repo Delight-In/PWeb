@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, Calendar, ArrowRight, ShieldCheck, Zap, Droplets, Flame, Wind, Cpu, AlertCircle, Loader2 } from 'lucide-react';
-import { sendDemoRequest } from '../services/leadService';
+import { X, CheckCircle, Calendar, ArrowRight, ShieldCheck, Zap, Droplets, Flame, Wind, Cpu, AlertCircle, Loader2, Mail, MessageSquare } from 'lucide-react';
+import { sendDemoRequest, getMailtoUrlForDemo, getWhatsAppUrl, TARGET_EMAIL } from '../services/leadService';
 
 interface RequestDemoModalProps {
   isOpen: boolean;
@@ -52,7 +52,7 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({
       if (res.success) {
         setSubmitted(true);
       } else {
-        setError(res.message || 'Unable to route demo request at this moment. Please email contact@prishitech.com directly.');
+        setError(res.message || 'Unable to route demo request at this moment. Please email admin.dm26@gmail.com directly.');
       }
     } catch (err) {
       console.error('Demo request submission failed:', err);
@@ -87,26 +87,48 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({
         </button>
 
         {submitted ? (
-          <div className="text-center py-8 space-y-4">
+          <div className="text-center py-6 space-y-4">
             <div className="w-14 h-14 mx-auto rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
               <CheckCircle className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-slate-900">Demo Scheduled Successfully</h3>
+            <h3 className="text-2xl font-bold text-slate-900">Demo Request Dispatched</h3>
             <p className="text-slate-600 text-sm max-w-md mx-auto">
-              Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. A senior Prishitech Solutions technical consultant from our Ghaziabad engineering hub has received your request for <span className="text-slate-900 font-medium">{formData.company}</span>.
+              Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your demo request for <span className="text-slate-900 font-medium">{formData.company}</span> has been dispatched to <strong className="text-emerald-700">{TARGET_EMAIL}</strong>.
             </p>
-            <div className="bg-slate-50 p-4 rounded-xl text-left border border-slate-200 text-xs text-slate-600 space-y-1.5">
+
+            <div className="bg-slate-50 p-4 rounded-xl text-left border border-slate-200 text-xs text-slate-700 space-y-2">
               <div className="flex items-center gap-2 text-emerald-800 font-semibold">
-                <Calendar className="w-4 h-4 text-emerald-600" /> Next Steps:
+                <Calendar className="w-4 h-4 text-emerald-600" /> Dispatch &amp; Verification Details:
               </div>
-              <p>• We have sent a calendar invitation and platform walkthrough overview to <strong className="text-slate-900">{formData.workEmail}</strong>.</p>
-              <p>• Live telemetry sandbox credentials will be provisioned prior to the briefing.</p>
+              <p>• <strong>Primary Mailbox:</strong> Routed to <code className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-medium text-slate-800">{TARGET_EMAIL}</code>.</p>
+              <p>• <strong>First-Time Note:</strong> If this is the first submission, FormSubmit sends a 1-time verification email to <strong className="text-slate-900">{TARGET_EMAIL}</strong>. Check your inbox or Spam folder and click <em>"Activate Form"</em> once to enable instant notifications.</p>
             </div>
+
+            {/* Quick Action Buttons */}
+            <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center">
+              <a
+                href={getMailtoUrlForDemo(formData)}
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-semibold shadow-xs transition-all"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Open Pre-filled in Gmail / Mail App</span>
+              </a>
+              <a
+                href={getWhatsAppUrl(`Hi PrishiTech, I requested a demo for ${formData.company} (${formData.name}, ${formData.phone}). Please connect.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold border border-slate-200 transition-all"
+              >
+                <MessageSquare className="w-4 h-4 text-emerald-600" />
+                <span>WhatsApp to +91 98100 12345</span>
+              </a>
+            </div>
+
             <button
               onClick={handleReset}
-              className="mt-6 px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl transition-all shadow-sm"
+              className="mt-4 px-6 py-2 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-all shadow-sm"
             >
-              Done &amp; Return
+              Done &amp; Return to Website
             </button>
           </div>
         ) : (
