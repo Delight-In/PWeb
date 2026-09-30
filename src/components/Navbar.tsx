@@ -42,19 +42,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Minimalist, Clean Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group focus:outline-none">
-            <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white shadow-xs group-hover:bg-emerald-700 transition-colors">
-              <Zap className="w-4 h-4 fill-white" />
-            </div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-emerald-700 transition-colors">
-                Prishitech
-              </span>
-              <span className="text-xs font-medium text-slate-400 hidden sm:inline">
-                Solutions
-              </span>
-            </div>
+          {/* Official PrishiTech Logo */}
+          <Link to="/" className="flex items-center group focus:outline-none py-1">
+            <img 
+              src="/logo.png" 
+              alt="PrishiTech - Complex Made Easy" 
+              className="h-8 sm:h-9 w-auto object-contain transition-opacity group-hover:opacity-90" 
+            />
           </Link>
 
           {/* Clean, Lightweight Desktop Navigation */}

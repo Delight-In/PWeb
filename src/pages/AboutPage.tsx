@@ -218,24 +218,27 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo, onOpenCapab
         </section>
 
         {/* CTA SECTION */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-          <div className="p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 max-w-3xl mx-auto space-y-5">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+        <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pb-6 text-center">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-4">
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block mb-1">
+              Connect With Us
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Ready to meet our engineering team?
             </h2>
-            <p className="text-slate-600 text-sm">
+            <p className="text-slate-600 text-sm max-w-xl mx-auto">
               Learn how our combined domain expertise and resource platform can modernize your facility operations.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 pt-2">
               <Link
                 to="/contact"
-                className="px-7 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-sm transition-all shadow-sm"
+                className="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors shadow-xs"
               >
                 Schedule an Introduction
               </Link>
               <button
                 onClick={onRequestDemo}
-                className="px-7 py-3 bg-white hover:bg-slate-100 text-slate-700 font-medium rounded-xl text-sm border border-slate-200 shadow-xs transition-colors"
+                className="px-6 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
               >
                 Request a Demo
               </button>

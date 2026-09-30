@@ -441,9 +441,12 @@ export const DigitalTransformationPage: React.FC<DigitalTransformationPageProps>
         </section>
 
         {/* BOTTOM CTA */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+        <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pb-6">
+          <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm text-center">
+            <span className="text-xs font-semibold uppercase tracking-wider text-sky-800 bg-sky-50 px-3 py-1 rounded-full border border-sky-200 inline-block mb-3">
+              Next Steps
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Ready to modernize your industrial IT foundation?
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mx-auto mt-2 mb-6">
@@ -452,13 +455,14 @@ export const DigitalTransformationPage: React.FC<DigitalTransformationPageProps>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors shadow-sm"
+                className="w-full sm:w-auto px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors shadow-xs flex items-center justify-center gap-2"
               >
-                Schedule Architecture Consultation
+                <span>Schedule Architecture Consultation</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <button
                 onClick={onRequestDemo}
-                className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-100 text-slate-800 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
+                className="w-full sm:w-auto px-6 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
               >
                 Request Platform Walkthrough
               </button>

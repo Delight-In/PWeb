@@ -641,8 +641,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo, onOpenCapabil
         </section>
 
         {/* 7. BOTTOM CTA SECTION */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 text-center relative overflow-hidden shadow-xs">
+        <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pb-6">
+          <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 text-center relative overflow-hidden shadow-sm">
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block mb-3">
+              Get Started
+            </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Ready to modernize your facility resources?
             </h2>
@@ -652,13 +655,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo, onOpenCapabil
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-all shadow-sm"
+                className="w-full sm:w-auto px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl text-xs transition-colors shadow-xs flex items-center justify-center gap-1.5"
               >
-                Talk to an Expert
+                <span>Talk to an Expert</span>
+                <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
               </Link>
               <button
                 onClick={onRequestDemo}
-                className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-100 text-slate-800 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
+                className="w-full sm:w-auto px-6 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl text-xs border border-slate-200 shadow-xs transition-colors"
               >
                 Request a Platform Demo
               </button>
