@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { RequestDemoModal } from './components/RequestDemoModal';
 import { CapabilityModal } from './components/CapabilityModal';
+import { PrishiBot } from './components/PrishiBot';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -124,6 +125,12 @@ export function App() {
         <CapabilityModal
           isOpen={capabilityModalOpen}
           onClose={() => setCapabilityModalOpen(false)}
+        />
+
+        {/* Floating AI Knowledge & Direct Demo Dispatch Bot */}
+        <PrishiBot 
+          onOpenDemoModal={() => handleOpenDemo()}
+          onOpenCapabilityModal={() => setCapabilityModalOpen(true)}
         />
       </div>
     </Router>

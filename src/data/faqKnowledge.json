@@ -1,0 +1,114 @@
+[
+  {
+    "id": "about-prishitech",
+    "category": "Company Overview",
+    "question": "What is Prishitech Solutions?",
+    "keywords": ["about", "who are you", "what is prishitech", "prishitech", "company", "overview", "what do you do"],
+    "answer": "Prishitech Solutions is an industrial technology provider that unifies Energy, Water, Gas, and Chiller management into a single Resource Intelligence platform, supported by end-to-end IT services and digital transformation expertise. We operate as a TRIAXIS Consortium partner to eliminate multi-vendor friction in industrial operations.",
+    "actionType": "demo"
+  },
+  {
+    "id": "energy-management",
+    "category": "Resource Intelligence",
+    "question": "What is Energy Management and Sub-metering?",
+    "keywords": ["energy", "electricity", "power", "kw", "kwh", "meter", "submetering", "feeder", "billing", "tariffs", "power factor"],
+    "answer": "Prishitech's Energy Management system provides real-time feeder sub-metering across industrial plants and buildings. It features automated peak-load surge alerts, baseline benchmarking against historical targets, power factor penalty mitigation, and automated BEE compliance reporting. Facilities typically reduce power costs by 12% to 22% within 90 days.",
+    "actionType": "demo"
+  },
+  {
+    "id": "water-management",
+    "category": "Resource Intelligence",
+    "question": "How does Water Tracking & Leak Detection work?",
+    "keywords": ["water", "leak", "pipe", "flow", "source", "tap", "borehole", "stp", "etp", "leakage", "conservation"],
+    "answer": "Our Water Management platform tracks continuous flow from boreholes, municipal mains, and recycled lines. Using algorithmic mass-balance calculations and acoustic sensors, the platform flags distribution line leaks within 15 minutes, preventing structural damage and resource waste.",
+    "actionType": "demo"
+  },
+  {
+    "id": "gas-monitoring",
+    "category": "Resource Intelligence",
+    "question": "What does Industrial Gas Monitoring cover?",
+    "keywords": ["gas", "lpg", "png", "pressure", "leakage", "safety", "industrial gas", "furnace", "boiler", "tank"],
+    "answer": "We monitor LPG, PNG, and specialized industrial gases in real time. We capture flow rates, pressure differentials, and tank levels with calibrated safety sensors. Automated alarms notify operators if pressure crosses safety limits, while predictive analytics streamline refill scheduling.",
+    "actionType": "demo"
+  },
+  {
+    "id": "chiller-management",
+    "category": "Resource Intelligence",
+    "question": "How do you optimize Chiller Plants & HVAC COP?",
+    "keywords": ["chiller", "cop", "hvac", "cooling", "condenser", "compressor", "air conditioning", "thermal", "vibration", "tr"],
+    "answer": "Chillers represent up to 40% of facility power consumption. Prishitech tracks thermodynamic Coefficient of Performance (COP), chilled-water delta T, condenser fouling, and compressor vibration to deliver 8% to 15% efficiency gains and prevent sudden breakdowns.",
+    "actionType": "demo"
+  },
+  {
+    "id": "energy-advisory",
+    "category": "Energy Advisory",
+    "question": "What is your Energy Advisory and BEE Audit service?",
+    "keywords": ["audit", "advisory", "bee", "statutory", "bureau of energy efficiency", "iso 50001", "cea", "compliance"],
+    "answer": "Backed by accredited Bureau of Energy Efficiency (BEE) auditors through the TRIAXIS Consortium, we deliver mandatory statutory energy audits, ISO 50001 compliance, power quality & harmonic analysis, and detailed ROI models for retrofit capital investments.",
+    "actionType": "contact"
+  },
+  {
+    "id": "it-services",
+    "category": "IT Services",
+    "question": "What IT Services & Digital Transformation do you offer?",
+    "keywords": ["it services", "digital transformation", "software", "development", "it", "tech", "digital", "architecture"],
+    "answer": "Prishitech delivers 5 core digital transformation services: 1) IoT & Industrial Gateway Monitoring; 2) Hybrid Cloud Infrastructure (AWS, Azure, GCP); 3) Cybersecurity & OT Defense (IEC 62443); 4) Big Data & Telemetry Analytics; and 5) AI & Autonomous Process Automation.",
+    "actionType": "demo"
+  },
+  {
+    "id": "ot-security",
+    "category": "Cybersecurity",
+    "question": "How do you protect industrial OT and SCADA systems?",
+    "keywords": ["cyber", "security", "ot", "scada", "ics", "purdue", "firewall", "iec 62443", "threat", "ransomware"],
+    "answer": "We build OT-aware cybersecurity based on the Purdue Enterprise Reference Architecture (PERA). We enforce strict DMZ boundaries between industrial shopfloors (Levels 0–2) and corporate cloud networks (Levels 4/5), with zero-trust gateways and SCADA anomaly inspection.",
+    "actionType": "contact"
+  },
+  {
+    "id": "triaxis-consortium",
+    "category": "Consortium",
+    "question": "What is the TRIAXIS Consortium advantage?",
+    "keywords": ["triaxis", "consortium", "partner", "partnership", "sanjeev", "engineering bench", "difference"],
+    "answer": "Traditional revamps stall because software developers lack high-voltage electrical depth, while electrical contractors lack cloud & cyber capabilities. The TRIAXIS Consortium combines Prishitech's software platform with certified power engineers and HVAC specialists under a single accountable SLA.",
+    "actionType": "contact"
+  },
+  {
+    "id": "office-location",
+    "category": "Company Info",
+    "question": "Where is your office located?",
+    "keywords": ["address", "location", "office", "headquarters", "where", "ghaziabad", "vaishali", "cloud 9", "phone", "contact"],
+    "answer": "Our headquarters and engineering hub is located at: 5A 45/46, Cloud-9, Sector-1, Vaishali, Ghaziabad, Uttar Pradesh 201019, India. Direct Switchboard: +91 120 456 7890 | WhatsApp: +91 98100 12345 | Email: contact@prishitech.com.",
+    "actionType": "contact"
+  },
+  {
+    "id": "pricing-roi",
+    "category": "Commercial",
+    "question": "What is the typical pricing and ROI payback period?",
+    "keywords": ["price", "cost", "pricing", "roi", "payback", "expensive", "quote", "commercial"],
+    "answer": "Engagements are tailored to facility size (single plant, commercial campus, hospital, or utility). Typical installations achieve a 12% to 22% reduction in utility expenses, recovering hardware investment within 4 to 9 months.",
+    "actionType": "demo"
+  },
+  {
+    "id": "capability-statement",
+    "category": "Documentation",
+    "question": "How can I download the Capability Statement PDF?",
+    "keywords": ["pdf", "capability", "prospectus", "document", "brochure", "download"],
+    "answer": "You can download our complete 2026 Enterprise Capability Statement PDF directly from the site. It contains detailed architectural blueprints, OT security frameworks, and TRIAXIS project metrics.",
+    "actionType": "download_pdf"
+  },
+  {
+    "id": "supported-protocols",
+    "category": "Technical",
+    "question": "Which industrial hardware and protocols do you support?",
+    "keywords": ["protocols", "hardware", "modbus", "bacnet", "mqtt", "lorawan", "opc", "opc-ua", "sensors", "meters"],
+    "answer": "We support all standard industrial protocols including Modbus RTU/TCP, BACnet, MQTT, LoRaWAN, OPC-UA, and 4-20mA analog inputs. Our gateways buffer data at the edge so no telemetry is lost during network dropouts.",
+    "actionType": "demo"
+  },
+  {
+    "id": "book-demo",
+    "category": "Actions",
+    "question": "How do I schedule a live telemetry demo?",
+    "keywords": ["demo", "walkthrough", "schedule", "book", "meeting", "presentation", "trial", "pilot"],
+    "answer": "I can schedule a live telemetry demo for you right now inside this chat! Just share your name, email, company, and phone number, and I will dispatch your request directly to our solutions architects.",
+    "actionType": "demo"
+  }
+]
