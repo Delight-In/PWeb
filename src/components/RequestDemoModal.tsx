@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, Calendar, ArrowRight, ShieldCheck, Zap, Droplets, Flame, Wind, Cpu } from 'lucide-react';
+import { X, CheckCircle, Calendar, ArrowRight, ShieldCheck, Zap, Droplets, Flame, Wind, Cpu, AlertCircle, Loader2 } from 'lucide-react';
+import { sendDemoRequest } from '../services/leadService';
 
 interface RequestDemoModalProps {
   isOpen: boolean;
@@ -13,6 +14,8 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({
   defaultPillar
 }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     workEmail: '',
@@ -39,13 +42,29 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await sendDemoRequest(formData);
+      if (res.success) {
+        setSubmitted(true);
+      } else {
+        setError(res.message || 'Unable to route demo request at this moment. Please email contact@prishitech.com directly.');
+      }
+    } catch (err) {
+      console.error('Demo request submission failed:', err);
+      setError('A network error occurred. Please check your connection or contact us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setError(null);
     onClose();
   };
 
@@ -104,6 +123,16 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {error && (
+                <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl flex items-start gap-2.5 text-rose-800 text-xs">
+                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-semibold block">Routing Notice</span>
+                    <span>{error}</span>
+                  </div>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="demo-name" className="block text-xs font-medium text-slate-700 mb-1">
@@ -221,10 +250,20 @@ export const RequestDemoModal: React.FC<RequestDemoModalProps> = ({
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 group"
+                  disabled={loading}
+                  className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 group disabled:opacity-50"
                 >
-                  <span>Confirm Demo Reservation</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 text-slate-300" />
+                  {loading ? (
+                    <div className="flex items-center gap-2 text-slate-100">
+                      <Loader2 className="w-4 h-4 animate-spin text-emerald-400" />
+                      <span>Sending Demo Request to Engineering...</span>
+                    </div>
+                  ) : (
+                    <>
+                      <span>Confirm Demo Reservation</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 text-slate-300" />
+                    </>
+                  )}
                 </button>
                 <p className="text-[11px] text-slate-400 text-center mt-2">
                   🔒 Zero spam guarantee. Direct connection with Prishitech &amp; TRIAXIS systems engineers.

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { 
   MapPin, Phone, Mail, Globe, Clock, CheckCircle2, 
-  Send, ShieldCheck 
+  Send, ShieldCheck, AlertCircle, Loader2 
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
+import { sendContactInquiry } from '../services/leadService';
 import type { ContactFormData, AreaOfInterest } from '../types';
 
 interface ContactPageProps {
@@ -22,20 +23,31 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
-    // Simulate reliable CRM & Sales inbox lead routing
-    setTimeout(() => {
+    try {
+      const res = await sendContactInquiry(formData);
+      if (res.success) {
+        setSubmitted(true);
+      } else {
+        setError(res.message || 'Unable to route message at this moment. Please email contact@prishitech.com directly.');
+      }
+    } catch (err) {
+      console.error('Contact inquiry error:', err);
+      setError('A network error occurred. Please check your connection or contact us directly.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 800);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setError(null);
     setFormData({
       name: '',
       company: '',
@@ -230,6 +242,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
+                      {error && (
+                        <div className="p-3.5 bg-rose-50 border border-rose-200 rounded-xl flex items-start gap-2.5 text-rose-800 text-xs">
+                          <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="font-semibold block">Routing Notice</span>
+                            <span>{error}</span>
+                          </div>
+                        </div>
+                      )}
+
                       {/* Name & Company */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
@@ -344,7 +366,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                           className="w-full py-3.5 px-6 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 group disabled:opacity-50"
                         >
                           {loading ? (
-                            <span>Routing Inquiry to Engineering...</span>
+                            <div className="flex items-center gap-2 text-slate-100">
+                              <Loader2 className="w-4 h-4 animate-spin text-emerald-400" />
+                              <span>Routing Inquiry to Engineering...</span>
+                            </div>
                           ) : (
                             <>
                               <span>Submit Facility Inquiry</span>
