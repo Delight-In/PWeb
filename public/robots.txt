@@ -1,0 +1,5 @@
+# Robots.txt for Prishitech Solutions
+User-agent: *
+Allow: /
+
+Sitemap: https://www.prishitech.com/sitemap.xml
