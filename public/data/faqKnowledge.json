@@ -4,40 +4,35 @@
     "category": "Company Overview",
     "question": "What is Prishitech Solutions?",
     "keywords": ["about", "who are you", "what is prishitech", "prishitech", "company", "overview", "what do you do"],
-    "answer": "Prishitech Solutions is an industrial technology provider that unifies Energy, Water, Gas, and Chiller management into a single Resource Intelligence platform, supported by end-to-end IT services and digital transformation expertise. We operate as a TRIAXIS Consortium partner to eliminate multi-vendor friction in industrial operations.",
-    "actionType": "demo"
+    "answer": "Prishitech Solutions is an industrial technology provider that unifies Energy, Water, Gas, and Chiller management into a single Resource Intelligence platform, supported by end-to-end IT services and digital transformation expertise. We operate as a TRIAXIS Consortium partner to eliminate multi-vendor friction in industrial operations."
   },
   {
     "id": "energy-management",
     "category": "Resource Intelligence",
     "question": "What is Energy Management and Sub-metering?",
     "keywords": ["energy", "electricity", "power", "kw", "kwh", "meter", "submetering", "feeder", "billing", "tariffs", "power factor"],
-    "answer": "Prishitech's Energy Management system provides real-time feeder sub-metering across industrial plants and buildings. It features automated peak-load surge alerts, baseline benchmarking against historical targets, power factor penalty mitigation, and automated BEE compliance reporting. Facilities typically reduce power costs by 12% to 22% within 90 days.",
-    "actionType": "demo"
+    "answer": "Prishitech's Energy Management system provides real-time feeder sub-metering across industrial plants and buildings. It features automated peak-load surge alerts, baseline benchmarking against historical targets, power factor penalty mitigation, and automated BEE compliance reporting. Facilities typically reduce power costs by 12% to 22% within 90 days."
   },
   {
     "id": "water-management",
     "category": "Resource Intelligence",
     "question": "How does Water Tracking & Leak Detection work?",
     "keywords": ["water", "leak", "pipe", "flow", "source", "tap", "borehole", "stp", "etp", "leakage", "conservation"],
-    "answer": "Our Water Management platform tracks continuous flow from boreholes, municipal mains, and recycled lines. Using algorithmic mass-balance calculations and acoustic sensors, the platform flags distribution line leaks within 15 minutes, preventing structural damage and resource waste.",
-    "actionType": "demo"
+    "answer": "Our Water Management platform tracks continuous flow from boreholes, municipal mains, and recycled lines. Using algorithmic mass-balance calculations and acoustic sensors, the platform flags distribution line leaks within 15 minutes, preventing structural damage and resource waste."
   },
   {
     "id": "gas-monitoring",
     "category": "Resource Intelligence",
     "question": "What does Industrial Gas Monitoring cover?",
     "keywords": ["gas", "lpg", "png", "pressure", "leakage", "safety", "industrial gas", "furnace", "boiler", "tank"],
-    "answer": "We monitor LPG, PNG, and specialized industrial gases in real time. We capture flow rates, pressure differentials, and tank levels with calibrated safety sensors. Automated alarms notify operators if pressure crosses safety limits, while predictive analytics streamline refill scheduling.",
-    "actionType": "demo"
+    "answer": "We monitor LPG, PNG, and specialized industrial gases in real time. We capture flow rates, pressure differentials, and tank levels with calibrated safety sensors. Automated alarms notify operators if pressure crosses safety limits, while predictive analytics streamline refill scheduling."
   },
   {
     "id": "chiller-management",
     "category": "Resource Intelligence",
     "question": "How do you optimize Chiller Plants & HVAC COP?",
     "keywords": ["chiller", "cop", "hvac", "cooling", "condenser", "compressor", "air conditioning", "thermal", "vibration", "tr"],
-    "answer": "Chillers represent up to 40% of facility power consumption. Prishitech tracks thermodynamic Coefficient of Performance (COP), chilled-water delta T, condenser fouling, and compressor vibration to deliver 8% to 15% efficiency gains and prevent sudden breakdowns.",
-    "actionType": "demo"
+    "answer": "Chillers represent up to 40% of facility power consumption. Prishitech tracks thermodynamic Coefficient of Performance (COP), chilled-water delta T, condenser fouling, and compressor vibration to deliver 8% to 15% efficiency gains and prevent sudden breakdowns."
   },
   {
     "id": "energy-advisory",
@@ -52,8 +47,7 @@
     "category": "IT Services",
     "question": "What IT Services & Digital Transformation do you offer?",
     "keywords": ["it services", "digital transformation", "software", "development", "it", "tech", "digital", "architecture"],
-    "answer": "Prishitech delivers 5 core digital transformation services: 1) IoT & Industrial Gateway Monitoring; 2) Hybrid Cloud Infrastructure (AWS, Azure, GCP); 3) Cybersecurity & OT Defense (IEC 62443); 4) Big Data & Telemetry Analytics; and 5) AI & Autonomous Process Automation.",
-    "actionType": "demo"
+    "answer": "Prishitech delivers 5 core digital transformation services: 1) IoT & Industrial Gateway Monitoring; 2) Hybrid Cloud Infrastructure (AWS, Azure, GCP); 3) Cybersecurity & OT Defense (IEC 62443); 4) Big Data & Telemetry Analytics; and 5) AI & Autonomous Process Automation."
   },
   {
     "id": "ot-security",
@@ -84,8 +78,7 @@
     "category": "Commercial",
     "question": "What is the typical pricing and ROI payback period?",
     "keywords": ["price", "cost", "pricing", "roi", "payback", "expensive", "quote", "commercial"],
-    "answer": "Engagements are tailored to facility size (single plant, commercial campus, hospital, or utility). Typical installations achieve a 12% to 22% reduction in utility expenses, recovering hardware investment within 4 to 9 months.",
-    "actionType": "demo"
+    "answer": "Engagements are tailored to facility size (single plant, commercial campus, hospital, or utility). Typical installations achieve a 12% to 22% reduction in utility expenses, recovering hardware investment within 4 to 9 months."
   },
   {
     "id": "capability-statement",
@@ -100,15 +93,22 @@
     "category": "Technical",
     "question": "Which industrial hardware and protocols do you support?",
     "keywords": ["protocols", "hardware", "modbus", "bacnet", "mqtt", "lorawan", "opc", "opc-ua", "sensors", "meters"],
-    "answer": "We support all standard industrial protocols including Modbus RTU/TCP, BACnet, MQTT, LoRaWAN, OPC-UA, and 4-20mA analog inputs. Our gateways buffer data at the edge so no telemetry is lost during network dropouts.",
+    "answer": "We support all standard industrial protocols including Modbus RTU/TCP, BACnet, MQTT, LoRaWAN, OPC-UA, and 4-20mA analog inputs. Our gateways buffer data at the edge so no telemetry is lost during network dropouts."
+  },
+  {
+    "id": "service-interest",
+    "category": "Engagement",
+    "question": "I am interested in your services. How can we connect or get a demo?",
+    "keywords": ["interest", "interested", "connect", "reach out", "touch", "get started", "partnership", "collaborate", "services inquiry"],
+    "answer": "We would be delighted to assist your facility! You can share your details below to dispatch a demo and consultation request directly to our solutions desk, or reach us directly at our Vaishali, Ghaziabad engineering hub.",
     "actionType": "demo"
   },
   {
     "id": "book-demo",
     "category": "Actions",
     "question": "How do I schedule a live telemetry demo?",
-    "keywords": ["demo", "walkthrough", "schedule", "book", "meeting", "presentation", "trial", "pilot"],
-    "answer": "I can schedule a live telemetry demo for you right now inside this chat! Just share your name, email, company, and phone number, and I will dispatch your request directly to our solutions architects.",
+    "keywords": ["demo", "walkthrough", "schedule", "book", "meeting", "presentation", "trial", "pilot", "create demo", "request demo"],
+    "answer": "I can dispatch a live telemetry demo request for you right now! Simply enter your name, email, phone, and facility name below, and our engineering desk in Vaishali, Ghaziabad will coordinate the walkthrough.",
     "actionType": "demo"
   }
 ]
