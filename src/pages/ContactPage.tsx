@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { 
   MapPin, Phone, Mail, Globe, Clock, CheckCircle2, 
-  Send, ShieldCheck, AlertCircle, Loader2, MessageSquare 
+  Send, ShieldCheck, AlertCircle, Loader2 
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { sendContactInquiry, getMailtoUrlForContact, getWhatsAppUrl, TARGET_EMAIL } from '../services/leadService';
+import { sendContactInquiry } from '../services/leadService';
 import type { ContactFormData, AreaOfInterest } from '../types';
 
 interface ContactPageProps {
@@ -211,39 +211,18 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
                     <div className="w-16 h-16 mx-auto rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700">
                       <CheckCircle2 className="w-9 h-9" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900">Inquiry Dispatched Successfully</h3>
+                    <h3 className="text-2xl font-bold text-slate-900">Thank You, {formData.name}!</h3>
                     <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
-                      Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Your inquiry regarding <strong className="text-emerald-700">{formData.areaOfInterest}</strong> for <span className="text-slate-900 font-medium">{formData.company}</span> has been routed to <strong className="text-emerald-700">{TARGET_EMAIL}</strong>.
+                      Your inquiry regarding <strong className="text-emerald-700">{formData.areaOfInterest}</strong> for <span className="text-slate-900 font-medium">{formData.company}</span> has been received by our engineering team.
                     </p>
-                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-left max-w-md mx-auto space-y-2 text-slate-700">
-                      <p>• <strong>Target Inbox:</strong> <code className="bg-white px-1.5 py-0.5 rounded border border-slate-200 font-medium text-slate-800">{TARGET_EMAIL}</code></p>
-                      <p>• <strong>First-Time Note:</strong> FormSubmit sends an initial 1-time activation link to <strong className="text-slate-900">{TARGET_EMAIL}</strong>. Check inbox or Spam and click <em>"Activate Form"</em> once to enable instant email delivery.</p>
-                      <p>• <strong>Engineering SLA:</strong> Within 4 business hours.</p>
+                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-left max-w-md mx-auto space-y-1.5 text-slate-700">
+                      <p>• <strong>Lead Routed To:</strong> Prishitech Solutions Sales &amp; TRIAXIS Advisory Bench</p>
+                      <p>• <strong>Confirmation Email:</strong> Dispatched to <span className="text-emerald-800 font-medium">{formData.email}</span></p>
+                      <p>• <strong>Response SLA:</strong> Within 4 business hours</p>
                     </div>
-
-                    {/* Quick Action Buttons */}
-                    <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center max-w-md mx-auto">
-                      <a
-                        href={getMailtoUrlForContact(formData)}
-                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-semibold shadow-xs transition-all"
-                      >
-                        <Mail className="w-4 h-4" />
-                        <span>Open Pre-filled in Gmail / Mail App</span>
-                      </a>
-                      <a
-                        href={getWhatsAppUrl(`Hi PrishiTech, I submitted an inquiry for ${formData.company} (${formData.name}, ${formData.phone}). Please get in touch.`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold border border-slate-200 transition-all"
-                      >
-                        <MessageSquare className="w-4 h-4 text-emerald-600" />
-                        <span>WhatsApp Engineering</span>
-                      </a>
-                    </div>
-
                     <button
                       onClick={handleReset}
-                      className="mt-4 px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-xs transition-all shadow-sm"
+                      className="mt-6 px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-sm transition-all shadow-sm"
                     >
                       Send Another Message
                     </button>
