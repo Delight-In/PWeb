@@ -1,114 +1,749 @@
-[
-  {
-    "id": "about-prishitech",
-    "category": "Company Overview",
-    "question": "What is Prishitech Solutions?",
-    "keywords": ["about", "who are you", "what is prishitech", "prishitech", "company", "overview", "what do you do"],
-    "answer": "Prishitech Solutions is an industrial technology provider that unifies Energy, Water, Gas, and Chiller management into a single Resource Intelligence platform, supported by end-to-end IT services and digital transformation expertise. We operate as a TRIAXIS Consortium partner to eliminate multi-vendor friction in industrial operations."
+{
+  "company": {
+    "name": "PrishiTech Solutions",
+    "tagline": "Complex Made Easy",
+    "positioning": "Enabling operations through IT innovations",
+    "business_type": "B2B technology consulting and implementation",
+    "focus": [
+      "Digital Transformation",
+      "Industrial IoT",
+      "Smart Operations",
+      "Data Analytics",
+      "Automation",
+      "Connected Operations",
+      "Enterprise Technology",
+      "SAP Advisory",
+      "Information Management"
+    ]
   },
-  {
-    "id": "energy-management",
-    "category": "Resource Intelligence",
-    "question": "What is Energy Management and Sub-metering?",
-    "keywords": ["energy", "electricity", "power", "kw", "kwh", "meter", "submetering", "feeder", "billing", "tariffs", "power factor"],
-    "answer": "Prishitech's Energy Management system provides real-time feeder sub-metering across industrial plants and buildings. It features automated peak-load surge alerts, baseline benchmarking against historical targets, power factor penalty mitigation, and automated BEE compliance reporting. Facilities typically reduce power costs by 12% to 22% within 90 days."
-  },
-  {
-    "id": "water-management",
-    "category": "Resource Intelligence",
-    "question": "How does Water Tracking & Leak Detection work?",
-    "keywords": ["water", "leak", "pipe", "flow", "source", "tap", "borehole", "stp", "etp", "leakage", "conservation"],
-    "answer": "Our Water Management platform tracks continuous flow from boreholes, municipal mains, and recycled lines. Using algorithmic mass-balance calculations and acoustic sensors, the platform flags distribution line leaks within 15 minutes, preventing structural damage and resource waste."
-  },
-  {
-    "id": "gas-monitoring",
-    "category": "Resource Intelligence",
-    "question": "What does Industrial Gas Monitoring cover?",
-    "keywords": ["gas", "lpg", "png", "pressure", "leakage", "safety", "industrial gas", "furnace", "boiler", "tank"],
-    "answer": "We monitor LPG, PNG, and specialized industrial gases in real time. We capture flow rates, pressure differentials, and tank levels with calibrated safety sensors. Automated alarms notify operators if pressure crosses safety limits, while predictive analytics streamline refill scheduling."
-  },
-  {
-    "id": "chiller-management",
-    "category": "Resource Intelligence",
-    "question": "How do you optimize Chiller Plants & HVAC COP?",
-    "keywords": ["chiller", "cop", "hvac", "cooling", "condenser", "compressor", "air conditioning", "thermal", "vibration", "tr"],
-    "answer": "Chillers represent up to 40% of facility power consumption. Prishitech tracks thermodynamic Coefficient of Performance (COP), chilled-water delta T, condenser fouling, and compressor vibration to deliver 8% to 15% efficiency gains and prevent sudden breakdowns."
-  },
-  {
-    "id": "energy-advisory",
-    "category": "Energy Advisory",
-    "question": "What is your Energy Advisory and BEE Audit service?",
-    "keywords": ["audit", "advisory", "bee", "statutory", "bureau of energy efficiency", "iso 50001", "cea", "compliance"],
-    "answer": "Backed by accredited Bureau of Energy Efficiency (BEE) auditors through the TRIAXIS Consortium, we deliver mandatory statutory energy audits, ISO 50001 compliance, power quality & harmonic analysis, and detailed ROI models for retrofit capital investments.",
-    "actionType": "contact"
-  },
-  {
-    "id": "it-services",
-    "category": "IT Services",
-    "question": "What IT Services & Digital Transformation do you offer?",
-    "keywords": ["it services", "digital transformation", "software", "development", "it", "tech", "digital", "architecture"],
-    "answer": "Prishitech delivers 5 core digital transformation services: 1) IoT & Industrial Gateway Monitoring; 2) Hybrid Cloud Infrastructure (AWS, Azure, GCP); 3) Cybersecurity & OT Defense (IEC 62443); 4) Big Data & Telemetry Analytics; and 5) AI & Autonomous Process Automation."
-  },
-  {
-    "id": "ot-security",
-    "category": "Cybersecurity",
-    "question": "How do you protect industrial OT and SCADA systems?",
-    "keywords": ["cyber", "security", "ot", "scada", "ics", "purdue", "firewall", "iec 62443", "threat", "ransomware"],
-    "answer": "We build OT-aware cybersecurity based on the Purdue Enterprise Reference Architecture (PERA). We enforce strict DMZ boundaries between industrial shopfloors (Levels 0–2) and corporate cloud networks (Levels 4/5), with zero-trust gateways and SCADA anomaly inspection.",
-    "actionType": "contact"
-  },
-  {
-    "id": "triaxis-consortium",
-    "category": "Consortium",
-    "question": "What is the TRIAXIS Consortium advantage?",
-    "keywords": ["triaxis", "consortium", "partner", "partnership", "sanjeev", "engineering bench", "difference"],
-    "answer": "Traditional revamps stall because software developers lack high-voltage electrical depth, while electrical contractors lack cloud & cyber capabilities. The TRIAXIS Consortium combines Prishitech's software platform with certified power engineers and HVAC specialists under a single accountable SLA.",
-    "actionType": "contact"
-  },
-  {
-    "id": "office-location",
-    "category": "Company Info",
-    "question": "Where is your office located?",
-    "keywords": ["address", "location", "office", "headquarters", "where", "ghaziabad", "vaishali", "cloud 9", "phone", "contact"],
-    "answer": "Our headquarters and engineering hub is located at: 5A 45/46, Cloud-9, Sector-1, Vaishali, Ghaziabad, Uttar Pradesh 201019, India. Direct Switchboard: +91 120 456 7890 | WhatsApp: +91 98100 12345 | Email: contact@prishitech.com.",
-    "actionType": "contact"
-  },
-  {
-    "id": "pricing-roi",
-    "category": "Commercial",
-    "question": "What is the typical pricing and ROI payback period?",
-    "keywords": ["price", "cost", "pricing", "roi", "payback", "expensive", "quote", "commercial"],
-    "answer": "Engagements are tailored to facility size (single plant, commercial campus, hospital, or utility). Typical installations achieve a 12% to 22% reduction in utility expenses, recovering hardware investment within 4 to 9 months."
-  },
-  {
-    "id": "capability-statement",
-    "category": "Documentation",
-    "question": "How can I download the Capability Statement PDF?",
-    "keywords": ["pdf", "capability", "prospectus", "document", "brochure", "download"],
-    "answer": "You can download our complete 2026 Enterprise Capability Statement PDF directly from the site. It contains detailed architectural blueprints, OT security frameworks, and TRIAXIS project metrics.",
-    "actionType": "download_pdf"
-  },
-  {
-    "id": "supported-protocols",
-    "category": "Technical",
-    "question": "Which industrial hardware and protocols do you support?",
-    "keywords": ["protocols", "hardware", "modbus", "bacnet", "mqtt", "lorawan", "opc", "opc-ua", "sensors", "meters"],
-    "answer": "We support all standard industrial protocols including Modbus RTU/TCP, BACnet, MQTT, LoRaWAN, OPC-UA, and 4-20mA analog inputs. Our gateways buffer data at the edge so no telemetry is lost during network dropouts."
-  },
-  {
-    "id": "service-interest",
-    "category": "Engagement",
-    "question": "I am interested in your services. How can we connect or get a demo?",
-    "keywords": ["interest", "interested", "connect", "reach out", "touch", "get started", "partnership", "collaborate", "services inquiry"],
-    "answer": "We would be delighted to assist your facility! You can share your details below to dispatch a demo and consultation request directly to our solutions desk, or reach us directly at our Vaishali, Ghaziabad engineering hub.",
-    "actionType": "demo"
-  },
-  {
-    "id": "book-demo",
-    "category": "Actions",
-    "question": "How do I schedule a live telemetry demo?",
-    "keywords": ["demo", "walkthrough", "schedule", "book", "meeting", "presentation", "trial", "pilot", "create demo", "request demo"],
-    "answer": "I can dispatch a live telemetry demo request for you right now! Simply enter your name, email, phone, and facility name below, and our engineering desk in Vaishali, Ghaziabad will coordinate the walkthrough.",
-    "actionType": "demo"
-  }
-]
+  "faq": [
+    {
+      "id": "PT001",
+      "category": "Company",
+      "question": "What is PrishiTech Solutions?",
+      "answer": "PrishiTech Solutions is a B2B technology and IT consulting company that helps organizations improve operations through digital transformation, IoT, analytics, automation, connected systems, enterprise technology and related implementation services.",
+      "keywords": [
+        "PrishiTech",
+        "company",
+        "IT consulting",
+        "technology",
+        "digital transformation"
+      ]
+    },
+    {
+      "id": "PT002",
+      "category": "Company",
+      "question": "What does PrishiTech Solutions do?",
+      "answer": "PrishiTech Solutions helps businesses solve operational and technology challenges using solutions such as Industrial IoT, real-time monitoring, data analytics, automation, connected operations, digital transformation, enterprise systems and SAP-related advisory and implementation services.",
+      "keywords": [
+        "services",
+        "solutions",
+        "IoT",
+        "analytics",
+        "automation",
+        "SAP"
+      ]
+    },
+    {
+      "id": "PT003",
+      "category": "Company",
+      "question": "What is PrishiTech Solutions' main tagline?",
+      "answer": "PrishiTech Solutions' main tagline is 'Complex Made Easy.'",
+      "keywords": [
+        "tagline",
+        "slogan",
+        "Complex Made Easy"
+      ]
+    },
+    {
+      "id": "PT004",
+      "category": "Company",
+      "question": "What does 'Complex Made Easy' mean?",
+      "answer": "It represents PrishiTech's approach of simplifying complex technology and operational challenges so that businesses can understand their data, improve processes and make better operational decisions.",
+      "keywords": [
+        "Complex Made Easy",
+        "meaning",
+        "business approach"
+      ]
+    },
+    {
+      "id": "PT005",
+      "category": "Business",
+      "question": "Is PrishiTech Solutions a B2B company?",
+      "answer": "Yes. PrishiTech Solutions primarily works in the B2B technology and IT services space, helping organizations solve business, operational and technology challenges.",
+      "keywords": [
+        "B2B",
+        "business",
+        "enterprise",
+        "IT services"
+      ]
+    },
+    {
+      "id": "PT006",
+      "category": "Digital Transformation",
+      "question": "What is digital transformation?",
+      "answer": "Digital transformation means using digital technologies to improve how a business operates, makes decisions, manages information and delivers value. PrishiTech approaches transformation around practical business and operational requirements rather than technology alone.",
+      "keywords": [
+        "digital transformation",
+        "digitalization",
+        "business transformation"
+      ]
+    },
+    {
+      "id": "PT007",
+      "category": "Digital Transformation",
+      "question": "How can PrishiTech help with digital transformation?",
+      "answer": "PrishiTech can support organizations through digital strategy, process improvement, automation, cloud-related initiatives, analytics, IoT, enterprise systems, data integration and implementation of technology solutions.",
+      "keywords": [
+        "digital transformation",
+        "strategy",
+        "automation",
+        "cloud",
+        "IoT",
+        "analytics"
+      ]
+    },
+    {
+      "id": "PT008",
+      "category": "IoT",
+      "question": "What is Industrial IoT?",
+      "answer": "Industrial IoT connects machines, sensors, equipment and operational systems so that organizations can collect and use operational data for monitoring, analysis, alerts and decision-making.",
+      "keywords": [
+        "Industrial IoT",
+        "IIoT",
+        "IoT",
+        "sensors",
+        "machines"
+      ]
+    },
+    {
+      "id": "PT009",
+      "category": "IoT",
+      "question": "How does PrishiTech use IoT?",
+      "answer": "PrishiTech uses IoT concepts to create connected operational environments where data can be sensed, monitored, analyzed and used for alerts and action.",
+      "keywords": [
+        "IoT",
+        "Industrial IoT",
+        "monitoring",
+        "connected operations"
+      ]
+    },
+    {
+      "id": "PT010",
+      "category": "IoT",
+      "question": "What is the PrishiTech approach to smart operations?",
+      "answer": "The approach can be summarized as Sense, Monitor, Analyze, Alert and Act. The objective is to convert operational information into useful insights and timely action.",
+      "keywords": [
+        "smart operations",
+        "Sense",
+        "Monitor",
+        "Analyze",
+        "Alert",
+        "Act"
+      ]
+    },
+    {
+      "id": "PT011",
+      "category": "Smart Operations",
+      "question": "What are smart operations?",
+      "answer": "Smart operations use connected technology, real-time information, analytics and automation to improve visibility, responsiveness, efficiency and operational decision-making.",
+      "keywords": [
+        "smart operations",
+        "operational excellence",
+        "digital operations"
+      ]
+    },
+    {
+      "id": "PT012",
+      "category": "Smart Alarm",
+      "question": "What is Smart Alarm?",
+      "answer": "Smart Alarm is a digital alarm-management solution designed to support alarm registration, alarm lifecycle management, escalation management and visibility into machine or process health.",
+      "keywords": [
+        "Smart Alarm",
+        "alarm management",
+        "alerts",
+        "escalation"
+      ]
+    },
+    {
+      "id": "PT013",
+      "category": "Smart Alarm",
+      "question": "What problem does Smart Alarm solve?",
+      "answer": "Smart Alarm is intended to help organizations manage operational alarms more systematically so that important issues can be identified, tracked, escalated and resolved in a structured way.",
+      "keywords": [
+        "alarm",
+        "alert",
+        "escalation",
+        "operational issues"
+      ]
+    },
+    {
+      "id": "PT014",
+      "category": "Smart Energy",
+      "question": "What is Smart Energy?",
+      "answer": "Smart Energy is an energy-monitoring and analytics solution focused on real-time visibility into energy consumption, energy analysis, alerts and energy-management activities.",
+      "keywords": [
+        "Smart Energy",
+        "energy monitoring",
+        "energy analytics",
+        "energy management"
+      ]
+    },
+    {
+      "id": "PT015",
+      "category": "Smart Energy",
+      "question": "How can Smart Energy help a business?",
+      "answer": "Smart Energy can help organizations understand energy consumption in real time, identify consumption patterns, monitor performance and support efforts to reduce waste and improve energy efficiency.",
+      "keywords": [
+        "energy efficiency",
+        "energy monitoring",
+        "energy consumption",
+        "energy savings"
+      ]
+    },
+    {
+      "id": "PT016",
+      "category": "Solar Analytics",
+      "question": "What is PTechView?",
+      "answer": "PTechView is a solar analytics and monitoring solution designed to provide visibility into solar power plant operations, performance, maintenance-related information, alarms and analytics.",
+      "keywords": [
+        "PTechView",
+        "solar analytics",
+        "solar monitoring",
+        "solar power plant"
+      ]
+    },
+    {
+      "id": "PT017",
+      "category": "Solar Analytics",
+      "question": "What can PTechView monitor?",
+      "answer": "PTechView can support monitoring and analytics related to solar plant performance, O&M effectiveness, asset performance, alarms, performance optimization and reporting.",
+      "keywords": [
+        "PTechView",
+        "solar",
+        "O&M",
+        "plant performance",
+        "analytics"
+      ]
+    },
+    {
+      "id": "PT018",
+      "category": "Smart Weight",
+      "question": "What is Smart Weight?",
+      "answer": "Smart Weight is a digital weighing solution designed to support accurate weighing, configurable tolerances, weighing tracking and historical record keeping.",
+      "keywords": [
+        "Smart Weight",
+        "weighing",
+        "digital weighing",
+        "traceability"
+      ]
+    },
+    {
+      "id": "PT019",
+      "category": "Smart Weight",
+      "question": "What problems can Smart Weight address?",
+      "answer": "Smart Weight is designed to help improve weighing accuracy, process control, tolerance management and traceability while reducing dependence on manual weighing records.",
+      "keywords": [
+        "weighing",
+        "accuracy",
+        "tolerance",
+        "traceability"
+      ]
+    },
+    {
+      "id": "PT020",
+      "category": "Smart Counter",
+      "question": "What is Smart Counter?",
+      "answer": "Smart Counter is a digital counting solution designed to automate counting processes and support data modelling, ERP integration and historical record keeping.",
+      "keywords": [
+        "Smart Counter",
+        "counting",
+        "ERP integration",
+        "digital counting"
+      ]
+    },
+    {
+      "id": "PT021",
+      "category": "Smart Counter",
+      "question": "How can Smart Counter improve counting operations?",
+      "answer": "Smart Counter can help reduce manual counting effort, improve counting consistency, provide digital traceability and connect counting information with enterprise systems where required.",
+      "keywords": [
+        "counting",
+        "automation",
+        "ERP",
+        "traceability"
+      ]
+    },
+    {
+      "id": "PT022",
+      "category": "Analytics",
+      "question": "What data analytics services does PrishiTech provide?",
+      "answer": "PrishiTech's analytics capabilities include data integration, data management, data quality and governance, enterprise data warehousing, business intelligence and advanced analytics.",
+      "keywords": [
+        "data analytics",
+        "business intelligence",
+        "data management",
+        "data warehouse"
+      ]
+    },
+    {
+      "id": "PT023",
+      "category": "Analytics",
+      "question": "Can PrishiTech turn operational data into actionable insights?",
+      "answer": "Yes. PrishiTech focuses on connecting operational data with analytics and decision-making so that businesses can move from raw data to insights and then to action.",
+      "keywords": [
+        "data",
+        "insights",
+        "analytics",
+        "decision-making"
+      ]
+    },
+    {
+      "id": "PT024",
+      "category": "Analytics",
+      "question": "What is data-driven decision making?",
+      "answer": "Data-driven decision making means using reliable and relevant business or operational data to understand situations, identify patterns and support decisions instead of relying only on assumptions or manual judgment.",
+      "keywords": [
+        "data-driven",
+        "decision making",
+        "analytics",
+        "business intelligence"
+      ]
+    },
+    {
+      "id": "PT025",
+      "category": "Automation",
+      "question": "Does PrishiTech provide automation solutions?",
+      "answer": "Yes. Automation is part of PrishiTech's digital transformation and technology focus. Automation can be applied to repetitive processes, operational monitoring, alerts, data handling and business workflows depending on the customer's requirements.",
+      "keywords": [
+        "automation",
+        "RPA",
+        "process automation",
+        "digital transformation"
+      ]
+    },
+    {
+      "id": "PT026",
+      "category": "Connected Operations",
+      "question": "What are connected operations?",
+      "answer": "Connected operations bring together machines, sensors, applications, people and business systems so that information can move across processes instead of remaining isolated in separate systems.",
+      "keywords": [
+        "connected operations",
+        "integration",
+        "IoT",
+        "systems"
+      ]
+    },
+    {
+      "id": "PT027",
+      "category": "Integration",
+      "question": "Can PrishiTech integrate solutions with existing systems?",
+      "answer": "Yes. Integration is part of PrishiTech's technology approach. Solutions can be designed to connect with existing enterprise or operational systems based on the customer's architecture and requirements.",
+      "keywords": [
+        "integration",
+        "ERP integration",
+        "system integration",
+        "IoT integration"
+      ]
+    },
+    {
+      "id": "PT028",
+      "category": "SAP",
+      "question": "Does PrishiTech provide SAP services?",
+      "answer": "Yes. PrishiTech's public company profile lists SAP Advisory among its specialties and describes services including SAP health checks, SAP HANA upgrade or migration services, SAP project and program management, SAP implementation and third-party integration.",
+      "keywords": [
+        "SAP",
+        "SAP Advisory",
+        "SAP HANA",
+        "SAP implementation",
+        "SAP integration"
+      ]
+    },
+    {
+      "id": "PT029",
+      "category": "SAP",
+      "question": "What SAP services does PrishiTech offer?",
+      "answer": "The publicly listed SAP service areas include SAP health checks, SAP HANA upgrade and migration services, SAP project and program management, SAP implementation and SAP integration with third-party systems.",
+      "keywords": [
+        "SAP health check",
+        "SAP HANA",
+        "SAP migration",
+        "SAP implementation",
+        "SAP integration"
+      ]
+    },
+    {
+      "id": "PT030",
+      "category": "ERP",
+      "question": "Does PrishiTech work with ERP systems?",
+      "answer": "Yes. PrishiTech's public profile describes experience with ERP solutions and lists SAP-related advisory, implementation and integration services.",
+      "keywords": [
+        "ERP",
+        "SAP",
+        "enterprise applications"
+      ]
+    },
+    {
+      "id": "PT031",
+      "category": "Implementation",
+      "question": "Does PrishiTech only provide consulting or also implement solutions?",
+      "answer": "PrishiTech works across consulting and implementation. Its public profile describes services covering strategy, advisory, implementation, integration, analytics and technology deployment.",
+      "keywords": [
+        "consulting",
+        "implementation",
+        "technology deployment"
+      ]
+    },
+    {
+      "id": "PT032",
+      "category": "Business Problems",
+      "question": "What business problems can PrishiTech help solve?",
+      "answer": "PrishiTech's solutions are positioned around challenges such as unplanned downtime, operational inefficiency, data silos, limited visibility, manual processes, energy inefficiency, alert-management challenges, process errors and the need for better data-driven decisions.",
+      "keywords": [
+        "downtime",
+        "inefficiency",
+        "data silos",
+        "manual processes",
+        "operational problems"
+      ]
+    },
+    {
+      "id": "PT033",
+      "category": "Operational Excellence",
+      "question": "How does PrishiTech improve operational efficiency?",
+      "answer": "PrishiTech approaches operational efficiency through real-time monitoring, analytics, automation, connected systems, better visibility, structured alerts and data-driven decision support.",
+      "keywords": [
+        "operational efficiency",
+        "operational excellence",
+        "monitoring",
+        "automation"
+      ]
+    },
+    {
+      "id": "PT034",
+      "category": "Predictive Maintenance",
+      "question": "Does PrishiTech work with predictive maintenance?",
+      "answer": "Predictive maintenance is part of the smart-operations and industrial-technology positioning used by PrishiTech. The concept involves using operational data and analytics to identify potential issues before they lead to larger disruptions.",
+      "keywords": [
+        "predictive maintenance",
+        "maintenance",
+        "downtime",
+        "analytics"
+      ]
+    },
+    {
+      "id": "PT035",
+      "category": "Real-Time Monitoring",
+      "question": "What is real-time monitoring?",
+      "answer": "Real-time monitoring means continuously observing operational data as it is generated so teams can identify changes, abnormal conditions or important events without waiting for periodic reports.",
+      "keywords": [
+        "real-time monitoring",
+        "monitoring",
+        "operational visibility"
+      ]
+    },
+    {
+      "id": "PT036",
+      "category": "Alert Management",
+      "question": "Is sending more alerts always better?",
+      "answer": "No. Too many alerts can create alert fatigue and cause important signals to be overlooked. Effective alert management should focus on relevance, prioritization, escalation and giving the right information to the right person at the right time.",
+      "keywords": [
+        "alert fatigue",
+        "alerts",
+        "alarm management",
+        "prioritization"
+      ]
+    },
+    {
+      "id": "PT037",
+      "category": "Sustainability",
+      "question": "How can technology support sustainability?",
+      "answer": "Technology can support sustainability by improving visibility into energy and utility consumption, identifying inefficiencies, enabling better resource management and providing data that can support operational and sustainability reporting.",
+      "keywords": [
+        "sustainability",
+        "ESG",
+        "energy",
+        "utilities",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "PT038",
+      "category": "Smart Utilities",
+      "question": "Does PrishiTech work with utility monitoring?",
+      "answer": "Yes. PrishiTech's positioning includes connected and intelligent utility-monitoring environments involving areas such as energy, water and other critical utilities.",
+      "keywords": [
+        "smart utilities",
+        "utility monitoring",
+        "energy",
+        "water",
+        "IoT"
+      ]
+    },
+    {
+      "id": "PT039",
+      "category": "Smart Utilities",
+      "question": "What is smart utility monitoring?",
+      "answer": "Smart utility monitoring uses sensors, connected systems and analytics to continuously monitor utilities such as energy and water, identify abnormal conditions and provide information for faster operational response.",
+      "keywords": [
+        "smart utilities",
+        "energy monitoring",
+        "water monitoring",
+        "IoT"
+      ]
+    },
+    {
+      "id": "PT040",
+      "category": "Industries",
+      "question": "Which industries can use PrishiTech solutions?",
+      "answer": "PrishiTech's solutions are relevant to industrial and enterprise environments such as manufacturing, energy, utilities, logistics and other operations where monitoring, analytics, automation and connected systems can create business value.",
+      "keywords": [
+        "manufacturing",
+        "energy",
+        "utilities",
+        "logistics",
+        "industrial"
+      ]
+    },
+    {
+      "id": "PT041",
+      "category": "Manufacturing",
+      "question": "How can PrishiTech help manufacturing companies?",
+      "answer": "Manufacturing organizations can use PrishiTech solutions for machine and process monitoring, alarm management, energy monitoring, analytics, connected operations, maintenance-related visibility and operational decision support.",
+      "keywords": [
+        "manufacturing",
+        "factory",
+        "machine monitoring",
+        "industrial IoT"
+      ]
+    },
+    {
+      "id": "PT042",
+      "category": "Energy",
+      "question": "How can PrishiTech help energy-related businesses?",
+      "answer": "PrishiTech can support energy-related operations through energy monitoring, analytics, solar plant monitoring, operational visibility and data-driven performance management.",
+      "keywords": [
+        "energy",
+        "solar",
+        "energy monitoring",
+        "analytics"
+      ]
+    },
+    {
+      "id": "PT043",
+      "category": "ROI",
+      "question": "What business outcomes can PrishiTech solutions support?",
+      "answer": "Depending on the solution and implementation, the intended outcomes can include better operational visibility, faster response, reduced manual effort, improved process control, better energy efficiency, stronger traceability and more informed decision-making.",
+      "keywords": [
+        "ROI",
+        "business outcomes",
+        "efficiency",
+        "visibility",
+        "productivity"
+      ]
+    },
+    {
+      "id": "PT044",
+      "category": "Implementation",
+      "question": "Can PrishiTech customize solutions for a business?",
+      "answer": "PrishiTech's solution positioning includes customizable and scalable technology solutions. The exact scope and customization depend on the organization's processes, existing systems, operational requirements and implementation environment.",
+      "keywords": [
+        "custom solution",
+        "customization",
+        "scalable",
+        "implementation"
+      ]
+    },
+    {
+      "id": "PT045",
+      "category": "Cloud",
+      "question": "Does PrishiTech work with cloud technologies?",
+      "answer": "Yes. Cloud strategy and implementation are included in the digital-transformation capabilities described in PrishiTech's public company profile.",
+      "keywords": [
+        "cloud",
+        "cloud strategy",
+        "cloud implementation"
+      ]
+    },
+    {
+      "id": "PT046",
+      "category": "Information Management",
+      "question": "What is information management?",
+      "answer": "Information management involves organizing, integrating, governing and maintaining business data so that it remains reliable, accessible and useful for business operations and decision-making.",
+      "keywords": [
+        "information management",
+        "data management",
+        "data governance"
+      ]
+    },
+    {
+      "id": "PT047",
+      "category": "Data Governance",
+      "question": "Does PrishiTech provide data governance services?",
+      "answer": "Yes. Data quality and governance are included in the information-management and analytics capabilities described in PrishiTech's public company profile.",
+      "keywords": [
+        "data governance",
+        "data quality",
+        "information management"
+      ]
+    },
+    {
+      "id": "PT048",
+      "category": "Business Intelligence",
+      "question": "Does PrishiTech provide business intelligence solutions?",
+      "answer": "Yes. Business intelligence strategy and roadmap are included in PrishiTech's publicly described information-management and analytics services.",
+      "keywords": [
+        "business intelligence",
+        "BI",
+        "analytics",
+        "data"
+      ]
+    },
+    {
+      "id": "PT049",
+      "category": "Analytics",
+      "question": "What types of analytics can PrishiTech support?",
+      "answer": "PrishiTech's public profile describes descriptive, predictive and prescriptive modelling as part of its advanced analytics capabilities.",
+      "keywords": [
+        "descriptive analytics",
+        "predictive analytics",
+        "prescriptive analytics",
+        "advanced analytics"
+      ]
+    },
+    {
+      "id": "PT050",
+      "category": "Customer Fit",
+      "question": "Who should contact PrishiTech Solutions?",
+      "answer": "Organizations looking to improve operational visibility, automate processes, connect systems, use IoT and analytics, improve enterprise technology environments or undertake digital-transformation initiatives may find PrishiTech relevant.",
+      "keywords": [
+        "customer",
+        "business",
+        "digital transformation",
+        "IoT",
+        "analytics"
+      ]
+    },
+    {
+      "id": "PT051",
+      "category": "Customer Fit",
+      "question": "Is PrishiTech suitable for companies that already have technology systems?",
+      "answer": "Yes. PrishiTech's services include integration, analytics, digital transformation and enterprise technology work, so an organization does not necessarily need to replace its existing systems. The appropriate approach depends on its current architecture and business requirements.",
+      "keywords": [
+        "existing systems",
+        "integration",
+        "digital transformation",
+        "legacy systems"
+      ]
+    },
+    {
+      "id": "PT052",
+      "category": "Approach",
+      "question": "Does PrishiTech focus only on technology?",
+      "answer": "No. The company's positioning emphasizes business and operational outcomes. Technology is used as an enabler for better visibility, efficiency, decision-making, process control and operational improvement.",
+      "keywords": [
+        "technology",
+        "business outcomes",
+        "operations",
+        "digital transformation"
+      ]
+    },
+    {
+      "id": "PT053",
+      "category": "Approach",
+      "question": "What is the PrishiTech philosophy?",
+      "answer": "The core philosophy is to simplify complex technology and operational challenges and turn data and technology into practical business outcomes.",
+      "keywords": [
+        "philosophy",
+        "Complex Made Easy",
+        "business outcomes"
+      ]
+    },
+    {
+      "id": "PT054",
+      "category": "Social Media",
+      "question": "What topics does PrishiTech share on LinkedIn?",
+      "answer": "PrishiTech's LinkedIn content focuses on industry insights, technology and solutions, case studies, practical tips, Q&A and expert insights, sustainability and ESG, smart operations, Industrial IoT, digital transformation, analytics and automation.",
+      "keywords": [
+        "LinkedIn",
+        "industry insights",
+        "case studies",
+        "IoT",
+        "digital transformation"
+      ]
+    },
+    {
+      "id": "PT055",
+      "category": "General",
+      "question": "What is the main idea behind PrishiTech's smart operations solutions?",
+      "answer": "The main idea is to move from raw operational data to useful decisions and action: Capture, Connect, Analyze, Act and Improve.",
+      "keywords": [
+        "smart operations",
+        "Capture",
+        "Connect",
+        "Analyze",
+        "Act",
+        "Improve"
+      ]
+    },
+    {
+      "id": "PT056",
+      "category": "General",
+      "question": "Why should a business use operational data more effectively?",
+      "answer": "Operational data can provide visibility into what is happening across processes, equipment and systems. When connected with analytics and the right workflows, it can help teams identify problems, understand patterns and make more timely decisions.",
+      "keywords": [
+        "operational data",
+        "analytics",
+        "visibility",
+        "decision making"
+      ]
+    },
+    {
+      "id": "PT057",
+      "category": "General",
+      "question": "Does more data automatically mean better operations?",
+      "answer": "No. More data does not automatically create better outcomes. Data needs to be relevant, connected, understandable and actionable. The objective is to turn useful data into insights and timely action.",
+      "keywords": [
+        "data",
+        "smart data",
+        "insights",
+        "action"
+      ]
+    },
+    {
+      "id": "PT058",
+      "category": "General",
+      "question": "What is the difference between monitoring and smart monitoring?",
+      "answer": "Basic monitoring tells an organization what is happening. Smart monitoring combines monitoring with analytics, alerts, context and decision support so teams can better understand what requires attention and what action may be appropriate.",
+      "keywords": [
+        "monitoring",
+        "smart monitoring",
+        "analytics",
+        "alerts"
+      ]
+    },
+    {
+      "id": "PT059",
+      "category": "General",
+      "question": "What makes a technology solution useful for operations?",
+      "answer": "A useful operational solution should address a real business problem, provide relevant information, integrate with the operating environment where appropriate, support timely action and produce measurable operational value.",
+      "keywords": [
+        "technology solution",
+        "operations",
+        "business value",
+        "ROI"
+      ]
+    },
+    {
+      "id": "PT060",
+      "category": "Contact",
+      "question": "Where can I learn more about PrishiTech Solutions?",
+      "answer": "More information about PrishiTech Solutions is available through its website at prishitechsolutions.com and its LinkedIn company page.",
+      "keywords": [
+        "contact",
+        "website",
+        "PrishiTech Solutions"
+      ]
+    }
+  ]
+}

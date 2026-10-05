@@ -48,15 +48,15 @@ export const PrishiBot: React.FC<PrishiBotProps> = ({
     {
       id: 'welcome',
       sender: 'bot',
-      text: "Hello! I am PrishiBot, your Resource Intelligence & Digital Transformation assistant. I can answer questions about our Energy, Water, Gas, and Chiller management platforms, IT & OT cybersecurity services, or help you schedule a live telemetry briefing. What can I help you with today?",
+      text: "Hello! I am PrishiBot, your assistant for PrishiTech Solutions — 'Complex Made Easy'. I can answer questions about our digital transformation solutions, Industrial IoT, smart operations (Smart Alarm, Smart Energy, PTechView, Smart Weight, Smart Counter), data analytics, and SAP advisory. What can I help you explore today?",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       suggestedPrompts: [
-        "What services does Prishitech provide?",
-        "How does Energy Management work?",
-        "How do you detect water leaks?",
-        "What is Chiller COP optimization?",
-        "Schedule a live telemetry demo",
-        "Download Capability Statement (PDF)",
+        "What does PrishiTech Solutions do?",
+        "What is 'Complex Made Easy'?",
+        "What is Smart Alarm?",
+        "What is PTechView?",
+        "What SAP services do you offer?",
+        "Schedule a live demo",
       ],
     },
   ]);
@@ -148,13 +148,13 @@ export const PrishiBot: React.FC<PrishiBotProps> = ({
       {
         id: `welcome-${Date.now()}`,
         sender: 'bot',
-        text: "Conversation restarted. How can I help you explore Prishitech's Resource Intelligence and IT solutions?",
+        text: "Conversation restarted. How can I help you explore PrishiTech Solutions' IT innovations and smart operations?",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         suggestedPrompts: [
-          "What services does Prishitech provide?",
-          "How does Energy Management work?",
-          "What is Chiller COP optimization?",
-          "Schedule a live telemetry demo",
+          "What does PrishiTech Solutions do?",
+          "What is 'Complex Made Easy'?",
+          "What is Smart Alarm?",
+          "Schedule a live demo",
         ],
       },
     ]);
