@@ -3,12 +3,6 @@
 > **One Platform. Every Resource. Total Intelligence.**  
 > Unifying Energy, Water, Gas and Chiller management into a single resource intelligence platform — backed by end-to-end IT services and digital transformation expertise, as a TRIAXIS Consortium partner.
 
-**Prepared for:** Sanjeev  
-**Date:** September 2026  
-**Registered Address:** 5A 45/46, Cloud-9, Sector-1, Vaishali, Ghaziabad, Uttar Pradesh 201019, India  
-**Contact:** contact@prishitech.com | +91 120 456 7890  
-
----
 
 ## 🚀 Features & Architecture
 
