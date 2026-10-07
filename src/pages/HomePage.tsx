@@ -114,7 +114,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo, onOpenCapabil
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50/90 border border-emerald-200/80 text-emerald-800 text-xs font-semibold tracking-wide mb-4 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-              TRIAXIS Consortium Partner · Industrial IoT
+              Industrial Grade · Enterprise IoT Platform
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
