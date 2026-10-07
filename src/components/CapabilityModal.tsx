@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { X, FileText, Download, CheckCircle, Shield, Award, Building2 } from 'lucide-react';
+import { X, FileText, Download, CheckCircle, Shield, Award, Building2, Loader2 } from 'lucide-react';
 import { generateAndDownloadCapabilityPdf } from '../utils/generateCapabilityPdf';
-import { WEB3FORMS_ACCESS_KEY } from '../services/leadService';
+import { submitCapabilityDownloadLead } from '../services/leadService';
 
 interface CapabilityModalProps {
   isOpen: boolean;
@@ -13,33 +13,31 @@ export const CapabilityModal: React.FC<CapabilityModalProps> = ({ isOpen, onClos
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
   const handleDownload = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    // 1. Instantly generate & download personalized PDF binary with logo and letterhead
+    generateAndDownloadCapabilityPdf(name.trim(), company.trim());
     setDownloaded(true);
 
-    // 1. Generate & download actual PDF binary
-    generateAndDownloadCapabilityPdf(name, company);
-
-    // 2. Silently notify admin.dm26@gmail.com of this prospective lead
+    // 2. Dispatch lead notification directly to email / Web3Forms
     try {
-      const formData = new FormData();
-      formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-      formData.append("subject", `📄 Capability Statement Downloaded: ${company || name} (${name})`);
-      formData.append("from_name", "PrishiTech Resource Intelligence Portal");
-      formData.append("Visitor Name", name);
-      formData.append("Corporate Email", email);
-      formData.append("Company / Facility", company || "Not specified");
-      formData.append("Asset Requested", "2026 Enterprise Capability Statement (PDF)");
-
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      }).catch(() => {});
-    } catch {
-      // Ignore background lead notification errors
+      await submitCapabilityDownloadLead({
+        name: name.trim(),
+        email: email.trim(),
+        company: company.trim()
+      });
+    } catch (err) {
+      console.error("Capability dispatch error:", err);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -129,16 +127,27 @@ export const CapabilityModal: React.FC<CapabilityModalProps> = ({ isOpen, onClos
                   placeholder="sanjeev@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white"
+                  disabled={isSubmitting}
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white disabled:opacity-60"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 disabled:opacity-75 cursor-pointer"
               >
-                <Download className="w-4 h-4" />
-                <span>Download Capability Statement (PDF)</span>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Generating PDF &amp; Registering...</span>
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-4 h-4" />
+                    <span>Download Capability Statement (PDF)</span>
+                  </>
+                )}
               </button>
             </form>
           </div>
@@ -147,14 +156,14 @@ export const CapabilityModal: React.FC<CapabilityModalProps> = ({ isOpen, onClos
             <div className="w-14 h-14 mx-auto rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
               <CheckCircle className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900">PDF Download Started</h3>
-            <p className="text-slate-600 text-sm">
-              Your official PDF document has been generated for <span className="font-semibold text-slate-900">{name}</span>.
+            <h3 className="text-xl font-bold text-slate-900">PDF Downloaded &amp; Details Sent</h3>
+            <p className="text-slate-600 text-sm leading-relaxed max-w-sm mx-auto">
+              Your personalized Capability Statement has been generated for <span className="font-semibold text-slate-900">{name}</span>. Lead registration details have been dispatched for <span className="font-semibold text-slate-900">{email}</span>.
             </p>
 
             <div className="py-2">
               <a
-                href="/Prishitech-Solutions-Capability-Statement-2026.pdf"
+                href="/Prishitech-Solutions-Capability-Statement-2026.pdf?v=2026.3"
                 download="Prishitech-Solutions-Capability-Statement-2026.pdf"
                 className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-700 hover:text-emerald-800 underline"
               >

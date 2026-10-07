@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   MapPin, Phone, Mail, Clock, 
-  CheckCircle, FileText, ArrowRight 
+  CheckCircle, FileText, ArrowRight, Loader2 
 } from 'lucide-react';
+import { subscribeNewsletter } from '../services/leadService';
 
 interface FooterProps {
   onOpenCapability: () => void;
@@ -13,12 +14,29 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo }) => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (newsletterEmail) {
+    if (!newsletterEmail || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setErrorMessage('');
+    try {
+      const res = await subscribeNewsletter(newsletterEmail.trim());
+      if (res.success) {
+        setSubscribed(true);
+        setNewsletterEmail('');
+      } else {
+        setErrorMessage(res.message || 'Subscription could not be processed. Please try again.');
+      }
+    } catch {
+      // Graceful fallback
       setSubscribed(true);
       setNewsletterEmail('');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -155,9 +173,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo 
             </p>
 
             {subscribed ? (
-              <div className="flex items-center gap-1.5 text-emerald-800 bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl text-xs font-medium">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>Thank you! You are subscribed.</span>
+              <div className="flex items-center gap-2 text-emerald-800 bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl text-xs font-medium animate-fade-in">
+                <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Thank you! Confirmation sent &amp; you are subscribed.</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="space-y-2">
@@ -168,15 +186,27 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo 
                     placeholder="name@company.com"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
-                    className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-500 shadow-2xs"
+                    disabled={isSubmitting}
+                    className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-500 shadow-2xs disabled:opacity-60"
                   />
                   <button
                     type="submit"
-                    className="px-3.5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-lg text-xs transition-colors shrink-0 shadow-xs"
+                    disabled={isSubmitting}
+                    className="px-3.5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-lg text-xs transition-colors shrink-0 shadow-xs flex items-center justify-center gap-1.5 disabled:opacity-70 cursor-pointer"
                   >
-                    Join
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                        <span>Joining...</span>
+                      </>
+                    ) : (
+                      <span>Join</span>
+                    )}
                   </button>
                 </div>
+                {errorMessage && (
+                  <p className="text-red-500 text-2xs">{errorMessage}</p>
+                )}
               </form>
             )}
 
