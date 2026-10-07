@@ -88,6 +88,23 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onRequestDemo }) => {
             {/* LEFT COLUMN: CONTACT DETAILS & CREDENTIALS (5 cols) */}
             <div className="lg:col-span-5 space-y-6">
               <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-6">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xs mb-4">
+                  <img 
+                    src="/images/corporate-hq-center.jpg" 
+                    alt="PrishiTech Central Operations & Engineering Facility" 
+                    className="w-full h-48 object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-3 left-3 text-white">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold block">
+                      NCR Technical Hub
+                    </span>
+                    <span className="text-xs font-bold text-white">
+                      Vaishali, Ghaziabad Engineering Center
+                    </span>
+                  </div>
+                </div>
+
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-1.5">Corporate Headquarters</h3>
                   <p className="text-slate-500 text-xs leading-relaxed">

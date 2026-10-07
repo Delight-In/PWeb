@@ -53,6 +53,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
 
           {/* Clean, Lightweight Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2 text-sm">
+            <Link
+              to="/about"
+              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
+                isActive('/about')
+                  ? 'text-emerald-700 bg-emerald-50/80 font-semibold'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+              }`}
+            >
+              About Us
+            </Link>
+
             {/* Solutions Dropdown */}
             <div 
               className="relative"
@@ -121,40 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              Industries
-            </Link>
-
-            <Link
-              to="/triaxis"
-              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
-                isActive('/triaxis')
-                  ? 'text-emerald-700 bg-emerald-50/80 font-semibold'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-              }`}
-            >
-              TRIAXIS
-            </Link>
-
-            <Link
-              to="/about"
-              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
-                isActive('/about')
-                  ? 'text-emerald-700 bg-emerald-50/80 font-semibold'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-              }`}
-            >
-              About
-            </Link>
-
-            <Link
-              to="/insights"
-              className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
-                isActive('/insights')
-                  ? 'text-emerald-700 bg-emerald-50/80 font-semibold'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-              }`}
-            >
-              Insights
+              Industries Served
             </Link>
 
             <Link
@@ -197,6 +175,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
       {isOpen && (
         <div className="md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-1 animate-fade-in shadow-lg">
           <Link
+            to="/about"
+            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >
+            About Us
+          </Link>
+
+          <Link
             to="/solutions/resource-intelligence"
             className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
           >
@@ -216,28 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
             to="/industries"
             className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
           >
-            Industries
-          </Link>
-
-          <Link
-            to="/triaxis"
-            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
-          >
-            TRIAXIS Consortium
-          </Link>
-
-          <Link
-            to="/about"
-            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
-          >
-            About Us
-          </Link>
-
-          <Link
-            to="/insights"
-            className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
-          >
-            Insights
+            Industries Served
           </Link>
 
           <Link
