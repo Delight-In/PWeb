@@ -4,7 +4,6 @@ import {
   Zap, Award, ArrowRight, Network, ShieldCheck, Check
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { PlatformBottomCta } from '../components/PlatformBottomCta';
 
 interface TriaxisPageProps {
@@ -100,11 +99,6 @@ export const TriaxisPage: React.FC<TriaxisPageProps> = ({ onRequestDemo }) => {
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            ENTERPRISE LOGO CLOUD
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             SECTION: THE THREE AXES OF TRIAXIS

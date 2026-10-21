@@ -11,7 +11,6 @@ import {
 import { SeoHead } from '../components/SeoHead';
 import { TelemetrySimulator } from '../components/TelemetrySimulator';
 import { RoiCalculator } from '../components/RoiCalculator';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { PlatformBottomCta } from '../components/PlatformBottomCta';
 
 interface HomePageProps {
@@ -237,11 +236,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestDemo }) => {
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            2. ENTERPRISE LOGO CLOUD (Platform UI Standard)
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             3. CORE CAPABILITIES (Alternating Grid & Bento Cards)

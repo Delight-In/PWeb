@@ -4,7 +4,6 @@ import {
   Search, ArrowRight, X
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { PlatformBottomCta } from '../components/PlatformBottomCta';
 import type { InsightArticle } from '../types';
 
@@ -125,11 +124,6 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({ onRequestDemo }) => 
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            ENTERPRISE LOGO CLOUD
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             SEARCH & FILTER BAR

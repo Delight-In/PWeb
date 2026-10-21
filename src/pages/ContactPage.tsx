@@ -5,7 +5,6 @@ import {
   Send, ShieldCheck, AlertCircle, Loader2, Calendar, Sparkles
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { sendContactInquiry } from '../services/leadService';
 import type { ContactFormData, AreaOfInterest } from '../types';
 
@@ -117,11 +116,6 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            ENTERPRISE LOGO CLOUD
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             MAIN CONTENT: DETAILS + UNIFIED BOOK DEMO / INQUIRY FORM

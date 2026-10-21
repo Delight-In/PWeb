@@ -6,7 +6,6 @@ import {
   Check
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { PlatformBottomCta } from '../components/PlatformBottomCta';
 
 interface AboutPageProps {
@@ -98,11 +97,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onRequestDemo }) => {
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            2. ENTERPRISE LOGO CLOUD (Platform UI Standard)
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             3. GUIDING PHILOSOPHY (3-Column Clean Cards)

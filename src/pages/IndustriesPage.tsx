@@ -6,7 +6,6 @@ import {
   ChevronRight, Check
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { PlatformBottomCta } from '../components/PlatformBottomCta';
 
 interface IndustriesPageProps {
@@ -215,11 +214,6 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onRequestDemo })
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            ENTERPRISE LOGO CLOUD
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             2. INTERACTIVE SECTOR STUDIO

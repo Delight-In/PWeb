@@ -6,7 +6,6 @@ import {
   Check
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { PlatformBottomCta } from '../components/PlatformBottomCta';
 
 interface DigitalTransformationPageProps {
@@ -303,11 +302,6 @@ export const DigitalTransformationPage: React.FC<DigitalTransformationPageProps>
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            ENTERPRISE LOGO CLOUD
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             2. INTERACTIVE SERVICE STUDIO

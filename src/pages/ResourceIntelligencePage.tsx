@@ -6,7 +6,6 @@ import {
   Layers, Check, Radio
 } from 'lucide-react';
 import { SeoHead } from '../components/SeoHead';
-import { PlatformLogoCloud } from '../components/PlatformLogoCloud';
 import { PlatformBottomCta } from '../components/PlatformBottomCta';
 
 interface ResourceIntelligencePageProps {
@@ -302,11 +301,6 @@ export const ResourceIntelligencePage: React.FC<ResourceIntelligencePageProps> =
             </div>
           </div>
         </section>
-
-        {/* =========================================================
-            ENTERPRISE LOGO CLOUD
-        ========================================================= */}
-        <PlatformLogoCloud />
 
         {/* =========================================================
             2. INTERACTIVE PILLAR STUDIO (5-STREAM TELEMETRY)
