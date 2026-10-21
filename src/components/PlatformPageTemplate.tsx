@@ -255,7 +255,7 @@ export const PlatformPageTemplate: React.FC<PlatformPageTemplateProps> = ({
                     </h3>
 
                     <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                      {cap.description}
+                      {cap.description.replace(/\s*(What this enables|Key features):?\s*$/i, '').trim()}
                     </p>
 
                     {cap.bullets && cap.bullets.length > 0 && (

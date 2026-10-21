@@ -259,7 +259,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "connect-more-assets-without-custom-engineering",
         "eyebrow": "Native Connectors",
         "title": "Connect more assets without custom engineering",
-        "description": "Connect directly to industrial devices using a high-performance library of native drivers—reducing custom integration work and accelerating time-to-first-data.\n \nWhat this enables:",
+        "description": "Connect directly to industrial devices using a high-performance library of native drivers—reducing custom integration work and accelerating time-to-first-data.",
         "bullets": [
           "Connect modern and legacy OT and IT assets through native drivers",
           "Ingest data directly from devices without middleware",
@@ -274,7 +274,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "apply-the-right-ingestion-approach-for-each-asset",
         "eyebrow": "Multiple Protocols",
         "title": "Apply the right ingestion approach for each asset",
-        "description": "Industrial environments require different ingestion methods depending on network load, polling behavior, and reliability requirements. PrishiTech supports multiple communication approaches to balance responsiveness, throughput, and scale.\n \nWhat this enables:",
+        "description": "Industrial environments require different ingestion methods depending on network load, polling behavior, and reliability requirements. PrishiTech supports multiple communication approaches to balance responsiveness, throughput, and scale.",
         "bullets": [
           "Support for mixed-protocol industrial environments",
           "Adapt ingestion based on network and system constraints",
@@ -289,7 +289,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "unify-industrial-data-beyond-time-series-signals",
         "eyebrow": "Multiple Data Types",
         "title": "Unify industrial data beyond time-series signals",
-        "description": "Industrial operations rely on more than telemetry. PrishiTech ingests time-series data, events, alarms, batches, and structured records into a consistent operational model.\n \nWhat this enables:",
+        "description": "Industrial operations rely on more than telemetry. PrishiTech ingests time-series data, events, alarms, batches, and structured records into a consistent operational model.",
         "bullets": [
           "Capture time-series, event, alarm, and batch data",
           "Ingest relational and structured data alongside telemetry",
@@ -304,7 +304,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "reduce-onboarding-time-with-automated-asset-discovery",
         "eyebrow": "DEVICE DISCOVERY",
         "title": "Reduce onboarding time with automated asset discovery",
-        "description": "Manual asset inventory slows deployment and creates visibility gaps. Automatically identify assets on the network and surface key connection details to accelerate deployment and improve visibility.\n \nWhat this enables:",
+        "description": "Manual asset inventory slows deployment and creates visibility gaps. Automatically identify assets on the network and surface key connection details to accelerate deployment and improve visibility.",
         "bullets": [
           "Detect OT and IT assets automatically",
           "Surface device type, vendor, IP, protocol, and last-seen status",
@@ -319,7 +319,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "organize-and-scale-signal-onboarding",
         "eyebrow": "TAG DISCOVERY",
         "title": "Organize and scale signal onboarding",
-        "description": "Browse, search, and organize signals at scale to eliminate manual tag configuration bottlenecks.\n \nWhat this enables:",
+        "description": "Browse, search, and organize signals at scale to eliminate manual tag configuration bottlenecks.",
         "bullets": [
           "Browse large signal hierarchies without point-by-point setup",
           "Search and filter tags quickly",
@@ -398,7 +398,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "turn-raw-signals-into-meaningful-operational-data",
         "eyebrow": "Data Contextualization",
         "title": "Turn raw signals into meaningful operational data",
-        "description": "Raw machine data becomes usable when it includes context—what the signal represents, where it belongs, and how it should be interpreted.\n \nWhat this enables:",
+        "description": "Raw machine data becomes usable when it includes context—what the signal represents, where it belongs, and how it should be interpreted.",
         "bullets": [
           "Attach asset context to machine and process data",
           "Add units, timestamps, and operational metadata",
@@ -413,7 +413,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "build-once-deploy-consistent-data-models-everywhere",
         "eyebrow": "Data Modeling",
         "title": "Build once, deploy consistent data models everywhere",
-        "description": "Industrial scale requires repeatable structure. Data models standardize machines, lines, and plants so data can be reused consistently across sites.\n \nWhat this enables:",
+        "description": "Industrial scale requires repeatable structure. Data models standardize machines, lines, and plants so data can be reused consistently across sites.",
         "bullets": [
           "Create reusable data models for assets, lines, facilities",
           "Standardize attributes, relationships, and hierarchies",
@@ -428,7 +428,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "move-transform-and-manage-data-across-systems",
         "eyebrow": "DATA ORCHESTRATION",
         "title": "Move, transform, and manage data across systems",
-        "description": "Industrial data pipelines must do more than move data—they must transform, enrich, and route it reliably across edge and enterprise environments\n \nWhat this enables:",
+        "description": "Industrial data pipelines must do more than move data—they must transform, enrich, and route it reliably across edge and enterprise environments",
         "bullets": [
           "Collect, transform, and route data across pipelines",
           "Coordinate data movement across OT and IT systems",
@@ -443,7 +443,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "publish-once-consume-everywhere-in-real-time",
         "eyebrow": "Data Sharing",
         "title": "Publish once, consume everywhere in real time",
-        "description": "Industrial systems scale faster when data is shared through a common layer instead of point-to-point integrations. This creates a cleaner operating model for analytics and AI.\n \nWhat this enables:",
+        "description": "Industrial systems scale faster when data is shared through a common layer instead of point-to-point integrations. This creates a cleaner operating model for analytics and AI.",
         "bullets": [
           "Publish curated data into a Unified Namespace",
           "Distribute data through MQTT and pub / sub patterns",
@@ -458,7 +458,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "bridge-ot-data-with-cloud-and-business-applications",
         "eyebrow": "Data Integration",
         "title": "Bridge OT data with cloud and business applications",
-        "description": "Industrial DataOps connects operational data with the broader business, enabling workflows, analytics, and closed-loop optimization.\n \nWhat this enables:",
+        "description": "Industrial DataOps connects operational data with the broader business, enabling workflows, analytics, and closed-loop optimization.",
         "bullets": [
           "Integrate with cloud, databases, and enterprise systems",
           "Enable secure OT–IT data exchange",
@@ -537,7 +537,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "deploy-and-scale-edge-applications-where-they-create-value",
         "eyebrow": "Edge Applications",
         "title": "Deploy and scale edge applications where they create value",
-        "description": "Applications are most effective when they run close to machines and users. Edge applications provide a local runtime for processing, storing, analyzing, and visualizing data without relying on centralized systems.\n \nWhat this enables:",
+        "description": "Applications are most effective when they run close to machines and users. Edge applications provide a local runtime for processing, storing, analyzing, and visualizing data without relying on centralized systems.",
         "bullets": [
           "Deploy containerized applications at the edge",
           "Support low-latency processing and local execution",
@@ -552,7 +552,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "analyze-and-act-on-data-in-real-time",
         "eyebrow": "Edge Analytics",
         "title": "Analyze and act on data in real time",
-        "description": "Edge analytics enables KPIs, anomaly detection, and condition-based actions to run in real time—without sending every signal to the cloud.\n \nWhat this enables:",
+        "description": "Edge analytics enables KPIs, anomaly detection, and condition-based actions to run in real time—without sending every signal to the cloud.",
         "bullets": [
           "Compute KPIs at the source of data generation",
           "Detect anomalies and deviations in real time",
@@ -567,7 +567,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "deliver-predictions-and-optimization-without-delay",
         "eyebrow": "Edge AI / ML",
         "title": "Deliver predictions and optimization without delay",
-        "description": "AI models create more value when they run where decisions are made. Edge AI enables local inference for anomaly detection, forecasting, optimization, and classification.\n \nWhat this enables:",
+        "description": "AI models create more value when they run where decisions are made. Edge AI enables local inference for anomaly detection, forecasting, optimization, and classification.",
         "bullets": [
           "Run machine learning inference locally",
           "Deliver immediate predictions and optimization signals",
@@ -582,7 +582,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "enable-natural-language-interaction-with-industrial-systems",
         "eyebrow": "Edge LLM / SLM",
         "title": "Enable natural-language interaction with industrial systems",
-        "description": "Language models make industrial systems easier to interpret by summarizing events, explaining conditions, and enabling natural-language workflows.\n \nWhat this enables:",
+        "description": "Language models make industrial systems easier to interpret by summarizing events, explaining conditions, and enabling natural-language workflows.",
         "bullets": [
           "Summarize events and operational conditions",
           "Interpret logs and system activity",
@@ -597,7 +597,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "move-from-automation-to-intelligent-action",
         "eyebrow": "Agentic Edge",
         "title": "Move from automation to intelligent action",
-        "description": "Agentic Edge introduces guided autonomy—allowing software agents to observe conditions, reason over data, recommend actions, and execute workflows within defined guardrails.\n \nWhat this enables:",
+        "description": "Agentic Edge introduces guided autonomy—allowing software agents to observe conditions, reason over data, recommend actions, and execute workflows within defined guardrails.",
         "bullets": [
           "Observe and interpret industrial conditions in real time",
           "Reason across OT and IT data",
@@ -676,7 +676,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "support-air-gapped-and-segmented-industrial-networks",
         "eyebrow": "AIR-gapped network",
         "title": "Support air-gapped and segmented industrial networks",
-        "description": "Many industrial environments require isolated execution models where external connectivity is limited or restricted. Data Security enables secure operation in these environments without disrupting local workflows.\n \nWhat this enables:",
+        "description": "Many industrial environments require isolated execution models where external connectivity is limited or restricted. Data Security enables secure operation in these environments without disrupting local workflows.",
         "bullets": [
           "Run applications, analytics, and AI in air-gapped environments",
           "Maintain operations without dependency on external connectivity",
@@ -691,7 +691,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "control-how-data-moves-across-ot-and-it",
         "eyebrow": "Data Gateway",
         "title": "Control how data moves across OT and IT",
-        "description": "Industrial data movement must be controlled and policy-driven. A data gateway ensures that only approved data leaves production environments while maintaining reliability across network boundaries.\n \nWhat this enables:",
+        "description": "Industrial data movement must be controlled and policy-driven. A data gateway ensures that only approved data leaves production environments while maintaining reliability across network boundaries.",
         "bullets": [
           "Create a controlled bridge between OT and enterprise systems",
           "Filter and govern outbound data movement",
@@ -706,7 +706,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "ensure-the-right-access-for-the-right-users",
         "eyebrow": "ROLE-BASED ACCESS (RBAC)",
         "title": "Ensure the right access for the right users",
-        "description": "Industrial environments require collaboration without overexposure. Role-based access ensures users only interact with the data, systems, and functions relevant to their role.\n \nWhat this enables:",
+        "description": "Industrial environments require collaboration without overexposure. Role-based access ensures users only interact with the data, systems, and functions relevant to their role.",
         "bullets": [
           "Apply least-privilege access across users and teams",
           "Scope permissions by site, asset, and operational role",
@@ -721,7 +721,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "track-activity-across-systems-and-workflows",
         "eyebrow": "Audit Trails",
         "title": "Track activity across systems and workflows",
-        "description": "Security depends on visibility. Audit trails provide traceability across user actions, system changes, and operational events.\n \nWhat this enables:",
+        "description": "Security depends on visibility. Audit trails provide traceability across user actions, system changes, and operational events.",
         "bullets": [
           "Capture logs for user activity and system activity",
           "Improve traceability across administrative workflows",
@@ -736,7 +736,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "protect-data-in-motion-across-edge-and-cloud",
         "eyebrow": "ENCRYPTION & CERTIFICATION",
         "title": "Protect data in motion across edge and cloud",
-        "description": "Industrial systems rely on secure communication between devices, services, and platforms. Encryption and certificate management ensure trusted and protected data exchange.\n \nWhat this enables:",
+        "description": "Industrial systems rely on secure communication between devices, services, and platforms. Encryption and certificate management ensure trusted and protected data exchange.",
         "bullets": [
           "Secure service and communication using SSL and TLS",
           "Protect device-to-service and service-to-service connections",
@@ -815,7 +815,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "control-how-data-flows-is-retained-and-is-shared",
         "eyebrow": "Policy & Control",
         "title": "Control how data flows, is retained, and is shared",
-        "description": "Governance begins with policy. Defining how data moves, where it can go, and how it is used creates a disciplined operating model for industrial data.\n \nWhat this enables:",
+        "description": "Governance begins with policy. Defining how data moves, where it can go, and how it is used creates a disciplined operating model for industrial data.",
         "bullets": [
           "Enforce rules for data flow, routing, and destination control",
           "Apply retention, masking, and approval-based data policies",
@@ -830,7 +830,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "create-a-searchable-structured-view-of-data-assets",
         "eyebrow": "Metadata Catalog",
         "title": "Create a searchable, structured view of data assets",
-        "description": "As data volumes grow, teams need visibility into what exists and what can be trusted. A metadata catalog organizes assets, tags, models, and data products into a unified, searchable layer.\n \nWhat this enables:",
+        "description": "As data volumes grow, teams need visibility into what exists and what can be trusted. A metadata catalog organizes assets, tags, models, and data products into a unified, searchable layer.",
         "bullets": [
           "Catalog assets, tags, models, and data products",
           "Improve visibility across operational data sources",
@@ -845,7 +845,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "understand-where-data-comes-from-and-how-it-s-used",
         "eyebrow": "Data Lineage",
         "title": "Understand where data comes from and how it’s used",
-        "description": "Data trust depends on traceability. Lineage provides visibility into how data is created, transformed, and consumed across systems.\n \nWhat this enables:",
+        "description": "Data trust depends on traceability. Lineage provides visibility into how data is created, transformed, and consumed across systems.",
         "bullets": [
           "Track data origins across OT and enterprise sources",
           "Map transformations across pipelines, models, and applications",
@@ -860,7 +860,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "standardize-definitions-across-ot-it-and-business",
         "eyebrow": "BUSINESS GLOSSARY",
         "title": "Standardize definitions across OT, IT, and business",
-        "description": "Governance requires consistent, shared interpretation. A business glossary ensures metrics, assets, and processes are understood the same way across teams.\n \nWhat this enables:",
+        "description": "Governance requires consistent, shared interpretation. A business glossary ensures metrics, assets, and processes are understood the same way across teams.",
         "bullets": [
           "Define standardized business and technical terminology",
           "Align interpretation across systems and teams",
@@ -875,7 +875,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "assign-responsibility-for-every-critical-data-asset",
         "eyebrow": "OWNERSHIP & DOCUMENTATION",
         "title": "Assign responsibility for every critical data asset",
-        "description": "Data becomes more reliable when ownership is clear. Governance defines responsibility and preserves context for long-term use.\n \nWhat this enables:",
+        "description": "Data becomes more reliable when ownership is clear. Governance defines responsibility and preserves context for long-term use.",
         "bullets": [
           "Assign ownership across data assets and systems",
           "Maintain documentation for operational and analytical use",
@@ -954,7 +954,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "provision-configure-and-monitor-devices-across-sites",
         "eyebrow": "Edge Device Management",
         "title": "Provision, configure, and monitor devices across sites",
-        "description": "Distributed environments require more than local administration. Centralized device management enables remote provisioning, configuration, monitoring, and updates across edge fleets.\n \nWhat this enables:",
+        "description": "Distributed environments require more than local administration. Centralized device management enables remote provisioning, configuration, monitoring, and updates across edge fleets.",
         "bullets": [
           "Provision edge devices remotely across plants",
           "Standardize configuration and deployment across sites",
@@ -970,7 +970,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "monitor-data-flows-storage-and-quality-from-one-view",
         "eyebrow": "Data Management",
         "title": "Monitor data flows, storage, and quality from one view",
-        "description": "As data moves across distributed environments, reliability becomes harder to maintain. Centralized data management provides visibility into data behavior without removing edge-level control.\n \nWhat this enables:",
+        "description": "As data moves across distributed environments, reliability becomes harder to maintain. Centralized data management provides visibility into data behavior without removing edge-level control.",
         "bullets": [
           "Visualize data flows across systems and sites",
           "Monitor storage behavior and data reliability",
@@ -986,7 +986,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "deploy-version-and-manage-applications-consistently",
         "eyebrow": "Application Management",
         "title": "Deploy, version, and manage applications consistently",
-        "description": "Scaling industrial applications requires disciplined lifecycle management. Centralized control ensures consistent deployment, versioning, and rollback across environments.\n \nWhat this enables:",
+        "description": "Scaling industrial applications requires disciplined lifecycle management. Centralized control ensures consistent deployment, versioning, and rollback across environments.",
         "bullets": [
           "Deploy containerized applications across multiple sites",
           "Manage versioning, release workflows, and rollout",
@@ -1002,7 +1002,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "govern-data-models-with-consistency-and-version-control",
         "eyebrow": "Data Model Management",
         "title": "Govern data models with consistency and version control",
-        "description": "Operational consistency depends on shared structure. Data model management ensures assets, processes, and relationships are represented consistently across plants.\n \nWhat this enables:",
+        "description": "Operational consistency depends on shared structure. Data model management ensures assets, processes, and relationships are represented consistently across plants.",
         "bullets": [
           "Version and govern operational data models",
           "Standardize structures and definitions across sites",
@@ -1018,7 +1018,7 @@ export const PLATFORM_PAGES_DATA: Record<string, PrishiTechPageData> = {
         "id": "deploy-monitor-and-update-ai-with-control",
         "eyebrow": "AI Model Management",
         "title": "Deploy, monitor, and update AI with control",
-        "description": "Industrial AI requires lifecycle discipline across environments. Centralized AI model management ensures models are deployed, monitored, and updated consistently.\n \nWhat this enables:",
+        "description": "Industrial AI requires lifecycle discipline across environments. Centralized AI model management ensures models are deployed, monitored, and updated consistently.",
         "bullets": [
           "Register and manage AI models centrally",
           "Deploy models across distributed edge locations",
