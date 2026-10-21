@@ -1,4 +1,5 @@
 export type AreaOfInterest = 
+  | 'Book a Platform Demo'
   | 'Resource Intelligence'
   | 'IT Services & Digital Transformation'
   | 'Energy Advisory'

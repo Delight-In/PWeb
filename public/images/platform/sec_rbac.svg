@@ -1,0 +1,101 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 60)">
+      <rect width="600" height="400" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+
+      <!-- Left Master User Icon -->
+      <g transform="translate(50, 150)">
+        <rect width="90" height="90" rx="10" fill="#121824" stroke="#253246" />
+        <circle cx="45" cy="36" r="14" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+        <path d="M26 68 C26 55 35 52 45 52 C55 52 64 55 64 68" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+      </g>
+
+      <!-- Connecting Lines -->
+      <line x1="140" y1="195" x2="190" y2="195" stroke="#05DF72" stroke-width="1.8"/>
+      <line x1="190" y1="110" x2="190" y2="280" stroke="#05DF72" stroke-width="1.8"/>
+      <line x1="190" y1="110" x2="220" y2="110" stroke="#05DF72" stroke-width="1.8"/>
+      <line x1="190" y1="195" x2="220" y2="195" stroke="#05DF72" stroke-width="1.8"/>
+      <line x1="190" y1="280" x2="220" y2="280" stroke="#05DF72" stroke-width="1.8"/>
+
+      <!-- 3 Role Users -->
+      
+        <g transform="translate(220, 85)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="25" cy="18" r="8" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+          <path d="M14 38 C14 30 19 28 25 28 C31 28 36 30 36 38" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+        </g>
+        <!-- Permissions Gear -->
+        <g transform="translate(360, 85)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="25" cy="25" r="8" stroke="#05DF72" stroke-width="1.5" fill="none"/>
+          <path d="M25 10 V14 M25 36 V40 M10 25 H14 M36 25 H40" stroke="#05DF72" stroke-width="2"/>
+        </g>
+        <!-- Security Key -->
+        <g transform="translate(480, 85)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="22" cy="22" r="7" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
+          <line x1="27" y1="27" x2="38" y2="38" stroke="#F59E0B" stroke-width="2"/>
+          <line x1="34" y1="34" x2="38" y2="30" stroke="#F59E0B" stroke-width="2"/>
+        </g>
+        <line x1="270" y1="110" x2="360" y2="110" stroke="#05DF72" stroke-width="1.5"/>
+        <line x1="410" y1="110" x2="480" y2="110" stroke="#05DF72" stroke-width="1.5"/>
+      
+        <g transform="translate(220, 170)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="25" cy="18" r="8" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+          <path d="M14 38 C14 30 19 28 25 28 C31 28 36 30 36 38" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+        </g>
+        <!-- Permissions Gear -->
+        <g transform="translate(360, 170)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="25" cy="25" r="8" stroke="#05DF72" stroke-width="1.5" fill="none"/>
+          <path d="M25 10 V14 M25 36 V40 M10 25 H14 M36 25 H40" stroke="#05DF72" stroke-width="2"/>
+        </g>
+        <!-- Security Key -->
+        <g transform="translate(480, 170)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="22" cy="22" r="7" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
+          <line x1="27" y1="27" x2="38" y2="38" stroke="#F59E0B" stroke-width="2"/>
+          <line x1="34" y1="34" x2="38" y2="30" stroke="#F59E0B" stroke-width="2"/>
+        </g>
+        <line x1="270" y1="195" x2="360" y2="195" stroke="#05DF72" stroke-width="1.5"/>
+        <line x1="410" y1="195" x2="480" y2="195" stroke="#05DF72" stroke-width="1.5"/>
+      
+        <g transform="translate(220, 255)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="25" cy="18" r="8" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+          <path d="M14 38 C14 30 19 28 25 28 C31 28 36 30 36 38" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+        </g>
+        <!-- Permissions Gear -->
+        <g transform="translate(360, 255)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="25" cy="25" r="8" stroke="#05DF72" stroke-width="1.5" fill="none"/>
+          <path d="M25 10 V14 M25 36 V40 M10 25 H14 M36 25 H40" stroke="#05DF72" stroke-width="2"/>
+        </g>
+        <!-- Security Key -->
+        <g transform="translate(480, 255)">
+          <rect width="50" height="50" rx="6" fill="#141A26" stroke="#253246" />
+          <circle cx="22" cy="22" r="7" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
+          <line x1="27" y1="27" x2="38" y2="38" stroke="#F59E0B" stroke-width="2"/>
+          <line x1="34" y1="34" x2="38" y2="30" stroke="#F59E0B" stroke-width="2"/>
+        </g>
+        <line x1="270" y1="280" x2="360" y2="280" stroke="#05DF72" stroke-width="1.5"/>
+        <line x1="410" y1="280" x2="480" y2="280" stroke="#05DF72" stroke-width="1.5"/>
+      
+    </g>
+  
+</svg>

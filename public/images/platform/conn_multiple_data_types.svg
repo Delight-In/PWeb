@@ -1,0 +1,61 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 70)">
+      <rect width="600" height="380" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+      
+      <!-- Left Dashboard Card -->
+      <g transform="translate(60, 130)">
+        <rect width="130" height="120" rx="10" fill="#121824" stroke="#253246" stroke-width="1.5" />
+        <rect x="25" y="30" width="80" height="60" rx="6" fill="none" stroke="#05DF72" stroke-width="2"/>
+        <line x1="45" y1="65" x2="45" y2="80" stroke="#05DF72" stroke-width="3"/>
+        <line x1="58" y1="52" x2="58" y2="80" stroke="#05DF72" stroke-width="3"/>
+        <line x1="71" y1="40" x2="71" y2="80" stroke="#05DF72" stroke-width="3"/>
+        <line x1="84" y1="58" x2="84" y2="80" stroke="#05DF72" stroke-width="3"/>
+      </g>
+
+      <!-- Branching Lines -->
+      <path d="M 190 190 C 230 190, 240 100, 280 100" fill="none" stroke="#05DF72" stroke-width="1.8" />
+      <path d="M 190 190 L 280 190" fill="none" stroke="#05DF72" stroke-width="1.8" />
+      <path d="M 190 190 C 230 190, 240 280, 280 280" fill="none" stroke="#05DF72" stroke-width="1.8" />
+
+      <!-- Right 3 Data Types -->
+      <g transform="translate(280, 68)">
+        <rect width="250" height="64" rx="8" fill="#121824" stroke="#253246" />
+        <polygon points="26,42 36,22 46,42" fill="none" stroke="#38BDF8" stroke-width="2"/>
+        <line x1="36" y1="28" x2="36" y2="34" stroke="#38BDF8" stroke-width="2"/>
+        <circle cx="36" cy="38" r="1" fill="#38BDF8"/>
+        <text x="60" y="38" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Time series data</text>
+      </g>
+
+      <g transform="translate(280, 158)">
+        <rect width="250" height="64" rx="8" fill="#121824" stroke="#253246" />
+        <polygon points="26,42 36,22 46,42" fill="none" stroke="#A855F7" stroke-width="2"/>
+        <line x1="36" y1="28" x2="36" y2="34" stroke="#A855F7" stroke-width="2"/>
+        <circle cx="36" cy="38" r="1" fill="#A855F7"/>
+        <text x="60" y="38" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Relational Data</text>
+      </g>
+
+      <g transform="translate(280, 248)">
+        <rect width="250" height="64" rx="8" fill="#121824" stroke="#253246" />
+        <polygon points="26,42 36,22 46,42" fill="none" stroke="#F59E0B" stroke-width="2"/>
+        <line x1="36" y1="28" x2="36" y2="34" stroke="#F59E0B" stroke-width="2"/>
+        <circle cx="36" cy="38" r="1" fill="#F59E0B"/>
+        <text x="60" y="38" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Event Data</text>
+      </g>
+    </g>
+  
+</svg>

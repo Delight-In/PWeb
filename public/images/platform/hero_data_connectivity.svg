@@ -1,0 +1,140 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <!-- Top System Box -->
+    <g transform="translate(130, 28)">
+      <rect width="540" height="48" rx="8" fill="#141A26" stroke="#253246" stroke-width="1.2" />
+      <text x="270" y="29" fill="#E2E8F0" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2" text-anchor="middle">
+        ENTERPRISE IT SYSTEMS, CLOUD APPLICATIONS, CLOUD LLMS
+      </text>
+    </g>
+
+    <!-- Bi-directional Arrow Top -->
+    <g transform="translate(400, 76)">
+      <line x1="0" y1="0" x2="0" y2="26" stroke="#05DF72" stroke-width="1.8" />
+      <polygon points="-3.5,4 0,0 3.5,4" fill="#05DF72" />
+      <polygon points="-3.5,22 0,26 3.5,22" fill="#05DF72" />
+    </g>
+
+    <!-- Central Foundation Container -->
+    <g transform="translate(68, 102)">
+      <rect width="664" height="306" rx="14" fill="#0B0F17" stroke="#1E293B" stroke-width="1.5" />
+      
+      <!-- Central Title -->
+      <text x="32" y="42" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">
+        PrishiTech Modern Industrial Data Foundation
+      </text>
+
+      <!-- 3x2 Grid of Capabilities -->
+      <g transform="translate(32, 64)">
+        
+            <g transform="translate(0, 0)">
+              <rect width="192" height="96" rx="10" fill="#0B1A14" stroke="#05DF72" stroke-width="2" />
+              <g transform="translate(18, 18)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M10 6 L10 14 M6 10 L14 10 M4 6 H16 V16 H4 Z M18 10 H22 M2 10 H6" stroke="#05DF72" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </g>
+              <text x="18" y="60" fill="#05DF72" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" letter-spacing="0.2">
+                <tspan x="18" dy="0">Data</tspan>
+                <tspan x="18" dy="20">Connectivity</tspan>
+              </text>
+            </g>
+          
+            <g transform="translate(204, 0)">
+              <rect width="192" height="96" rx="10" fill="#121824" stroke="#222F44" stroke-width="1.2" />
+              <g transform="translate(18, 18)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="7" r="3" stroke="#94A3B8" stroke-width="1.8"/><circle cx="7" cy="17" r="3" stroke="#94A3B8" stroke-width="1.8"/><circle cx="17" cy="17" r="3" stroke="#94A3B8" stroke-width="1.8"/><line x1="9.5" y1="9" x2="8" y2="14" stroke="#94A3B8" stroke-width="1.5"/><line x1="14.5" y1="9" x2="16" y2="14" stroke="#94A3B8" stroke-width="1.5"/><line x1="10" y1="17" x2="14" y2="17" stroke="#94A3B8" stroke-width="1.5"/>
+                </svg>
+              </g>
+              <text x="18" y="60" fill="#F1F5F9" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="0.2">
+                <tspan x="18" dy="0">Industrial</tspan>
+                <tspan x="18" dy="20">Data-Ops</tspan>
+              </text>
+            </g>
+          
+            <g transform="translate(408, 0)">
+              <rect width="192" height="96" rx="10" fill="#121824" stroke="#222F44" stroke-width="1.2" />
+              <g transform="translate(18, 18)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </g>
+              <text x="18" y="60" fill="#F1F5F9" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="0.2">
+                <tspan x="18" dy="0">Edge</tspan>
+                <tspan x="18" dy="20">Intelligence</tspan>
+              </text>
+            </g>
+          
+            <g transform="translate(0, 110)">
+              <rect width="192" height="96" rx="10" fill="#121824" stroke="#222F44" stroke-width="1.2" />
+              <g transform="translate(18, 18)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3 L19 6 V11 C19 16 12 20 12 20 C12 20 5 16 5 11 V6 Z" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="2" fill="#94A3B8"/>
+                </svg>
+              </g>
+              <text x="18" y="60" fill="#F1F5F9" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="0.2">
+                <tspan x="18" dy="0">Data</tspan>
+                <tspan x="18" dy="20">Security</tspan>
+              </text>
+            </g>
+          
+            <g transform="translate(204, 110)">
+              <rect width="192" height="96" rx="10" fill="#121824" stroke="#222F44" stroke-width="1.2" />
+              <g transform="translate(18, 18)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 14 C4 14 3 12.5 3 10.5 C3 8.5 4.5 7 6.5 7 C7.5 5 9.5 4 12 4 C15 4 17.5 6 18 8.5 C19.5 8.8 21 10 21 11.8 C21 13.6 19.5 15 17.5 15 H6 Z" fill="none" stroke="#94A3B8" stroke-width="1.8"/><line x1="8" y1="18" x2="8" y2="21" stroke="#94A3B8" stroke-width="1.8"/><line x1="12" y1="18" x2="12" y2="21" stroke="#94A3B8" stroke-width="1.8"/><line x1="16" y1="18" x2="16" y2="21" stroke="#94A3B8" stroke-width="1.8"/>
+                </svg>
+              </g>
+              <text x="18" y="60" fill="#F1F5F9" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="0.2">
+                <tspan x="18" dy="0">Data</tspan>
+                <tspan x="18" dy="20">Governance</tspan>
+              </text>
+            </g>
+          
+            <g transform="translate(408, 110)">
+              <rect width="192" height="96" rx="10" fill="#121824" stroke="#222F44" stroke-width="1.2" />
+              <g transform="translate(18, 18)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#94A3B8" stroke-width="1.8"/>
+                </svg>
+              </g>
+              <text x="18" y="60" fill="#F1F5F9" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="0.2">
+                <tspan x="18" dy="0">Central</tspan>
+                <tspan x="18" dy="20">Management</tspan>
+              </text>
+            </g>
+          
+      </g>
+    </g>
+
+    <!-- Bi-directional Arrow Bottom -->
+    <g transform="translate(400, 408)">
+      <line x1="0" y1="0" x2="0" y2="26" stroke="#05DF72" stroke-width="1.8" />
+      <polygon points="-3.5,4 0,0 3.5,4" fill="#05DF72" />
+      <polygon points="-3.5,22 0,26 3.5,22" fill="#05DF72" />
+    </g>
+
+    <!-- Bottom OT System Box -->
+    <g transform="translate(130, 434)">
+      <rect width="540" height="48" rx="8" fill="#141A26" stroke="#253246" stroke-width="1.2" />
+      <text x="270" y="29" fill="#E2E8F0" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2" text-anchor="middle">
+        OT &amp; INDUSTRIAL IT SYSTEMS
+      </text>
+    </g>
+  
+</svg>

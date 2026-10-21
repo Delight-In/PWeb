@@ -1,0 +1,67 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(140, 60)">
+      <rect width="520" height="400" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+      <text x="40" y="44" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Enterprise Data Catalog</text>
+      <g transform="translate(40, 64)">
+        
+          <g transform="translate(0, 0)">
+            <rect width="440" height="36" rx="6" fill="#121824" stroke="#222F44" />
+            <text x="20" y="23" fill="#05DF72" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&gt;</text>
+            <text x="40" y="23" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">OPC UA Data Sources</text>
+          </g>
+        
+          <g transform="translate(0, 44)">
+            <rect width="440" height="36" rx="6" fill="#121824" stroke="#222F44" />
+            <text x="20" y="23" fill="#05DF72" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&gt;</text>
+            <text x="40" y="23" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Automation PLCs</text>
+          </g>
+        
+          <g transform="translate(0, 88)">
+            <rect width="440" height="36" rx="6" fill="#121824" stroke="#222F44" />
+            <text x="20" y="23" fill="#05DF72" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&gt;</text>
+            <text x="40" y="23" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Edge Data Platforms</text>
+          </g>
+        
+          <g transform="translate(0, 132)">
+            <rect width="440" height="36" rx="6" fill="#121824" stroke="#222F44" />
+            <text x="20" y="23" fill="#05DF72" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&gt;</text>
+            <text x="40" y="23" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Historian Databases</text>
+          </g>
+        
+          <g transform="translate(0, 176)">
+            <rect width="440" height="36" rx="6" fill="#121824" stroke="#222F44" />
+            <text x="20" y="23" fill="#05DF72" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&gt;</text>
+            <text x="40" y="23" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">SCADA Systems</text>
+          </g>
+        
+          <g transform="translate(0, 220)">
+            <rect width="440" height="36" rx="6" fill="#121824" stroke="#222F44" />
+            <text x="20" y="23" fill="#05DF72" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&gt;</text>
+            <text x="40" y="23" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Message Brokers (MQTT)</text>
+          </g>
+        
+          <g transform="translate(0, 264)">
+            <rect width="440" height="36" rx="6" fill="#121824" stroke="#222F44" />
+            <text x="20" y="23" fill="#05DF72" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&gt;</text>
+            <text x="40" y="23" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Cloud Data Lakehouse</text>
+          </g>
+        
+      </g>
+    </g>
+  
+</svg>

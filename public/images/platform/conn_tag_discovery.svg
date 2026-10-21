@@ -1,0 +1,54 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 60)">
+      <rect width="600" height="400" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+      <g transform="translate(70, 48)">
+        <!-- Step 1 -->
+        <g transform="translate(0, 0)">
+          <rect width="240" height="44" rx="8" fill="#141A26" stroke="#253246" />
+          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Plant 01 &rarr;</text>
+        </g>
+        <!-- Step 2 -->
+        <g transform="translate(60, 56)">
+          <rect width="260" height="44" rx="8" fill="#141A26" stroke="#253246" />
+          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Clean_System &rarr;</text>
+        </g>
+        <!-- Step 3 -->
+        <g transform="translate(120, 112)">
+          <rect width="280" height="44" rx="8" fill="#141A26" stroke="#253246" />
+          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Steam_Line &rarr;</text>
+        </g>
+        <!-- Discovered Tags -->
+        <g transform="translate(180, 168)">
+          <rect width="260" height="42" rx="8" fill="#121824" stroke="#05DF72" stroke-width="1.2" />
+          <circle cx="24" cy="21" r="3" fill="#05DF72" />
+          <text x="36" y="26" fill="#A7F3D0" font-family="monospace" font-size="14" font-weight="600">Temperature_PV</text>
+        </g>
+        <g transform="translate(180, 218)">
+          <rect width="260" height="42" rx="8" fill="#121824" stroke="#05DF72" stroke-width="1.2" />
+          <circle cx="24" cy="21" r="3" fill="#05DF72" />
+          <text x="36" y="26" fill="#A7F3D0" font-family="monospace" font-size="14" font-weight="600">Pressure_Bar</text>
+        </g>
+        <g transform="translate(180, 268)">
+          <rect width="260" height="42" rx="8" fill="#121824" stroke="#05DF72" stroke-width="1.2" />
+          <circle cx="24" cy="21" r="3" fill="#05DF72" />
+          <text x="36" y="26" fill="#A7F3D0" font-family="monospace" font-size="14" font-weight="600">Flow_Rate_GPM</text>
+        </g>
+      </g>
+    </g>
+  
+</svg>

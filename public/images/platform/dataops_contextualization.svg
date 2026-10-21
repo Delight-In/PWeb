@@ -1,0 +1,84 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 60)">
+      <rect width="600" height="400" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+      <g transform="translate(50, 45)">
+        
+          <g transform="translate(0, 0)">
+            <!-- Raw Tag Box -->
+            <rect width="130" height="54" rx="8" fill="#141A26" stroke="#253246" />
+            <text x="65" y="33" fill="#F8FAFC" font-family="monospace" font-size="14" font-weight="700" text-anchor="middle">#200030</text>
+
+            <!-- Arrow -->
+            <line x1="145" y1="27" x2="185" y2="27" stroke="#05DF72" stroke-width="2" />
+            <polygon points="181,23 189,27 181,31" fill="#05DF72" />
+
+            <!-- Meaning Box -->
+            <rect x="200" y="0" width="300" height="54" rx="8" fill="#121824" stroke="#253246" />
+            <circle cx="220" cy="27" r="4" fill="#EF4444" />
+            <text x="234" y="33" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Oven comms error</text>
+          </g>
+        
+          <g transform="translate(0, 78)">
+            <!-- Raw Tag Box -->
+            <rect width="130" height="54" rx="8" fill="#141A26" stroke="#253246" />
+            <text x="65" y="33" fill="#F8FAFC" font-family="monospace" font-size="14" font-weight="700" text-anchor="middle">#0x24F</text>
+
+            <!-- Arrow -->
+            <line x1="145" y1="27" x2="185" y2="27" stroke="#05DF72" stroke-width="2" />
+            <polygon points="181,23 189,27 181,31" fill="#05DF72" />
+
+            <!-- Meaning Box -->
+            <rect x="200" y="0" width="300" height="54" rx="8" fill="#121824" stroke="#253246" />
+            <circle cx="220" cy="27" r="4" fill="#38BDF8" />
+            <text x="234" y="33" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Oven heating set point = 591 °F</text>
+          </g>
+        
+          <g transform="translate(0, 156)">
+            <!-- Raw Tag Box -->
+            <rect width="130" height="54" rx="8" fill="#141A26" stroke="#253246" />
+            <text x="65" y="33" fill="#F8FAFC" font-family="monospace" font-size="14" font-weight="700" text-anchor="middle">#00101</text>
+
+            <!-- Arrow -->
+            <line x1="145" y1="27" x2="185" y2="27" stroke="#05DF72" stroke-width="2" />
+            <polygon points="181,23 189,27 181,31" fill="#05DF72" />
+
+            <!-- Meaning Box -->
+            <rect x="200" y="0" width="300" height="54" rx="8" fill="#121824" stroke="#253246" />
+            <circle cx="220" cy="27" r="4" fill="#05DF72" />
+            <text x="234" y="33" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Valve path D open</text>
+          </g>
+        
+          <g transform="translate(0, 234)">
+            <!-- Raw Tag Box -->
+            <rect width="130" height="54" rx="8" fill="#141A26" stroke="#253246" />
+            <text x="65" y="33" fill="#F8FAFC" font-family="monospace" font-size="14" font-weight="700" text-anchor="middle">"DONE"</text>
+
+            <!-- Arrow -->
+            <line x1="145" y1="27" x2="185" y2="27" stroke="#05DF72" stroke-width="2" />
+            <polygon points="181,23 189,27 181,31" fill="#05DF72" />
+
+            <!-- Meaning Box -->
+            <rect x="200" y="0" width="300" height="54" rx="8" fill="#121824" stroke="#253246" />
+            <circle cx="220" cy="27" r="4" fill="#A855F7" />
+            <text x="234" y="33" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Oven process complete</text>
+          </g>
+        
+      </g>
+    </g>
+  
+</svg>

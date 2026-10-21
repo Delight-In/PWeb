@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   MapPin, Phone, Mail, Clock, 
-  CheckCircle, FileText, ArrowRight, Loader2 
+  CheckCircle, ArrowRight, Loader2 
 } from 'lucide-react';
 import { subscribeNewsletter } from '../services/leadService';
 
 interface FooterProps {
-  onOpenCapability: () => void;
-  onRequestDemo: () => void;
+  onRequestDemo?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo }) => {
+export const Footer: React.FC<FooterProps> = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,8 +44,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main 4-Column Footer Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 border-b border-slate-200">
-          {/* Column 1: Official Logo, Mission & Registered Address (5 cols) */}
-          <div className="lg:col-span-5 space-y-4">
+          {/* Column 1: Official Logo, Mission & Registered Address (4 cols) */}
+          <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="inline-block focus:outline-none">
               <img 
                 src="/logo.png" 
@@ -56,7 +55,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo 
             </Link>
 
             <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-sm">
-              Unifying Energy, Water, Gas and Chiller management into a single resource intelligence platform — backed by end-to-end IT services, as a TRIAXIS Consortium partner.
+              Coordinated Industrial Data Foundation for manufacturing operations and AI — unifying Data Connectivity, DataOps, Edge Intelligence, Security, Governance, and Central Management.
             </p>
 
             <div className="space-y-2 pt-1 text-xs text-slate-600">
@@ -81,78 +80,69 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo 
             </div>
           </div>
 
-          {/* Column 2: Resource Platform (2 cols) */}
-          <div className="lg:col-span-2">
+          {/* Column 2: Industrial Data Platform (3 cols) */}
+          <div className="lg:col-span-3">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3.5">
-              Resource Platform
+              Industrial Platform
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2 text-xs">
               <li>
-                <Link to="/solutions/resource-intelligence" className="text-slate-600 hover:text-emerald-700 transition-colors">
-                  Energy Management
+                <Link to="/platform/industrial-data-foundation" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Industrial Data Foundation
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/resource-intelligence" className="text-slate-600 hover:text-emerald-700 transition-colors">
-                  Water Management
+                <Link to="/platform/data-connectivity" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Data Connectivity
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/resource-intelligence" className="text-slate-600 hover:text-emerald-700 transition-colors">
-                  Gas &amp; Pressure Safety
+                <Link to="/platform/industrial-dataops" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Industrial DataOps
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/resource-intelligence" className="text-slate-600 hover:text-emerald-700 transition-colors">
-                  Chiller Plants (COP)
+                <Link to="/platform/edge-intelligence" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Edge Intelligence
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/resource-intelligence" className="text-slate-600 hover:text-emerald-700 transition-colors">
-                  Energy Advisory &amp; Audits
+                <Link to="/platform/data-security" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Data Security
                 </Link>
               </li>
               <li>
-                <button 
-                  onClick={onRequestDemo} 
-                  className="text-emerald-700 hover:text-emerald-800 font-semibold flex items-center gap-1 pt-1"
-                >
-                  <span>Request Demo</span>
-                  <ArrowRight className="w-3 h-3" />
-                </button>
+                <Link to="/platform/data-governance" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Data Governance
+                </Link>
+              </li>
+              <li>
+                <Link to="/platform/central-management" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Central Management
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: IT Services & OT Security (2 cols) */}
+          {/* Column 3: Resource Platform & IT Services (2 cols) */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3.5">
-              IT Services
+              Solutions
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2 text-xs">
               <li>
-                <Link to="/solutions/digital-transformation" className="text-slate-600 hover:text-sky-700 transition-colors">
-                  IoT &amp; Remote Monitoring
+                <Link to="/solutions/resource-intelligence" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Resource Intelligence
                 </Link>
               </li>
               <li>
                 <Link to="/solutions/digital-transformation" className="text-slate-600 hover:text-sky-700 transition-colors">
-                  Cloud &amp; Infrastructure
+                  IT &amp; Digital Transformation
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/digital-transformation" className="text-slate-600 hover:text-sky-700 transition-colors">
-                  OT &amp; SCADA Cybersecurity
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/digital-transformation" className="text-slate-600 hover:text-sky-700 transition-colors">
-                  Data &amp; Analytics
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/digital-transformation" className="text-slate-600 hover:text-sky-700 transition-colors">
-                  AI &amp; Automation
+                <Link to="/industries" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Industries Served
                 </Link>
               </li>
               <li>
@@ -160,10 +150,29 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo 
                   TRIAXIS Consortium
                 </Link>
               </li>
+              <li>
+                <Link to="/about" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-slate-600 hover:text-emerald-700 transition-colors">
+                  Contact &amp; Book Demo
+                </Link>
+              </li>
+              <li className="pt-1">
+                <Link 
+                  to="/contact" 
+                  className="text-emerald-700 hover:text-emerald-800 font-semibold flex items-center gap-1"
+                >
+                  <span>Book Demo</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 4: Newsletter & Capability Statement (3 cols) */}
+          {/* Column 4: Newsletter & Technical Updates (3 cols) */}
           <div className="lg:col-span-3 space-y-3.5">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3.5">
               Stay Informed
@@ -209,16 +218,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCapability, onRequestDemo 
                 )}
               </form>
             )}
-
-            <div className="pt-1">
-              <button
-                onClick={onOpenCapability}
-                className="w-full py-2 px-3 bg-white hover:bg-slate-100 text-slate-700 font-medium rounded-lg text-xs border border-slate-200 flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
-              >
-                <FileText className="w-3.5 h-3.5 text-slate-500" />
-                <span>Download Capability Statement (PDF)</span>
-              </button>
-            </div>
           </div>
         </div>
 

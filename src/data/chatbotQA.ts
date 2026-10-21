@@ -17,13 +17,13 @@ export interface FAQItem {
   question: string;
   keywords: string[];
   answer: string;
-  actionType?: 'demo' | 'contact' | 'download_pdf';
+  actionType?: 'demo' | 'contact';
   suggestedPrompts?: string[];
 }
 
 export interface BotResponse {
   answer: string;
-  actionType?: 'demo' | 'contact' | 'download_pdf';
+  actionType?: 'demo' | 'contact';
   matchedQuestion?: string;
   suggestedPrompts?: string[];
 }
@@ -254,7 +254,7 @@ const coreWebsiteKnowledge: FAQItem[] = [
     suggestedPrompts: [
       "How do you calculate facility ROI?",
       "Schedule a live platform demo",
-      "Download Capability Statement (PDF)"
+      "Explore Platform Architecture"
     ]
   },
   {
@@ -297,10 +297,10 @@ const coreWebsiteKnowledge: FAQItem[] = [
   {
     id: "capability-statement",
     category: "Documentation",
-    question: "How can I download the Capability Statement PDF?",
-    keywords: ["pdf", "capability", "prospectus", "document", "brochure", "download", "whitepaper", "statement"],
-    answer: `You can download our complete **PrishiTech Solutions Capability Statement 2026 (PDF)** right here. It details our full technical architecture, non-invasive deployment methodology, and case benchmarks.`,
-    actionType: "download_pdf",
+    question: "How can I learn more about your technical architecture?",
+    keywords: ["pdf", "capability", "prospectus", "document", "brochure", "download", "whitepaper", "statement", "specs"],
+    answer: `You can explore our complete technical specifications, architecture blueprints, and case benchmarks across our platform pages or schedule a technical walkthrough with our engineering team in Vaishali, Ghaziabad.`,
+    actionType: "contact",
     suggestedPrompts: [
       "Schedule a live demo",
       "What services do you provide?",
@@ -316,7 +316,7 @@ const coreWebsiteKnowledge: FAQItem[] = [
     actionType: "demo",
     suggestedPrompts: [
       "What services do you provide?",
-      "Download Capability Statement (PDF)",
+      "Explore Platform Architecture",
       "Where is your office located?"
     ]
   },
@@ -401,7 +401,7 @@ export function getBotResponse(rawQuery: string): BotResponse {
       answer: `You're very welcome! If you'd like to explore how these solutions apply to your specific plant or commercial complex, I can coordinate a live demo or site walkthrough anytime.`,
       suggestedPrompts: [
         "Schedule a live demo",
-        "Download Capability Statement (PDF)",
+        "Explore Platform Architecture",
         "Where is your office located?"
       ]
     };
@@ -425,7 +425,7 @@ export function getBotResponse(rawQuery: string): BotResponse {
       matchedQuestion: "How do I schedule a live demo?",
       suggestedPrompts: [
         "What services do you provide?",
-        "Download Capability Statement (PDF)",
+        "Explore Platform Architecture",
         "Where is your office located?"
       ]
     };
@@ -436,7 +436,7 @@ export function getBotResponse(rawQuery: string): BotResponse {
     const item = coreWebsiteKnowledge.find(k => k.id === 'capability-statement')!;
     return {
       answer: item.answer,
-      actionType: 'download_pdf',
+      actionType: 'contact',
       matchedQuestion: item.question,
       suggestedPrompts: item.suggestedPrompts
     };

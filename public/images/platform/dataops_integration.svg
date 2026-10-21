@@ -1,0 +1,71 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 50)">
+      <rect width="600" height="420" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+      
+      <!-- Top Cloud Box -->
+      <g transform="translate(210, 40)">
+        <rect width="180" height="90" rx="10" fill="#121824" stroke="#253246" />
+        <path d="M12 28 C9 28 7 26 7 23 C7 20 9 18 11.5 18 C12.5 15.5 15 14 18 14 C22 14 25 17 25 21 C27 21 29 22.5 29 25 C29 27.5 27 29 25 29 Z" fill="none" stroke="#38BDF8" stroke-width="2" transform="translate(30, 20) scale(1.6)"/>
+        <text x="90" y="80" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Enterprise Cloud</text>
+      </g>
+
+      <!-- 4 Arrows Down -->
+      
+        <line x1="300" y1="130" x2="110" y2="280" stroke="#05DF72" stroke-width="1.8" />
+        <polygon points="106,272 110,282 114,272" fill="#05DF72" />
+        
+        <!-- Factory Icon -->
+        <g transform="translate(75, 290)">
+          <rect width="70" height="70" rx="8" fill="#121824" stroke="#253246" />
+          <path d="M8 20 V46 H44 V26 L34 32 V26 L24 32 V20 Z" fill="none" stroke="#05DF72" stroke-width="1.8" transform="translate(10, 6) scale(1.0)"/>
+          <text x="35" y="62" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Plant 01</text>
+        </g>
+      
+        <line x1="300" y1="130" x2="240" y2="280" stroke="#05DF72" stroke-width="1.8" />
+        <polygon points="236,272 240,282 244,272" fill="#05DF72" />
+        
+        <!-- Factory Icon -->
+        <g transform="translate(205, 290)">
+          <rect width="70" height="70" rx="8" fill="#121824" stroke="#253246" />
+          <path d="M8 20 V46 H44 V26 L34 32 V26 L24 32 V20 Z" fill="none" stroke="#05DF72" stroke-width="1.8" transform="translate(10, 6) scale(1.0)"/>
+          <text x="35" y="62" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Plant 02</text>
+        </g>
+      
+        <line x1="300" y1="130" x2="370" y2="280" stroke="#05DF72" stroke-width="1.8" />
+        <polygon points="366,272 370,282 374,272" fill="#05DF72" />
+        
+        <!-- Factory Icon -->
+        <g transform="translate(335, 290)">
+          <rect width="70" height="70" rx="8" fill="#121824" stroke="#253246" />
+          <path d="M8 20 V46 H44 V26 L34 32 V26 L24 32 V20 Z" fill="none" stroke="#05DF72" stroke-width="1.8" transform="translate(10, 6) scale(1.0)"/>
+          <text x="35" y="62" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Plant 03</text>
+        </g>
+      
+        <line x1="300" y1="130" x2="500" y2="280" stroke="#05DF72" stroke-width="1.8" />
+        <polygon points="496,272 500,282 504,272" fill="#05DF72" />
+        
+        <!-- Factory Icon -->
+        <g transform="translate(465, 290)">
+          <rect width="70" height="70" rx="8" fill="#121824" stroke="#253246" />
+          <path d="M8 20 V46 H44 V26 L34 32 V26 L24 32 V20 Z" fill="none" stroke="#05DF72" stroke-width="1.8" transform="translate(10, 6) scale(1.0)"/>
+          <text x="35" y="62" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Plant 04</text>
+        </g>
+      
+    </g>
+  
+</svg>

@@ -1,30 +1,27 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
-  Bot, X, Send, Sparkles, Calendar, Download, 
+  Bot, X, Send, Sparkles, Calendar, 
   RotateCcw, CheckCircle2, Loader2, ArrowRight
 } from 'lucide-react';
 import { getBotResponse, type BotResponse } from '../data/chatbotQA';
 import { sendDemoRequest, type DemoSubmission } from '../services/leadService';
-import { generateAndDownloadCapabilityPdf } from '../utils/generateCapabilityPdf';
 
 interface Message {
   id: string;
   sender: 'bot' | 'user';
   text: string;
   timestamp: string;
-  actionType?: 'demo' | 'contact' | 'download_pdf';
+  actionType?: 'demo' | 'contact';
   suggestedPrompts?: string[];
   isDemoForm?: boolean;
 }
 
 interface PrishiBotProps {
   onOpenDemoModal?: () => void;
-  onOpenCapabilityModal?: () => void;
 }
 
 export const PrishiBot: React.FC<PrishiBotProps> = ({ 
-  onOpenDemoModal,
-  onOpenCapabilityModal
+  onOpenDemoModal
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
@@ -127,9 +124,9 @@ export const PrishiBot: React.FC<PrishiBotProps> = ({
           text: `🎉 Thank you, ${demoForm.name}! Your demo request for ${demoForm.company} has been dispatched to our Vaishali, Ghaziabad engineering desk. A senior solutions architect will connect with you at ${demoForm.phone || demoForm.workEmail} within 4 business hours.`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
           suggestedPrompts: [
-            "Download Capability Statement (PDF)",
             "What protocols do you support?",
-            "Where is your office located?"
+            "Where is your office located?",
+            "What services do you provide?"
           ]
         };
         setMessages((prev) => [...prev, confirmMsg]);
@@ -236,19 +233,6 @@ export const PrishiBot: React.FC<PrishiBotProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
               <span>TRIAXIS Verified Knowledge Base (v2026.9)</span>
             </span>
-            <button
-              onClick={() => {
-                if (onOpenCapabilityModal) {
-                  onOpenCapabilityModal();
-                } else {
-                  generateAndDownloadCapabilityPdf();
-                }
-              }}
-              className="text-emerald-700 hover:text-emerald-800 font-semibold hover:underline flex items-center gap-1"
-            >
-              <Download className="w-3 h-3" />
-              <span>Get PDF</span>
-            </button>
           </div>
 
           {/* MESSAGES SCROLL AREA */}
@@ -372,18 +356,6 @@ export const PrishiBot: React.FC<PrishiBotProps> = ({
                 )}
 
                 {/* ACTION BUTTONS IF ATTACHED */}
-                {msg.actionType === 'download_pdf' && (
-                  <div className="mt-2 flex gap-2">
-                    <button
-                      onClick={() => generateAndDownloadCapabilityPdf()}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-semibold transition-colors"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      <span>Download Capability Statement (PDF)</span>
-                    </button>
-                  </div>
-                )}
-
                 {msg.actionType === 'contact' && (
                   <div className="mt-2 flex flex-wrap gap-2">
                     <a

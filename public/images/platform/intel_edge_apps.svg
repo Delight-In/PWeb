@@ -1,0 +1,49 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 60)">
+      <rect width="600" height="400" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+      <text x="300" y="52" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Edge Hosted Containerized Apps</text>
+      <g transform="translate(48, 80)">
+        
+          <g transform="translate(0, 0)">
+            <text x="56" y="22" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">App - 01</text>
+            <rect y="36" width="112" height="220" rx="10" fill="#0E281E" stroke="#05DF72" stroke-width="1.8" />
+            <text x="56" y="150" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(-90 56 150)">Container Runtime</text>
+          </g>
+        
+          <g transform="translate(128, 0)">
+            <text x="56" y="22" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">App - 02</text>
+            <rect y="36" width="112" height="220" rx="10" fill="#0E281E" stroke="#05DF72" stroke-width="1.8" />
+            <text x="56" y="150" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(-90 56 150)">Container Runtime</text>
+          </g>
+        
+          <g transform="translate(256, 0)">
+            <text x="56" y="22" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">App - 03</text>
+            <rect y="36" width="112" height="220" rx="10" fill="#0E281E" stroke="#05DF72" stroke-width="1.8" />
+            <text x="56" y="150" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(-90 56 150)">Container Runtime</text>
+          </g>
+        
+          <g transform="translate(384, 0)">
+            <text x="56" y="22" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">App - 04</text>
+            <rect y="36" width="112" height="220" rx="10" fill="#0E281E" stroke="#05DF72" stroke-width="1.8" />
+            <text x="56" y="150" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(-90 56 150)">Container Runtime</text>
+          </g>
+        
+      </g>
+    </g>
+  
+</svg>

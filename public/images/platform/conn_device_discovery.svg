@@ -1,0 +1,88 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 60)">
+      <rect width="600" height="400" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+      <g transform="translate(50, 40)">
+        
+          <g transform="translate(0, 0)">
+            <!-- Source Card -->
+            <rect width="320" height="62" rx="10" fill="#121824" stroke="#253246" stroke-width="1.2" />
+            <rect x="20" y="16" width="30" height="30" rx="6" fill="#1A2234" />
+            <circle cx="35" cy="31" r="5" fill="#05DF72" />
+            <text x="62" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">SCADA / MES</text>
+            <text x="62" y="47" fill="#64748B" font-family="monospace" font-size="10">10.0.1.12</text>
+
+            <!-- Connected Badge -->
+            <g transform="translate(350, 16)">
+              <circle cx="15" cy="15" r="12" fill="#064E3B" stroke="#05DF72" stroke-width="1.5" />
+              <path d="M10 15 L14 19 L20 11" stroke="#05DF72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <text x="36" y="21" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Connected</text>
+            </g>
+          </g>
+        
+          <g transform="translate(0, 80)">
+            <!-- Source Card -->
+            <rect width="320" height="62" rx="10" fill="#121824" stroke="#253246" stroke-width="1.2" />
+            <rect x="20" y="16" width="30" height="30" rx="6" fill="#1A2234" />
+            <circle cx="35" cy="31" r="5" fill="#05DF72" />
+            <text x="62" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">PLC / CNC / Robotic</text>
+            <text x="62" y="47" fill="#64748B" font-family="monospace" font-size="10">192.168.1.50</text>
+
+            <!-- Connected Badge -->
+            <g transform="translate(350, 16)">
+              <circle cx="15" cy="15" r="12" fill="#064E3B" stroke="#05DF72" stroke-width="1.5" />
+              <path d="M10 15 L14 19 L20 11" stroke="#05DF72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <text x="36" y="21" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Connected</text>
+            </g>
+          </g>
+        
+          <g transform="translate(0, 160)">
+            <!-- Source Card -->
+            <rect width="320" height="62" rx="10" fill="#121824" stroke="#253246" stroke-width="1.2" />
+            <rect x="20" y="16" width="30" height="30" rx="6" fill="#1A2234" />
+            <circle cx="35" cy="31" r="5" fill="#05DF72" />
+            <text x="62" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Historian / Database</text>
+            <text x="62" y="47" fill="#64748B" font-family="monospace" font-size="10">192.168.2.100</text>
+
+            <!-- Connected Badge -->
+            <g transform="translate(350, 16)">
+              <circle cx="15" cy="15" r="12" fill="#064E3B" stroke="#05DF72" stroke-width="1.5" />
+              <path d="M10 15 L14 19 L20 11" stroke="#05DF72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <text x="36" y="21" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Connected</text>
+            </g>
+          </g>
+        
+          <g transform="translate(0, 240)">
+            <!-- Source Card -->
+            <rect width="320" height="62" rx="10" fill="#121824" stroke="#253246" stroke-width="1.2" />
+            <rect x="20" y="16" width="30" height="30" rx="6" fill="#1A2234" />
+            <circle cx="35" cy="31" r="5" fill="#05DF72" />
+            <text x="62" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Sensors / Vision</text>
+            <text x="62" y="47" fill="#64748B" font-family="monospace" font-size="10">192.168.1.84</text>
+
+            <!-- Connected Badge -->
+            <g transform="translate(350, 16)">
+              <circle cx="15" cy="15" r="12" fill="#064E3B" stroke="#05DF72" stroke-width="1.5" />
+              <path d="M10 15 L14 19 L20 11" stroke="#05DF72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <text x="36" y="21" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Connected</text>
+            </g>
+          </g>
+        
+      </g>
+    </g>
+  
+</svg>

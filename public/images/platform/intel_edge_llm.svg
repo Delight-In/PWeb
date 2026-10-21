@@ -1,0 +1,40 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#334155" fill-opacity="0.28" />
+    </pattern>
+    <linearGradient id="emeraldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05DF72" />
+      <stop offset="100%" stop-color="#00A854" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="520" rx="12" fill="#070A10" />
+  <rect width="800" height="520" rx="12" fill="url(#dotGrid)" />
+
+  
+    <g transform="translate(100, 60)">
+      <rect width="600" height="400" rx="14" fill="#090E17" stroke="#10B981" stroke-width="1.2" />
+
+      <!-- User Chat Bubble -->
+      <g transform="translate(110, 60)">
+        <rect width="360" height="64" rx="10" fill="#1E293B" />
+        <circle cx="395" cy="32" r="14" fill="#334155" />
+        <path d="M390 38 C390 35 393 34 395 34 C397 34 400 35 400 38 M392 30 A3 3 0 1 1 398 30 A3 3 0 0 1 392 30" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+        <text x="20" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">How can I configure a connection to a device</text>
+        <text x="20" y="48" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">using Modbus TCP?</text>
+      </g>
+
+      <!-- Assistant Response Bubble -->
+      <g transform="translate(70, 160)">
+        <rect width="460" height="170" rx="10" fill="#0C1B14" stroke="#05DF72" stroke-width="1.5" />
+        <text x="24" y="34" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="14" font-weight="700">PrishiTech Edge Industrial Copilot:</text>
+        <text x="24" y="60" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="13">To configure Modbus TCP on PrishiTech DeviceHub:</text>
+        <text x="24" y="86" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">1. Specify IP address and Port 502</text>
+        <text x="24" y="108" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">2. Map Holding Registers (40001 - 49999)</text>
+        <text x="24" y="130" fill="#05DF72" font-family="system-ui, sans-serif" font-size="12" font-weight="600">&bull; Auto-tag schema generated successfully</text>
+      </g>
+    </g>
+  
+</svg>
