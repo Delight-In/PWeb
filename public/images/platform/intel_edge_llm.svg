@@ -33,7 +33,7 @@
         <text x="24" y="60" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="13">To configure Modbus TCP on PrishiTech DeviceHub:</text>
         <text x="24" y="86" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">1. Specify IP address and Port 502</text>
         <text x="24" y="108" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12">2. Map Holding Registers (40001 - 49999)</text>
-        <text x="24" y="130" fill="#05DF72" font-family="system-ui, sans-serif" font-size="12" font-weight="600">&bull; Auto-tag schema generated successfully</text>
+        <text x="24" y="130" fill="#05DF72" font-family="system-ui, sans-serif" font-size="12" font-weight="600">• Auto-tag schema generated successfully</text>
       </g>
     </g>
   

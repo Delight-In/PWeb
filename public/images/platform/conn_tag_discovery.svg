@@ -20,17 +20,17 @@
         <!-- Step 1 -->
         <g transform="translate(0, 0)">
           <rect width="240" height="44" rx="8" fill="#141A26" stroke="#253246" />
-          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Plant 01 &rarr;</text>
+          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Plant 01 →</text>
         </g>
         <!-- Step 2 -->
         <g transform="translate(60, 56)">
           <rect width="260" height="44" rx="8" fill="#141A26" stroke="#253246" />
-          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Clean_System &rarr;</text>
+          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Clean_System →</text>
         </g>
         <!-- Step 3 -->
         <g transform="translate(120, 112)">
           <rect width="280" height="44" rx="8" fill="#141A26" stroke="#253246" />
-          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Steam_Line &rarr;</text>
+          <text x="24" y="28" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Steam_Line →</text>
         </g>
         <!-- Discovered Tags -->
         <g transform="translate(180, 168)">
